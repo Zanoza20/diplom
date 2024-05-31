@@ -7,43 +7,45 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <button class="btn" onclick="openLoginMenu()">Увійти</button>
+    <div class="container">
+        <button class="btn" onclick="openLoginMenu()">Увійти</button>
 
-    <div class="sign-up" id="sign-up" style="display: none;">
-        <span class="close" onclick="closeLoginMenu()">&times;</span>
+        <div class="sign-up" id="sign-up" style="display: none;">
+            <span class="close" onclick="closeLoginMenu()">&times;</span>
 
-        <form action="#" class="sign-up-content">
-            <div class="container">
-                <h1>Увійти</h1>
-                <p>Будь-ласка, заповніть ці поля</p>
+            <form action="#" class="sign-up-content">
+                <div class="container">
+                    <h1>Увійти</h1>
+                    <p>Будь-ласка, заповніть ці поля</p>
 
-                <hr>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Введіть ваш email..." required autocomplete="off">
+                    <hr>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Введіть ваш email..." required autocomplete="off">
 
-                <label for="pass">Пароль</label>
-                <input type="password" id="pass" name="pass" placeholder="Створіть Пароль" required>
+                    <label for="pass">Пароль</label>
+                    <input type="password" id="pass" name="pass" placeholder="Створіть Пароль" required>
 
-                <label for="pass-repeat">Пароль</label>
-                <input type="password" id="pass-repeat" name="pass-repeat" placeholder="Введіть повторно ваш пароль" required>
+                    <label for="pass-repeat">Пароль</label>
+                    <input type="password" id="pass-repeat" name="pass-repeat" placeholder="Введіть повторно ваш пароль" required>
 
-                <label for="#">
-                    <input type="checkbox" name="remember" id="remember" checked> Запам'ятати мене
-                </label>
+                    <label for="#">
+                        <input type="checkbox" name="remember" id="remember" checked> Запам'ятати мене
+                    </label>
 
-                <p id="error-msg" style="color: red; display: none;">Паролі не співпадають</p>
+                    <p id="error-msg" style="color: red; display: none;">Паролі не співпадають</p>
 
-                <p>Вітаємо с поверненням.<a href="#">Раді знову вас бачити</a></p>
+                    <p>Вітаємо с поверненням.<a href="#">Раді знову вас бачити</a></p>
 
-                <div class="buttons">
-                    <button type="button" class="cancelBtn" onclick="closeLoginMenu()">Відмінити</button>
-                    <button type="button" class="SignUpBtn" onclick="login()">Увійти</button>
+                    <div class="buttons">
+                        <button type="button" class="cancelBtn" onclick="closeLoginMenu()">Відмінити</button>
+                        <button type="button" class="SignUpBtn" onclick="login()">Увійти</button>
+                    </div>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
-    <div id="goods"></div>
+        <div id="goods"></div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="TudoCard.js"></script>
