@@ -6,13 +6,7 @@ $('document').ready(function(){
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
 
-    loginButton.click(function(){
-        window.location.href = "https://diplom-by4t.vercel.app";
-    });
-
-    registerButton.click(function(){
-        window.location.href = "https://diplom-dfz4.vercel.app";
-    });
+    
 });
 
 function loadGoods() {
