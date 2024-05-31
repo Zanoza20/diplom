@@ -178,8 +178,9 @@ hr {
 
 .single-goods .price {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    bottom: 50px; /* Зміщуємо від нижнього краю */
+    left: 50%; /* По центру відносно товару */
+    transform: translateX(-50%); /* Вирівнюємо по горизонталі */
     background-color: rgba(255, 255, 255, 0.8);
     padding: 0.5rem 1rem;
     border-radius: 5px;
