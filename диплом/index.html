@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Увійти</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TudoCard</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <button class="btn" onclick="openLoginMenu()">Увійти</button>
 
-    <div class="sign-up" id="sign-up">
+    <div class="sign-up" id="sign-up" style="display: none;">
         <span class="close" onclick="closeLoginMenu()">&times;</span>
 
         <form action="#" class="sign-up-content">
             <div class="container">
                 <h1>Увійти</h1>
-                <p>Будь-ласка, заповнціть ці поля</p>
+                <p>Будь-ласка, заповніть ці поля</p>
 
                 <hr>
                 <label for="email">Email</label>
@@ -42,6 +42,27 @@
             </div>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        function openLoginMenu() {
+            document.getElementById('sign-up').style.display = 'block';
+        }
+
+        function closeLoginMenu() {
+            document.getElementById('sign-up').style.display = 'none';
+        }
+
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('pass').value;
+            const passwordRepeat = document.getElementById('pass-repeat').value;
+
+            if (password !== passwordRepeat) {
+                document.getElementById('error-msg').style.display = 'block';
+                return;
+            }
+            // Your login logic goes here
+        }
+    </script>
 </body>
 </html>
