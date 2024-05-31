@@ -150,11 +150,12 @@ hr {
 }
 
 .single-goods {
-    background-color: #fff;
+    background-color: #ccc; /* Сірий фон товару */
     border: 2px solid #ff0000;
     border-radius: 10px;
     padding: 20px;
     height: 100%;
+    position: relative;
 }
 
 .single-goods img {
@@ -173,6 +174,15 @@ hr {
 .single-goods p {
     font-size: 1.6rem;
     margin-bottom: 10px;
+}
+
+.single-goods .price {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 .single-goods .add-to-cart {
