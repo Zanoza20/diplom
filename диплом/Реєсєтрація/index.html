@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Реєстрація</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <button class="btn" onclick="document.getElementById('sign-up').style.display='block'">Зареєструватись</button>
+
+        <div class="sign-up" id="sign-up">
+            <span class="close" onclick="document.getElementById('sign-up').style.display='none'">&times;</span>
+
+            <form id="sign-up-form" class="sign-up-content">
+                <div class="container">
+                    <h1>Зареєструватись</h1>
+                    <p>Будь-ласка, заповніть ці поля</p>
+
+                    <hr>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Введіть ваш email..." required autocomplete="off">
+
+                    <label for="pass">Пароль</label>
+                    <input type="password" id="pass" name="pass" placeholder="Створіть Пароль" required>
+
+                    <label for="pass-repeat">Пароль</label>
+                    <input type="password" id="pass-repeat" name="pass-repeat" placeholder="Введіть повторно ваш пароль" required>
+
+                    <label for="#">
+                        <input type="checkbox" name="remember" id="remember" checked> Запам'ятати мене
+                    </label>
+
+                    <p>Створюючи аккаунт, ви зобов'язуєтесь...<a href="#">Розповісти про цей сайт друзям</a></p>
+
+                    <div class="buttons">
+                        <button type="button" class="cancelBtn" onclick="document.getElementById('sign-up').style.display='none'">Відмінити</button>
+                        <button type="button" class="SignUpBtn" onclick="registerUser()">Зареєструватись</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
