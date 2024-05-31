@@ -6,14 +6,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <button id="loginButton" class="btn">Відкрити меню</button>
+    <button id="loginButton" class="btn">Увійти</button>
     <button id="registerButton" class="btn">Зареєструватись</button>
 
     <div id="goods" class="goods-container"></div>
 
     <div id="menu" class="sign-up">
         <div class="sign-up-content">
-            <h1>Привіт</h1>
+            <h1>Вхід в аккаунт</h1>
+            <form>
+                <div class="container">
+                    <label for="uname"><b>Логін</b></label>
+                    <input type="text" placeholder="Введіть ваш логін" name="uname" required>
+
+                    <label for="psw"><b>Пароль</b></label>
+                    <input type="password" placeholder="Введіть ваш пароль" name="psw" required>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
+                    </label>
+
+                    <div class="clearfix">
+                        <button type="button" class="cancelbtn">Відмінити</button>
+                        <button type="submit" class="signupbtn">Увійти</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 
