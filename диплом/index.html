@@ -2,73 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TudoCard</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <button class="btn" onclick="openLoginMenu()">Увійти</button>
+    <button id="loginButton" class="btn">Увійти в аккаунт</button>
+    <button id="registerButton" class="btn">Зареєструватись</button>
 
-        <div class="sign-up" id="sign-up" style="display: none;">
-            <span class="close" onclick="closeLoginMenu()">&times;</span>
-
-            <form action="#" class="sign-up-content">
-                <div class="container">
-                    <h1>Увійти</h1>
-                    <p>Будь-ласка, заповніть ці поля</p>
-
-                    <hr>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Введіть ваш email..." required autocomplete="off">
-
-                    <label for="pass">Пароль</label>
-                    <input type="password" id="pass" name="pass" placeholder="Створіть Пароль" required>
-
-                    <label for="pass-repeat">Пароль</label>
-                    <input type="password" id="pass-repeat" name="pass-repeat" placeholder="Введіть повторно ваш пароль" required>
-
-                    <label for="#">
-                        <input type="checkbox" name="remember" id="remember" checked> Запам'ятати мене
-                    </label>
-
-                    <p id="error-msg" style="color: red; display: none;">Паролі не співпадають</p>
-
-                    <p>Вітаємо с поверненням.<a href="#">Раді знову вас бачити</a></p>
-
-                    <div class="buttons">
-                        <button type="button" class="cancelBtn" onclick="closeLoginMenu()">Відмінити</button>
-                        <button type="button" class="SignUpBtn" onclick="login()">Увійти</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div id="goods"></div>
-    </div>
+    <div id="goods" class="goods-container"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="TudoCard.js"></script>
-    <script>
-        function openLoginMenu() {
-            document.getElementById('sign-up').style.display = 'block';
-        }
-
-        function closeLoginMenu() {
-            document.getElementById('sign-up').style.display = 'none';
-        }
-
-        function login() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('pass').value;
-            const passwordRepeat = document.getElementById('pass-repeat').value;
-
-            if (password !== passwordRepeat) {
-                document.getElementById('error-msg').style.display = 'block';
-                return;
-            }
-            // Your login logic goes here
-        }
-    </script>
+    <script src="js/TudoCard.js"></script>
 </body>
 </html>
