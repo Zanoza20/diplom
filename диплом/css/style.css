@@ -22,13 +22,13 @@ body {
     z-index: 999;
     background-color: royalblue;
     color: #ffba0d;
-    padding: 1.3rem 2.6rem;
+    padding: 1rem 2rem;
     border: none;
     outline: none;
     box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
     border-radius: 1rem;
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     transition: .5s;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 #registerButton {
-    left: calc(20px + 2.6rem + 20px); /* відступ від лівого краю + ширина кнопки + відступ між кнопками */
+    left: calc(20px + 2rem + 10px); /* відступ від лівого краю + ширина кнопки + відступ між кнопками */
     top: 20px;
 }
 
