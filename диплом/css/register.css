@@ -1,0 +1,10 @@
+.container p {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.container p a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
