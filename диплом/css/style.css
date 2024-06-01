@@ -50,22 +50,24 @@ body {
     padding: 1.6rem;
 }
 
-input[type=email], input[type=password] {
+input[type=tel], input[type=password] {
     width: 100%;
     padding: 1.5rem;
     display: inline-block;
-    border: none;
+    border: 1px solid #ccc;
     margin: .5rem 0 2.2rem 0;
     background: #ddd;
+    border-radius: 0.5rem;
 }
 
-input[type=email]:focus, input[type=password]:focus {
+input[type=tel]:focus, input[type=password]:focus {
     background: #f1f1f1;
     outline: none;
 }
 
 h1 {
     font-size: 3.5rem;
+    text-align: center;
 }
 
 p {
@@ -77,7 +79,7 @@ label {
     font-size: 2rem;
 }
 
-button[type=button] {
+button[type=button], button[type=submit] {
     background-color: #4caf50;
     color: #fff;
     padding: 1.4rem 2rem;
@@ -86,26 +88,33 @@ button[type=button] {
     cursor: pointer;
     width: 100%;
     opacity: 0.8;
+    border-radius: 0.5rem;
 }
 
-button[type=button]:hover {
+button[type=button]:hover, button[type=submit]:hover {
     opacity: 1;
 }
 
-button.cancelBtn {
+button.cancelbtn {
     background-color: #f44336;
+    width: 48%;
+}
+
+.signupbtn {
+    width: 48%;
 }
 
 .buttons {
     display: flex;
+    justify-content: space-between;
 }
 
 .sign-up {
     display: none;
     position: fixed;
     z-index: 1;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     width: 100%;
     min-height: 100%;
     overflow: auto;
@@ -153,54 +162,4 @@ hr {
 
 .single-goods {
     background-color: #ccc; /* Сірий фон товару */
-    border: 2px solid #ff0000;
-    border-radius: 10px;
-    padding: 20px;
-    height: 100%;
-    position: relative;
-}
-
-.single-goods img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-.single-goods h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.single-goods p {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-}
-
-.single-goods .price {
-    position: absolute;
-    bottom: 50px; /* Зміщуємо від нижнього краю */
-    left: 50%; /* По центру відносно товару */
-    transform: translateX(-50%); /* Вирівнюємо по горизонталі */
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-.single-goods .add-to-cart {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 1.4rem 2rem;
-    margin-top: auto;
-    margin-bottom: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
-    border-radius: 5px;
-}
-
-.single-goods .add-to-cart:hover {
-    opacity: 1;
-}
+    border: 
