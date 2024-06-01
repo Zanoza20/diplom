@@ -39,11 +39,11 @@ body {
 
 #loginButton {
     left: 20px;
-    top: calc(20px + 1.5rem + 20px); /* відступ від верху + висота кнопки "Зареєструватись" + відступ між кнопками */
+    top: calc(20px + 1.5рем + 20px); /* відступ від верху + висота кнопки "Зареєструватись" + відступ між кнопками */
 }
 
 .btn:active {
-    transform: translateY(.3rem);
+    transform: translateY(.3рем);
 }
 
 .sign-up {
@@ -56,7 +56,7 @@ body {
     min-height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, .7);
-    padding-top: 5rem;
+    padding-top: 5рем;
 }
 
 .sign-up-content {
@@ -65,7 +65,7 @@ body {
     width: 40%;
     border: .1рем solid #888;
     border-radius: 1rem; /* Заокруглені кути */
-    padding: 2rem; /* Збільшує розмір фону */
+    padding: 2рем; /* Збільшує розмір фону */
 }
 
 .close {
