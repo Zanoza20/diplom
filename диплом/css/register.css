@@ -1,10 +1,22 @@
 .container p {
-    font-size: 1.4rem;
+    font-size: 1.4рем;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 1рем;
 }
 .container p a {
     color: blue;
     text-decoration: underline;
     cursor: pointer;
+}
+.container input[type="tel"],
+.container input[type="password"] {
+    width: 100%;
+    padding: 1рем;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 0.5рем;
+}
+.container .clearfix button {
+    border-radius: 0.5рем; /* Заокруглені кути */
 }
