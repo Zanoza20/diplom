@@ -13,7 +13,7 @@
 
     <div id="goods" class="goods-container"></div>
 
-    <div id="menu" class="sign-up">
+    <div id="loginMenu" class="sign-up">
         <div class="sign-up-content">
             <h1>Вхід в аккаунт</h1>
             <form>
@@ -37,22 +37,22 @@
         </div>
     </div>
 
-    <div id="register" class="sign-up">
+    <div id="registerMenu" class="sign-up">
         <div class="sign-up-content">
             <h1>Реєстрація</h1>
             <form>
                 <div class="container">
-                    <label for="phone"><b>Введіть номер вашого телефону</b></label>
-                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
+                    <label for="phone"><b>Введіть ваш номер телефону</b></label>
+                    <input type="tel" placeholder="Номер телефону" name="phone" required>
                     
                     <label for="psw"><b>Придумайте пароль</b></label>
-                    <input type="password" placeholder="Придумайте пароль" name="psw" required>
+                    <input type="password" placeholder="Пароль" name="psw" required>
                     
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
                     </label>
                     
-                    <p>При реєстрації на нашому сайті, ви погоджуєтесь з <a href="#" id="userAgreementLink">правилами користувача</a>.</p>
+                    <p>При реєстрації на нашому сайті, ви погоджуєтесь з <a href="#">правилами користувача</a></p>
                     
                     <div class="clearfix">
                         <button type="button" class="cancelbtn">Відмінити</button>
@@ -63,52 +63,25 @@
         </div>
     </div>
 
-    <div id="userAgreement" class="sign-up">
-        <div class="sign-up-content">
-            <h1>Правила користувача</h1>
-            <p>Тут буде текст правил користувача.</p>
-            <button type="button" class="cancelbtn" id="closeUserAgreement">Закрити</button>
-        </div>
-    </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="TudoCard.js"></script>
     <script>
         $(document).ready(function(){
             var loginButton = $("#loginButton");
             var registerButton = $("#registerButton");
-            var userAgreementLink = $("#userAgreementLink");
-            var closeUserAgreement = $("#closeUserAgreement");
-
-            var loginMenu = $("#menu");
-            var registerMenu = $("#register");
-            var userAgreementMenu = $("#userAgreement");
+            var loginMenu = $("#loginMenu");
+            var registerMenu = $("#registerMenu");
 
             loginButton.click(function(){
                 loginMenu.show();
-                registerMenu.hide();
-                userAgreementMenu.hide();
             });
 
             registerButton.click(function(){
                 registerMenu.show();
-                loginMenu.hide();
-                userAgreementMenu.hide();
             });
 
             $(".cancelbtn").click(function(){
-                loginMenu.hide();
-                registerMenu.hide();
-                userAgreementMenu.hide();
-            });
-
-            userAgreementLink.click(function(event){
-                event.preventDefault();
-                userAgreementMenu.show();
-            });
-
-            closeUserAgreement.click(function(){
-                userAgreementMenu.hide();
+                $(this).closest('.sign-up').hide();
             });
         });
     </script>
