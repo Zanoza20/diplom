@@ -4,17 +4,17 @@
     gap: 1rem;
 }
 .container label {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5рем;
     font-size: 1.6rem;
 }
 .container input[type="tel"],
 .container input[type="password"] {
     width: 100%;
-    padding: 1rem;
+    padding: 1рем;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    border-radius: 0.5rem;
+    border-radius: 0.5рем;
 }
 .container .clearfix {
     display: flex;
@@ -22,10 +22,10 @@
 }
 .container .clearfix button {
     width: 48%;
-    padding: 1rem;
+    padding: 1рем;
     font-size: 1.6rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.5рем;
     cursor: pointer;
 }
 .container .cancelbtn {
@@ -38,6 +38,6 @@
 }
 .sign-up-content h1 {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    margin-bottom: 2рем;
+    font-size: 2.5рем;
 }
