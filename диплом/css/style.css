@@ -25,7 +25,7 @@ body {
     padding: 0.8rem 1.5rem;
     border: none;
     outline: none;
-    box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
+    box-shadow: .3rem .3rem .6рем rgba(0, 0, 0, .8);
     border-radius: 1rem;
     cursor: pointer;
     font-size: 1.4rem;
@@ -63,16 +63,16 @@ body {
     background-color: #fefefe;
     margin: 5% auto;
     width: 40%;
-    border: .1rem solid #888;
+    border: .1рем solid #888;
     border-radius: 1rem; /* Заокруглені кути */
     padding: 2rem; /* Збільшує розмір фону */
 }
 
 .close {
     position: absolute;
-    right: 3.5rem;
-    top: 1.5rem;
-    font-size: 4rem;
+    right: 3.5рем;
+    top: 1.5рем;
+    font-size: 4рем;
     font-weight: 800;
     color: #fff;
 }
@@ -110,12 +110,12 @@ body {
 }
 
 .single-goods h3 {
-    font-size: 1.8rem;
+    font-size: 1.8рем;
     margin-bottom: 10px;
 }
 
 .single-goods p {
-    font-size: 1.6rem;
+    font-size: 1.6рем;
     margin-bottom: 10px;
 }
 
@@ -125,14 +125,14 @@ body {
     left: 50%; /* По центру відносно товару */
     transform: translateX(-50%); /* Вирівнюємо по горизонталі */
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem 1rem;
+    padding: 0.5рем 1рем;
     border-radius: 5px;
 }
 
 .single-goods .add-to-cart {
     background-color: #ff0000;
     color: #fff;
-    padding: 1.4rem 2rem;
+    padding: 1.4рем 2рем;
     margin-top: auto;
     margin-bottom: 10px;
     border: none;
