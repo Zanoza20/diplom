@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>TudoCard</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
     <button id="loginButton" class="btn">Увійти</button>
@@ -13,15 +11,15 @@
 
     <div id="goods" class="goods-container"></div>
 
-    <div id="loginMenu" class="sign-up">
+    <div id="menuLogin" class="sign-up">
         <div class="sign-up-content">
             <h1>Вхід в аккаунт</h1>
             <form>
                 <div class="container">
-                    <label for="phone"><b>Номер телефону</b></label>
+                    <label for="phoneLogin"><b>Номер телефону</b></label>
                     <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
                     
-                    <label for="psw"><b>Пароль</b></label>
+                    <label for="pswLogin"><b>Пароль</b></label>
                     <input type="password" placeholder="Пароль" name="psw" required>
                     
                     <label>
@@ -37,23 +35,23 @@
         </div>
     </div>
 
-    <div id="registerMenu" class="sign-up">
+    <div id="menuRegister" class="sign-up">
         <div class="sign-up-content">
             <h1>Реєстрація</h1>
             <form>
                 <div class="container">
-                    <label for="phone"><b>Введіть ваш номер телефону</b></label>
-                    <input type="tel" placeholder="Номер телефону" name="phone" required>
+                    <label for="phoneRegister"><b>Введіть номер вашого телефону</b></label>
+                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
                     
-                    <label for="psw"><b>Придумайте пароль</b></label>
+                    <label for="pswRegister"><b>Придумайте пароль</b></label>
                     <input type="password" placeholder="Пароль" name="psw" required>
                     
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
                     </label>
                     
-                    <p>При реєстрації на нашому сайті, ви погоджуєтесь з <a href="#">правилами користувача</a></p>
-                    
+                    <p>При реєстрації на нашому сайті, ви погоджуєтесь з <a href="#" id="userRulesLink">правилами користувача</a></p>
+
                     <div class="clearfix">
                         <button type="button" class="cancelbtn">Відмінити</button>
                         <button type="submit" class="signupbtn">Зареєструватись</button>
@@ -63,27 +61,17 @@
         </div>
     </div>
 
+    <div id="userRules" class="sign-up">
+        <div class="sign-up-content">
+            <h1>Правила користувача</h1>
+            <div class="container">
+                <p>Тут будуть розміщені правила користувача...</p>
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn">Закрити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="TudoCard.js"></script>
-    <script>
-        $(document).ready(function(){
-            var loginButton = $("#loginButton");
-            var registerButton = $("#registerButton");
-            var loginMenu = $("#loginMenu");
-            var registerMenu = $("#registerMenu");
-
-            loginButton.click(function(){
-                loginMenu.show();
-            });
-
-            registerButton.click(function(){
-                registerMenu.show();
-            });
-
-            $(".cancelbtn").click(function(){
-                $(this).closest('.sign-up').hide();
-            });
-        });
-    </script>
-</body>
-</html>
+    <script src="js/TudoCard.js
