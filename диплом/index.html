@@ -18,7 +18,6 @@
         .container input[type="password"] {
             width: 100%;
             padding: 1rem;
-            margin-bottom: 1rem;
             display: inline-block;
             border: 1px solid #ccc;
             box-sizing: border-box;
@@ -44,6 +43,11 @@
             background-color: green;
             color: white;
         }
+        .sign-up-content h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +65,7 @@
                     <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
                     
                     <label for="psw"><b>Пароль</b></label>
-                    <input type="password" placeholder="Пароль" name="psw" required style="width: 100%; max-width: 300px;">
+                    <input type="password" placeholder="Пароль" name="psw" required>
                     
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
