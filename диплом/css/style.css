@@ -46,60 +46,6 @@ body {
     transform: translateY(.3rem);
 }
 
-.container {
-    padding: 1.6rem;
-}
-
-input[type=email], input[type=password] {
-    width: 100%;
-    padding: 1.5rem;
-    display: inline-block;
-    border: none;
-    margin: .5rem 0 2.2rem 0;
-    background: #ddd;
-}
-
-input[type=email]:focus, input[type=password]:focus {
-    background: #f1f1f1;
-    outline: none;
-}
-
-h1 {
-    font-size: 3.5rem;
-}
-
-p {
-    font-size: 1.7rem;
-    margin-top: 1rem;
-}
-
-label {
-    font-size: 2rem;
-}
-
-button[type=button] {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 1.4rem 2rem;
-    margin: 0.8rem 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
-}
-
-button[type=button]:hover {
-    opacity: 1;
-}
-
-button.cancelBtn {
-    background-color: #f44336;
-}
-
-.buttons {
-    display: flex;
-}
-
 .sign-up {
     display: none;
     position: fixed;
@@ -118,11 +64,6 @@ button.cancelBtn {
     margin: 5% auto 15% auto;
     width: 50%;
     border: .1rem solid #888;
-}
-
-hr {
-    border: .1rem solid #ccc;
-    margin: 2rem 0;
 }
 
 .close {
