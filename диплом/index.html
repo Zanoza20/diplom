@@ -76,6 +76,29 @@
         </div>
     </div>
 
+    <div id="itemDetails" class="sign-up">
+        <div class="sign-up-content">
+            <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
+            <div class="container">
+                <img id="itemImage" src="" alt="Товар">
+                <h1 id="itemName">Назва товару</h1>
+                <p id="itemDescription">Опис товару</p>
+                <div id="additionalInfo">
+                    <p><b>Бренд:</b> <span id="brand"></span></p>
+                    <p><b>Виробник графічного процессора:</b> <span id="gpuManufacturer"></span></p>
+                    <p><b>Графічний чип:</b> <span id="graphicChip"></span></p>
+                    <p><b>Обсяг пам'яті:</b> <span id="memorySize"></span></p>
+                    <p><b>Тип пам'яті:</b> <span id="memoryType"></span></p>
+                    <p><b>Призначення:</b> <span id="purpose"></span></p>
+                    <p><b>Тип системи охолодження:</b> <span id="coolingType"></span></p>
+                </div>
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn">Закрити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/TudoCard.js"></script>
 </body>
