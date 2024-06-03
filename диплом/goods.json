@@ -89,5 +89,5 @@
         "memoryType": "LPDDR4X",
         "purpose": "Consumer",
         "coolingType": "Passive"
-    },
+    }
 }
