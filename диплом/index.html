@@ -13,6 +13,7 @@
 
     <div id="menuLogin" class="sign-up">
         <div class="sign-up-content">
+            <span class="close" onclick="document.getElementById('menuLogin').style.display='none'">&times;</span>
             <h1>Вхід в аккаунт</h1>
             <form>
                 <div class="container">
@@ -37,6 +38,7 @@
 
     <div id="menuRegister" class="sign-up">
         <div class="sign-up-content">
+            <span class="close" onclick="document.getElementById('menuRegister').style.display='none'">&times;</span>
             <h1>Реєстрація</h1>
             <form>
                 <div class="container">
@@ -63,6 +65,7 @@
 
     <div id="userRules" class="sign-up">
         <div class="sign-up-content">
+            <span class="close" onclick="document.getElementById('userRules').style.display='none'">&times;</span>
             <h1>Правила користувача</h1>
             <div class="container">
                 <p>Тут будуть розміщені правила користувача...</p>
@@ -73,19 +76,22 @@
         </div>
     </div>
 
-    <div id="productDetails" class="sign-up">
+    <div id="itemDetails" class="sign-up">
         <div class="sign-up-content">
-            <h1 id="productTitle"></h1>
+            <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
             <div class="container">
-                <img id="productImage" src="" alt="product image">
-                <p id="productDescription"></p>
-                <p><strong>Бренд:</strong> <span id="productBrand"></span></p>
-                <p><strong>Виробник графічного процессора:</strong> <span id="productManufacturer"></span></p>
-                <p><strong>Графічний чип:</strong> <span id="productChip"></span></p>
-                <p><strong>Обсяг памяті:</strong> <span id="productMemory"></span></p>
-                <p><strong>Тип памяті:</strong> <span id="productMemoryType"></span></p>
-                <p><strong>Призначення:</strong> <span id="productPurpose"></span></p>
-                <p><strong>Тип системи охолодження:</strong> <span id="productCoolingType"></span></p>
+                <img id="itemImage" src="" alt="Товар">
+                <h1 id="itemName">Назва товару</h1>
+                <p id="itemDescription">Опис товару</p>
+                <div id="additionalInfo">
+                    <p><b>Бренд:</b> <span id="brand"></span></p>
+                    <p><b>Виробник графічного процессора:</b> <span id="gpuManufacturer"></span></p>
+                    <p><b>Графічний чип:</b> <span id="graphicChip"></span></p>
+                    <p><b>Обсяг пам'яті:</b> <span id="memorySize"></span></p>
+                    <p><b>Тип пам'яті:</b> <span id="memoryType"></span></p>
+                    <p><b>Призначення:</b> <span id="purpose"></span></p>
+                    <p><b>Тип системи охолодження:</b> <span id="coolingType"></span></p>
+                </div>
                 <div class="clearfix">
                     <button type="button" class="cancelbtn">Закрити</button>
                 </div>
