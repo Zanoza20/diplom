@@ -193,4 +193,14 @@ button.cancelbtn {
     padding: 1.4rem 2rem;
     margin-top: auto;
     margin-bottom: 10px;
-    border
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+.single-goods .add-to-cart:hover {
+    opacity: 1;
+}
