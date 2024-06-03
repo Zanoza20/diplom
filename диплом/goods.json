@@ -1,122 +1,28 @@
 {
     "11292": {
-        "name" : "яблоки",
-        "cost" : 12,
-        "descreption" : "яблр",
-        "image" : "images/13860.png"
-     },
-"11293": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11294": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11295": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11296": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11297": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11298": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11299": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11290": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "12295": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "31296": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "16297": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "161298": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11289": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "19260": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
-     },
- "35296": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "19297": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "161898": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "11589": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- },
- "192690": {
-    "name" : "яблоки",
-    "cost" : 12,
-    "descreption" : "яблр",
-    "image" : "images/13860.png"
- }
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
+    },
+    "11293": {
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
+    }
 }
