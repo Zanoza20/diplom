@@ -24,5 +24,70 @@
         "memoryType": "LPDDR4X",
         "purpose": "Consumer",
         "coolingType": "Passive"
-    }
+    },
+    "11294": {
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
+    },
+    "11295": {
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
+    },
+    "11296": {
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
+    },
+    "11298": {
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
+    },
+    "11299": {
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
+    },
 }
