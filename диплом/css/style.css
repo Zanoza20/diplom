@@ -130,25 +130,14 @@ button.cancelbtn {
     border: .1rem solid #888;
     border-radius: 1rem;
     padding: 2rem;
-}
-
-hr {
-    border: .1рем solid #ccc;
-    margin: 2рем 0;
+    position: relative;
 }
 
 .close {
     position: absolute;
-    right: 3.5рем;
-    top: 1.5рем;
-    font-size: 4рем;
-    font-weight: 800;
-    color: #fff;
-}
-
-.close:hover,
-.close:focus {
-    color: #f44336;
+    right: 2rem;
+    top: 2rem;
+    font-size: 3rem;
     cursor: pointer;
 }
 
@@ -204,13 +193,4 @@ hr {
     padding: 1.4rem 2rem;
     margin-top: auto;
     margin-bottom: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
-    border-radius: 5px;
-}
-
-.single-goods .add-to-cart:hover {
-    opacity: 1;
-}
+    border
