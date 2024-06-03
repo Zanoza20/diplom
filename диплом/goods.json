@@ -2,121 +2,27 @@
     "11292": {
         "name": "яблоки",
         "cost": 12,
-        "descreption": "Смачні і соковиті яблука",
-        "image": "images/13860.png"
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
     },
     "11293": {
-        "name": "банани",
-        "cost": 15,
-        "descreption": "Свіжі банани з плантацій",
-        "image": "images/13860.png"
-    },
-    "11294": {
-        "name": "виноград",
-        "cost": 20,
-        "descreption": "Солодкий виноград для вашого столу",
-        "image": "images/13860.png"
-    },
-    "11295": {
-        "name": "апельсини",
-        "cost": 18,
-        "descreption": "Соковиті апельсини з Іспанії",
-        "image": "images/13860.png"
-    },
-    "11296": {
-        "name": "груші",
-        "cost": 22,
-        "descreption": "Смачні груші з саду",
-        "image": "images/13860.png"
-    },
-    "11297": {
-        "name": "манго",
-        "cost": 30,
-        "descreption": "Екзотичний манго з Індії",
-        "image": "images/13860.png"
-    },
-    "11298": {
-        "name": "ківі",
-        "cost": 25,
-        "descreption": "Свіжі ківі з Нової Зеландії",
-        "image": "images/13860.png"
-    },
-    "11299": {
-        "name": "лимони",
-        "cost": 10,
-        "descreption": "Кислі лимони для вашого чаю",
-        "image": "images/13860.png"
-    },
-    "11300": {
-        "name": "персики",
-        "cost": 28,
-        "descreption": "Соковиті персики з Грузії",
-        "image": "images/13860.png"
-    },
-    "11301": {
-        "name": "вишня",
-        "cost": 35,
-        "descreption": "Солодка вишня з саду",
-        "image": "images/13860.png"
-    },
-    "11302": {
-        "name": "черешня",
-        "cost": 40,
-        "descreption": "Соковита черешня для вашого десерту",
-        "image": "images/13860.png"
-    },
-    "11303": {
-        "name": "ананас",
-        "cost": 50,
-        "descreption": "Екзотичний ананас з Гаваїв",
-        "image": "images/13860.png"
-    },
-    "11304": {
-        "name": "мандарини",
-        "cost": 15,
-        "descreption": "Соковиті мандарини з Китаю",
-        "image": "images/13860.png"
-    },
-    "11305": {
-        "name": "папайя",
-        "cost": 35,
-        "descreption": "Екзотична папайя з Таїланду",
-        "image": "images/13860.png"
-    },
-    "11306": {
-        "name": "абрикоси",
-        "cost": 20,
-        "descreption": "Солодкі абрикоси з саду",
-        "image": "images/13860.png"
-    },
-    "11307": {
-        "name": "сливи",
-        "cost": 18,
-        "descreption": "Смачні сливи для вашого десерту",
-        "image": "images/13860.png"
-    },
-    "11308": {
-        "name": "диня",
-        "cost": 25,
-        "descreption": "Соковита диня з сонячного поля",
-        "image": "images/13860.png"
-    },
-    "11309": {
-        "name": "кавун",
-        "cost": 30,
-        "descreption": "Свіжий кавун для вашого столу",
-        "image": "images/13860.png"
-    },
-    "11310": {
-        "name": "грейпфрут",
-        "cost": 20,
-        "descreption": "Кисло-солодкий грейпфрут",
-        "image": "images/13860.png"
-    },
-    "11311": {
-        "name": "карамбола",
-        "cost": 40,
-        "descreption": "Екзотична карамбола з Азії",
-        "image": "images/13860.png"
+        "name": "яблоки",
+        "cost": 12,
+        "descreption": "яблр",
+        "image": "images/13860.png",
+        "brand": "Apple",
+        "gpuManufacturer": "Apple Inc.",
+        "graphicChip": "A12 Bionic",
+        "memorySize": "256GB",
+        "memoryType": "LPDDR4X",
+        "purpose": "Consumer",
+        "coolingType": "Passive"
     }
 }
