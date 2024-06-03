@@ -143,56 +143,41 @@ button.cancelbtn {
 
 .goods-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .single-goods {
-    background-color: #ccc; /* Сірий фон товару */
-    border: 2px solid #ff0000;
-    border-radius: 10px;
-    padding: 20px;
-    height: 100%;
-    position: relative;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .3);
 }
 
 .single-goods img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
+    max-width: 100%;
+    border-bottom: .1rem solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .single-goods h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.single-goods p {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    cursor: pointer;
 }
 
 .single-goods .price {
-    color: red;
+    font-size: 2rem;
     font-weight: bold;
-    position: absolute;
-    bottom: 50px; /* Зміщуємо від нижнього краю */
-    left: 50%; /* По центру відносно товару */
-    transform: translateX(-50%); /* Вирівнюємо по горизонталі */
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1.6rem;
+    color: red;
+    margin: 1rem 0;
 }
 
 .single-goods .add-to-cart {
-    background-color: #ff0000;
-    color: #fff;
+    background-color: #4caf50;
+    color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
