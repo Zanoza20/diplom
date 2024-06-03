@@ -1,32 +1,27 @@
-var cart = {};
-
-$('document').ready(function(){
-    loadGoods();
-
+$(document).ready(function() {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
+    var menuLogin = $("#menuLogin");
+    var menuRegister = $("#menuRegister");
+    var userRules = $("#userRules");
+    var userRulesLink = $("#userRulesLink");
 
-    
-});
-
-function loadGoods() {
-    $.getJSON('goods.json', function (data) {
-        var out = '';
-        for (var key in data) {
-            out += '<div class="single-goods">';
-            out += '<h3>' + data[key]['name'] + '</h3>';
-            out += '<p>Ціна: ' + data[key]['cost'] + '</p>';
-            out += '<img src="' + data[key].image + '">';
-            out += '<button class="add-to-cart" data-art="' + key + '">Купити</button>';
-            out += '</div>';
-        }
-        $('#goods').html(out);
-        $('button.add-to-cart').on('click', addToCart);
+    loginButton.click(function() {
+        menuLogin.show();
     });
-}
 
-function addToCart() {
-    var articul = $(this).attr('data-art');
-    cart[articul] = 1;
-    console.log(cart);
-}
+    registerButton.click(function() {
+        menuRegister.show();
+    });
+
+    $(".cancelbtn").click(function() {
+        menuLogin.hide();
+        menuRegister.hide();
+        userRules.hide();
+    });
+
+    userRulesLink.click(function(event) {
+        event.preventDefault();
+        userRules.show();
+    });
+});
