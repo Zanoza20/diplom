@@ -1,134 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: url('../images/background.png') no-repeat center center fixed;
-    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.7)), url(images/phon.png) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    border-radius: 15px;
+    position: fixed;
+    z-index: 999;
+    background-color: royalblue;
+    color: #ffba0d;
+    padding: 0.8rem 1.5rem;
     border: none;
-    background-color: #4CAF50;
-    color: white;
+    outline: none;
+    box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
+    border-radius: 1rem;
     cursor: pointer;
+    font-size: 1.4rem;
+    transition: .5s;
 }
 
-.goods-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+#registerButton {
+    left: 20px;
+    top: 20px;
 }
 
-.good {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 15px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#loginButton {
+    left: 20px;
+    top: calc(20px + 1.5rem + 20px); /* відступ від верху + висота кнопки "Зареєструватись" + відступ між кнопками */
 }
 
-.good img {
-    width: 100px;
-    height: 100px;
+.btn:active {
+    transform: translateY(.3rem);
 }
 
-.good h3 {
-    font-size: 18px;
-    margin: 10px 0;
-    cursor: pointer;
+.container {
+    padding: 1.6rem;
 }
 
-.good p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: red;
-    font-weight: bold;
-}
-
-.add-to-cart-btn {
-    display: block;
+input[type=tel], input[type=password] {
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 1.5rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin: .5rem 0 2.2rem 0;
+    background: #ddd;
+    border-radius: 0.5rem;
+}
+
+input[type=tel]:focus, input[type=password]:focus {
+    background: #f1f1f1;
+    outline: none;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+p {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+}
+
+label {
+    font-size: 2rem;
+}
+
+button[type=button], button[type=submit] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 1.4rem 2rem;
+    margin: 0.8rem 0;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
+    width: 48%;
+    opacity: 0.8;
+    border-radius: 0.5rem;
+}
+
+button[type=button]:hover, button[type=submit]:hover {
+    opacity: 1;
+}
+
+button.cancelbtn {
+    background-color: #f44336;
+    width: 48%;
+}
+
+.signupbtn {
+    width: 48%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sign-up {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    z-index: 1000;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .7);
+    padding-top: 5rem;
 }
 
 .sign-up-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    width: 50%;
+    border: .1rem solid #888;
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.goods-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+.single-goods {
+    background-color: #ccc; /* Сірий фон товару */
+    border: 2px solid #ff0000;
     border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+    position: relative;
 }
 
-.sign-up-content h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.sign-up-content p {
-    margin-bottom: 10px;
-}
-
-.sign-up-content img {
+.single-goods img {
     width: 100%;
+    max-width: 200px;
     height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.single-goods h3 {
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-.container {
-    padding: 20px;
+.single-goods p {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+.single-goods .price {
+    position: absolute;
+    bottom: 50px; /* Зміщуємо від нижнього краю */
+    left: 50%; /* По центру відносно товару */
+    transform: translateX(-50%); /* Вирівнюємо по горизонталі */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
-.buttons {
-    text-align: center;
-}
-
-.cancelbtn {
-    background-color: #f44336;
+.single-goods .add-to-cart {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 1.4rem 2rem;
+    margin-top: auto;
+    margin-bottom: 10px;
     border: none;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border-radius: 10px;
     cursor: pointer;
-    width: auto;
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 5px;
+    font-size: 1.6rem;
 }
 
-.signupbtn {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-    cursor: pointer;
-    width: auto;
+.single-goods .add-to-cart:hover {
+    opacity: 1;
 }
