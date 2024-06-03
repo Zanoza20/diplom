@@ -1,192 +1,134 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-}
-
 body {
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.7)), url(images/phon.png) no-repeat center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, sans-serif;
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .btn {
-    position: fixed;
-    z-index: 999;
-    background-color: royalblue;
-    color: #ffba0d;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    outline: none;
-    box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
-    border-radius: 1rem;
-    cursor: pointer;
-    font-size: 1.4rem;
-    transition: .5s;
-}
-
-#registerButton {
-    left: 20px;
-    top: 20px;
-}
-
-#loginButton {
-    left: 20px;
-    top: calc(20px + 1.5rem + 20px); /* відступ від верху + висота кнопки "Зареєструватись" + відступ між кнопками */
-}
-
-.btn:active {
-    transform: translateY(.3rem);
-}
-
-.container {
-    padding: 1.6rem;
-}
-
-input[type=tel], input[type=password] {
-    width: 100%;
-    padding: 1.5rem;
     display: inline-block;
-    border: 1px solid #ccc;
-    margin: .5rem 0 2.2rem 0;
-    background: #ddd;
-    border-radius: 0.5rem;
-}
-
-input[type=tel]:focus, input[type=password]:focus {
-    background: #f1f1f1;
-    outline: none;
-}
-
-h1 {
-    font-size: 3.5rem;
-    text-align: center;
-}
-
-p {
-    font-size: 1.7rem;
-    margin-top: 1rem;
-}
-
-label {
-    font-size: 2rem;
-}
-
-button[type=button], button[type=submit] {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 1.4rem 2rem;
-    margin: 0.8rem 0;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
     border: none;
+    background-color: #4CAF50;
+    color: white;
     cursor: pointer;
-    width: 48%;
-    opacity: 0.8;
-    border-radius: 0.5rem;
 }
 
-button[type=button]:hover, button[type=submit]:hover {
-    opacity: 1;
-}
-
-button.cancelbtn {
-    background-color: #f44336;
-    width: 48%;
-}
-
-.signupbtn {
-    width: 48%;
-}
-
-.buttons {
+.goods-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.good {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.good img {
+    width: 100px;
+    height: 100px;
+}
+
+.good h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.good p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .sign-up {
     display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    min-height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, .7);
-    padding-top: 5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1000;
 }
 
 .sign-up-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto;
-    width: 50%;
-    border: .1rem solid #888;
-    border-radius: 1rem;
-    padding: 2rem;
-    position: relative;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.close {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    font-size: 3rem;
-    cursor: pointer;
+.sign-up-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-.goods-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+.sign-up-content p {
+    margin-bottom: 10px;
 }
 
-.single-goods {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 1rem;
+.sign-up-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.buttons {
     text-align: center;
-    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .3);
 }
 
-.single-goods img {
-    max-width: 100%;
-    border-bottom: .1rem solid #ddd;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-}
-
-.single-goods h3 {
-    font-size: 2.2rem;
-    cursor: pointer;
-}
-
-.single-goods .price {
-    font-size: 2rem;
-    font-weight: bold;
-    color: red;
-    margin: 1rem 0;
-}
-
-.single-goods .add-to-cart {
-    background-color: #4caf50;
+.cancelbtn {
+    background-color: #f44336;
+    border: none;
     color: white;
     padding: 10px 20px;
-    border: none;
+    margin: 10px 0;
+    border-radius: 10px;
     cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
-    border-radius: 5px;
-    font-size: 1.6rem;
+    width: auto;
 }
 
-.single-goods .add-to-cart:hover {
-    opacity: 1;
+.signupbtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    width: auto;
 }
