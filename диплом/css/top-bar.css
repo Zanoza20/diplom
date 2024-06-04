@@ -1,0 +1,38 @@
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, rgba(255, 0, 150, .8), rgba(75, 0, 130, .8));
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.search-field {
+    flex: 1;
+    margin: 0 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1.6рем;
+}
+
+.support-number {
+    font-size: 1.6рем;
+    color: #fff;
+    margin-right: 1rem;
+}
+
+.cart-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
