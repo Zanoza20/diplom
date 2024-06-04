@@ -32,7 +32,7 @@ $(document).ready(function() {
         var goodsContainer = $("#goods");
         $.each(data, function(key, value) {
             goodsContainer.append(
-                '<div class="goods-item">' +
+                '<div class="single-goods">' +
                 '<img src="' + value.image + '" alt="' + value.name + '">' +
                 '<h3 class="item-name" data-key="' + key + '">' + value.name + '</h3>' +
                 '<div class="price">₴' + value.cost + '</div>' +
@@ -48,7 +48,7 @@ $(document).ready(function() {
 
             $("#itemImage").attr("src", item.image);
             $("#itemName").text(item.name);
-            $("#itemDescription").text(item.description);
+            $("#itemDescription").text(item.descreption);
             $("#brand").text(item.brand || "Невідомий");
             $("#gpuManufacturer").text(item.gpuManufacturer || "Невідомий");
             $("#graphicChip").text(item.graphicChip || "Невідомий");
