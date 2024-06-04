@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.7)), url(images/phon.png) no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.goods-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 80px; /* відступ для панелі */
+}
+
+.single-goods {
+    background: #fff; /* Білий фон */
+    padding: 2rem; /* Збільшено висоту товару */
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
+}
+
+.single-goods img {
+    max-width: 100%;
+    border-bottom: .1рем solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.single-goods h3 {
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+.single-goods .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    margin: 1рем 0;
+}
+
+.single-goods .add-to-cart {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 5px;
+    font-size: 1.6рем;
+}
+
+.single-goods .add-to-cart:hover {
+    opacity: 1;
+}
+
+.btn {
+    position: fixed;
+    z-index: 999;
+    background-color: royalblue;
+    color: #ffba0d;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    outline: none;
+    box-shadow: .3rem .3рем .6рем rgba(0, 0, 0, .8);
+    border-radius: 1рем;
+    cursor: pointer;
+    font-size: 1.4рем;
+    transition: .5s;
+    top: 80px; /* відступ з урахуванням панелі */
+}
+
+#registerButton {
+    left: 20px;
+}
+
+#loginButton {
+    left: 20px;
+    top: 180px; /* відступ з урахуванням панелі */
+}
