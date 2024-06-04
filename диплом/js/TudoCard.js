@@ -60,4 +60,17 @@ $(document).ready(function() {
             itemDetails.show();
         });
     });
+
+    // Пошук товару
+    $("#searchField").on("input", function() {
+        var searchTerm = $(this).val().toLowerCase();
+        $(".single-goods").each(function() {
+            var itemName = $(this).find(".item-name").text().toLowerCase();
+            if (itemName.includes(searchTerm)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
 });
