@@ -31,7 +31,7 @@ body {
     padding: 2rem; /* Збільшено висоту товару */
     border-radius: 1rem;
     text-align: center;
-    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
+    box-shadow: .2rem .2рем .5рем rgba(0, 0, 0, .3);
 }
 
 .single-goods img {
@@ -77,8 +77,8 @@ body {
     padding: 0.8rem 1.5rem;
     border: none;
     outline: none;
-    box-shadow: .3rem .3рем .6рем rgba(0, 0, 0, .8);
-    border-radius: 1рем;
+    box-shadow: .3рем .3рем .6рем rgba(0, 0, 0, .8);
+    border-radius: 1рем; /* Округлення кутів */
     cursor: pointer;
     font-size: 1.4рем;
     transition: .5s;
