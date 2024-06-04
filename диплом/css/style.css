@@ -25,8 +25,8 @@ body {
     padding: 0.8rem 1.5rem;
     border: none;
     outline: none;
-    box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
-    border-radius: 1rem;
+    box-shadow: .3rem .3рем .6рем rgba(0, 0, 0, .8);
+    border-radius: 1рем;
     cursor: pointer;
     font-size: 1.4rem;
     transition: .5s;
@@ -43,7 +43,7 @@ body {
 }
 
 .btn:active {
-    transform: translateY(.3rem);
+    transform: translateY(.3рем);
 }
 
 .container {
@@ -52,7 +52,7 @@ body {
 
 input[type=tel], input[type=password] {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.5рем;
     display: inline-block;
     border: 1px solid #ccc;
     margin: .5rem 0 2.2rem 0;
@@ -82,13 +82,13 @@ label {
 button[type=button], button[type=submit] {
     background-color: #4caf50;
     color: #fff;
-    padding: 1.4rem 2rem;
-    margin: 0.8rem 0;
+    padding: 1.4rem 2рем;
+    margin: 0.8рем 0;
     border: none;
     cursor: pointer;
     width: 48%;
     opacity: 0.8;
-    border-radius: 0.5rem;
+    border-radius: 0.5рем;
 }
 
 button[type=button]:hover, button[type=submit]:hover {
@@ -127,37 +127,42 @@ button.cancelbtn {
     background-color: #fefefe;
     margin: 5% auto 15% auto;
     width: 50%;
-    border: .1rem solid #888;
-    border-radius: 1rem;
-    padding: 2rem;
+    border: .1рем solid #888;
+    border-radius: 1рем;
+    padding: 2рем;
     position: relative;
 }
 
 .close {
     position: absolute;
-    right: 2rem;
-    top: 2rem;
-    font-size: 3rem;
+    right: 2рем;
+    top: 2рем;
+    font-size: 3рем;
     cursor: pointer;
 }
 
 .goods-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 2rem;
+    gap: 2рем;
+    padding: 2рем;
 }
 
 .single-goods {
-    background: #333; /* Темно-сірий фон */
+    background: #fff; /* Білий фон */
     padding: 1rem;
     border-radius: 1rem;
     text-align: center;
-    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
+    box-shadow: .2рем .2рем .5рем rgba(0, 0, 0, .3);
+    height: calc(200%); /* Збільшення висоти у 2 рази */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .single-goods img {
     max-width: 100%;
+    height: auto;
     border-bottom: .1рем solid #ddd;
     padding-bottom: 1рем;
     margin-bottom: 1рем;
@@ -166,6 +171,7 @@ button.cancelbtn {
 .single-goods h3 {
     font-size: 2.2rem;
     cursor: pointer;
+    margin-top: auto;
 }
 
 .single-goods .price {
@@ -185,6 +191,7 @@ button.cancelbtn {
     opacity: 0.8;
     border-radius: 5px;
     font-size: 1.6rem;
+    margin-top: auto;
 }
 
 .single-goods .add-to-cart:hover {
