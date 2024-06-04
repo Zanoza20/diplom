@@ -1,30 +1,23 @@
 $(document).ready(function() {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
-    var menuLogin = $("#menuLogin");
-    var menuRegister = $("#menuRegister");
-    var userRules = $("#userRules");
     var userRulesLink = $("#userRulesLink");
-    var itemDetails = $("#itemDetails");
 
     loginButton.click(function() {
-        menuLogin.show();
+        $("#menuLogin").show();
     });
 
     registerButton.click(function() {
-        menuRegister.show();
+        $("#menuRegister").show();
     });
 
-    $(".cancelbtn").click(function() {
-        menuLogin.hide();
-        menuRegister.hide();
-        userRules.hide();
-        itemDetails.hide();
+    $(".close").click(function() {
+        $(this).closest('.sign-up').hide();
     });
 
     userRulesLink.click(function(event) {
         event.preventDefault();
-        userRules.show();
+        $("#userRules").show();
     });
 
     // Завантаження товарів
@@ -57,7 +50,7 @@ $(document).ready(function() {
             $("#purpose").text(item.purpose || "Невідомий");
             $("#coolingType").text(item.coolingType || "Невідомий");
 
-            itemDetails.show();
+            $("#itemDetails").show();
         });
     });
 
@@ -74,3 +67,7 @@ $(document).ready(function() {
         });
     });
 });
+
+function closeMenu(menuId) {
+    $("#" + menuId).hide();
+}
