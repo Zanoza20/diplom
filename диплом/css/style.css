@@ -148,45 +148,9 @@ button.cancelbtn {
     padding: 2rem;
 }
 
-.single-goods {
-    background: #333; /* Темно-сірий фон */
+.goods-header {
+    background-color: #ff69b4; /* рожевий колір для області над товарами */
     padding: 1rem;
     border-radius: 1rem;
-    text-align: center;
-    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
-}
-
-.single-goods img {
-    max-width: 100%;
-    border-bottom: .1рем solid #ddd;
-    padding-bottom: 1рем;
-    margin-bottom: 1рем;
-}
-
-.single-goods h3 {
-    font-size: 2.2rem;
-    cursor: pointer;
-}
-
-.single-goods .price {
-    font-size: 2рем;
-    font-weight: bold;
-    color: red;
-    margin: 1рем 0;
-}
-
-.single-goods .add-to-cart {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
-    border-radius: 5px;
-    font-size: 1.6rem;
-}
-
-.single-goods .add-to-cart:hover {
-    opacity: 1;
+    margin-bottom: 2rem; /* відступ від блоку товарів */
 }
