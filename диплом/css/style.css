@@ -1,178 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: url('images/phon.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-}
-
-.header {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.7)), url(images/phon.png) no-repeat center/cover;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.logo img {
-    width: 100px;
-}
-
-.search {
-    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.search input {
-    padding: 10px;
+.btn {
+    position: fixed;
+    z-index: 999;
+    background-color: royalblue;
+    color: #ffba0d;
+    padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 5px;
-}
-
-.search button {
-    padding: 10px;
-    margin-left: 10px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
+    outline: none;
+    box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
+    border-radius: 1rem;
     cursor: pointer;
+    font-size: 1.4rem;
+    transition: .5s;
 }
 
-.contact-info {
-    text-align: right;
+#registerButton {
+    left: 20px;
+    top: 20px;
 }
 
-.menu {
-    margin: 20px;
-    display: flex;
-    justify-content: flex-start;
+#loginButton {
+    left: 20px;
+    top: calc(20px + 1.5rem + 20px); /* відступ від верху + висота кнопки "Зареєструватись" + відступ між кнопками */
 }
 
-.menu button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.btn:active {
+    transform: translateY(.3rem);
 }
 
-.goods-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+.container {
+    padding: 1.6rem;
 }
 
-.goods-item {
-    background-color: #333;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 20px;
-    width: calc(25% - 40px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+input[type=tel], input[type=password] {
+    width: 100%;
+    padding: 1.5rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin: .5rem 0 2.2rem 0;
+    background: #ddd;
+    border-radius: 0.5rem;
+}
+
+input[type=tel]:focus, input[type=password]:focus {
+    background: #f1f1f1;
+    outline: none;
+}
+
+h1 {
+    font-size: 3.5rem;
     text-align: center;
 }
 
-.goods-item img {
-    width: 100%;
-    border-bottom: 1px solid #555;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+p {
+    font-size: 1.7rem;
+    margin-top: 1rem;
 }
 
-.goods-item h3 {
-    margin: 10px 0;
+label {
+    font-size: 2rem;
 }
 
-.goods-item .price {
-    margin: 10px 0;
-}
-
-.goods-item button {
-    padding: 10px 20px;
+button[type=button], button[type=submit] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 1.4rem 2rem;
+    margin: 0.8rem 0;
     border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
     cursor: pointer;
+    width: 48%;
+    opacity: 0.8;
+    border-radius: 0.5rem;
 }
 
-.modal {
+button[type=button]:hover, button[type=submit]:hover {
+    opacity: 1;
+}
+
+button.cancelbtn {
+    background-color: #f44336;
+    width: 48%;
+}
+
+.signupbtn {
+    width: 48%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sign-up {
     display: none;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, .7);
+    padding-top: 5rem;
 }
 
-.modal-content {
-    background-color: #333;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    color: white;
-    border-radius: 5px;
+.sign-up-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    width: 50%;
+    border: .1rem solid #888;
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.goods-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.single-goods {
+    background: #333; /* Темно-сірий фон */
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
+}
+
+.single-goods img {
+    max-width: 100%;
+    border-bottom: .1рем solid #ddd;
+    padding-bottom: 1рем;
+    margin-bottom: 1рем;
+}
+
+.single-goods h3 {
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+.single-goods .price {
+    font-size: 2рем;
     font-weight: bold;
+    color: red;
+    margin: 1рем 0;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.container {
-    padding: 16px;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
+.single-goods .add-to-cart {
+    background-color: #4caf50;
     color: white;
-    border: none;
-    cursor: pointer;
-}
-
-form input[type=text], form input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-}
-
-form input[type=text]:focus, form input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-form button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
+    opacity: 0.8;
+    border-radius: 5px;
+    font-size: 1.6rem;
 }
 
-form button:hover {
+.single-goods .add-to-cart:hover {
     opacity: 1;
 }
