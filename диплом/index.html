@@ -1,105 +1,92 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>TudoCard</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/TudoCard.js"></script>
 </head>
 <body>
-    <button id="loginButton" class="btn">Увійти</button>
-    <button id="registerButton" class="btn">Зареєструватись</button>
+    <div class="header">
+        <div class="logo">
+            <img src="images/Logo.png" alt="Логотип">
+        </div>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Пошук...">
+            <button id="searchButton">Пошук</button>
+        </div>
+        <div class="contact-info">
+            <p>+38 097 69 37 243</p>
+            <p>Вийти з нами на зв'язок</p>
+            <p>Графік роботи: ПН-ПТ 09:00 - 22:00</p>
+        </div>
+    </div>
+    
+    <div class="menu">
+        <button id="registerButton">Зареєструватися</button>
+        <button id="loginButton">Увійти</button>
+    </div>
+
+    <div id="menuLogin" class="modal">
+        <div class="modal-content">
+            <span class="close cancelbtn">&times;</span>
+            <form>
+                <div class="container">
+                    <label for="uname"><b>Логін</b></label>
+                    <input type="text" placeholder="Введіть Логін" name="uname" required>
+                    <label for="psw"><b>Пароль</b></label>
+                    <input type="password" placeholder="Введіть Пароль" name="psw" required>
+                    <button type="submit">Увійти</button>
+                    <button type="button" class="cancelbtn">Скасувати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="menuRegister" class="modal">
+        <div class="modal-content">
+            <span class="close cancelbtn">&times;</span>
+            <form>
+                <div class="container">
+                    <label for="uname"><b>Логін</b></label>
+                    <input type="text" placeholder="Введіть Логін" name="uname" required>
+                    <label for="psw"><b>Пароль</b></label>
+                    <input type="password" placeholder="Введіть Пароль" name="psw" required>
+                    <button type="submit">Зареєструватися</button>
+                    <button type="button" class="cancelbtn">Скасувати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="userRules" class="modal">
+        <div class="modal-content">
+            <span class="close cancelbtn">&times;</span>
+            <h2>Правила користувача</h2>
+            <p>Тут будуть правила користування сайтом...</p>
+        </div>
+    </div>
+
+    <div id="itemDetails" class="modal">
+        <div class="modal-content">
+            <span class="close cancelbtn">&times;</span>
+            <img id="itemImage" src="" alt="Зображення товару">
+            <h2 id="itemName"></h2>
+            <p id="itemDescription"></p>
+            <ul>
+                <li>Бренд: <span id="brand"></span></li>
+                <li>Виробник GPU: <span id="gpuManufacturer"></span></li>
+                <li>Графічний чіп: <span id="graphicChip"></span></li>
+                <li>Розмір пам'яті: <span id="memorySize"></span></li>
+                <li>Тип пам'яті: <span id="memoryType"></span></li>
+                <li>Призначення: <span id="purpose"></span></li>
+                <li>Тип охолодження: <span id="coolingType"></span></li>
+            </ul>
+        </div>
+    </div>
 
     <div id="goods" class="goods-container"></div>
-
-    <div id="menuLogin" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('menuLogin').style.display='none'">&times;</span>
-            <h1>Вхід в аккаунт</h1>
-            <form>
-                <div class="container">
-                    <label for="phoneLogin"><b>Номер телефону</b></label>
-                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
-                    
-                    <label for="pswLogin"><b>Пароль</b></label>
-                    <input type="password" placeholder="Пароль" name="psw" required>
-                    
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
-                    </label>
-                    
-                    <div class="clearfix buttons">
-                        <button type="button" class="cancelbtn">Відмінити</button>
-                        <button type="submit" class="signupbtn">Увійти</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="menuRegister" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('menuRegister').style.display='none'">&times;</span>
-            <h1>Реєстрація</h1>
-            <form>
-                <div class="container">
-                    <label for="phoneRegister"><b>Введіть номер вашого телефону</b></label>
-                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
-                    
-                    <label for="pswRegister"><b>Придумайте пароль</b></label>
-                    <input type="password" placeholder="Пароль" name="psw" required>
-                    
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
-                    </label>
-                    
-                    <p>При реєстрації на нашому сайті, ви погоджуєтесь з <a href="#" id="userRulesLink">правилами користувача</a></p>
-
-                    <div class="clearfix buttons">
-                        <button type="button" class="cancelbtn">Відмінити</button>
-                        <button type="submit" class="signupbtn">Зареєструватись</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="userRules" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('userRules').style.display='none'">&times;</span>
-            <h1>Правила користувача</h1>
-            <div class="container">
-                <p>Тут будуть розміщені правила користувача...</p>
-                <div class="clearfix">
-                    <button type="button" class="cancelbtn">Закрити</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="itemDetails" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
-            <div class="container">
-                <img id="itemImage" src="" alt="Товар">
-                <h1 id="itemName">Назва товару</h1>
-                <p id="itemDescription">Опис товару</p>
-                <div id="additionalInfo">
-                    <p><b>Бренд:</b> <span id="brand"></span></p>
-                    <p><b>Виробник графічного процессора:</b> <span id="gpuManufacturer"></span></p>
-                    <p><b>Графічний чип:</b> <span id="graphicChip"></span></p>
-                    <p><b>Обсяг пам'яті:</b> <span id="memorySize"></span></p>
-                    <p><b>Тип пам'яті:</b> <span id="memoryType"></span></p>
-                    <p><b>Призначення:</b> <span id="purpose"></span></p>
-                    <p><b>Тип системи охолодження:</b> <span id="coolingType"></span></p>
-                </div>
-                <div class="clearfix">
-                    <button type="button" class="cancelbtn">Закрити</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="js/TudoCard.js"></script>
 </body>
 </html>
