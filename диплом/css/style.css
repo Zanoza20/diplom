@@ -13,9 +13,47 @@ body {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.7)), url(images/phon.png) no-repeat center/cover;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+.top-bar {
+    width: 100%;
+    background-color: #D291BC; /* Рожево-темний колір */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.search-field {
+    flex: 1;
+    margin: 0 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.support-number {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.cart-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
 
 .btn {
@@ -31,25 +69,16 @@ body {
     cursor: pointer;
     font-size: 1.4rem;
     transition: .5s;
+    top: 80px; /* відступ з урахуванням панелі */
 }
 
 #registerButton {
     left: 20px;
-    top: 20px;
 }
 
 #loginButton {
     left: 20px;
-    top: calc(20px + 1.5rem + 20px); /* відступ від верху + висота кнопки "Зареєструватись" + відступ між кнопками */
-}
-
-.cart-icon {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+    top: calc(80px + 1.5rem + 20px); /* відступ від верху + висота кнопки "Зареєструватись" + відступ між кнопками */
 }
 
 .btn:active {
@@ -90,54 +119,49 @@ label {
 }
 
 button[type=button], button[type=submit] {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #04AA6D;
+    color: white;
     padding: 1.4rem 2rem;
-    margin: 0.8rem 0;
+    margin: 1rem 0;
     border: none;
     cursor: pointer;
-    width: 48%;
-    opacity: 0.8;
-    border-radius: 0.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    font-size: 1.8rem;
 }
 
 button[type=button]:hover, button[type=submit]:hover {
-    opacity: 1;
+    opacity: .8;
 }
 
-button.cancelbtn {
+.cancelbtn {
     background-color: #f44336;
-    width: 48%;
-}
-
-.signupbtn {
-    width: 48%;
 }
 
 .buttons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .sign-up {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, .7);
-    padding-top: 5rem;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,.7);
+    padding-top: 2rem;
 }
 
 .sign-up-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto;
+    margin: 2% auto 15% auto;
+    border: 1px solid #888;
     width: 50%;
-    border: .1rem solid #888;
     border-radius: 1rem;
     padding: 2rem;
     position: relative;
@@ -156,6 +180,7 @@ button.cancelbtn {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     padding: 2rem;
+    margin-top: 80px; /* відступ для панелі */
 }
 
 .single-goods {
