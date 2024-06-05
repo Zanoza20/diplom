@@ -225,3 +225,20 @@ button[type=button]:hover, button[type=submit]:hover {
 .single-goods .add-to-cart:hover {
     opacity: 1;
 }
+
+/* Додані стилі з першого коду */
+.cart-menu {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    top: 80px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.cart-menu h1 {
+    font-size: 2.5
