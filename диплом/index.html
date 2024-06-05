@@ -22,7 +22,7 @@
 
     <div id="menuLogin" class="sign-up">
         <div class="sign-up-content">
-            <span class="close" onclick="closeMenu('menuLogin')">&times;</span>
+            <span class="close" onclick="document.getElementById('menuLogin').style.display='none'">&times;</span>
             <h1>Вхід в аккаунт</h1>
             <form>
                 <div class="container">
@@ -37,7 +37,7 @@
                     </label>
                     
                     <div class="clearfix buttons">
-                        <button type="button" class="cancelbtn" onclick="closeMenu('menuLogin')">Відмінити</button>
+                        <button type="button" class="cancelbtn">Відмінити</button>
                         <button type="submit" class="signupbtn">Увійти</button>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
 
     <div id="menuRegister" class="sign-up">
         <div class="sign-up-content">
-            <span class="close" onclick="closeMenu('menuRegister')">&times;</span>
+            <span class="close" onclick="document.getElementById('menuRegister').style.display='none'">&times;</span>
             <h1>Реєстрація</h1>
             <form>
                 <div class="container">
@@ -64,7 +64,7 @@
                     <p>При реєстрації на нашому сайті, ви погоджуєтесь з <a href="#" id="userRulesLink">правилами користувача</a></p>
 
                     <div class="clearfix buttons">
-                        <button type="button" class="cancelbtn" onclick="closeMenu('menuRegister')">Відмінити</button>
+                        <button type="button" class="cancelbtn">Відмінити</button>
                         <button type="submit" class="signupbtn">Зареєструватись</button>
                     </div>
                 </div>
@@ -74,12 +74,12 @@
 
     <div id="userRules" class="sign-up">
         <div class="sign-up-content">
-            <span class="close" onclick="closeMenu('userRules')">&times;</span>
+            <span class="close" onclick="document.getElementById('userRules').style.display='none'">&times;</span>
             <h1>Правила користувача</h1>
             <div class="container">
                 <p>Тут будуть розміщені правила користувача...</p>
                 <div class="clearfix">
-                    <button type="button" class="cancelbtn" onclick="closeMenu('userRules')">Закрити</button>
+                    <button type="button" class="cancelbtn">Закрити</button>
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
 
     <div id="itemDetails" class="sign-up">
         <div class="sign-up-content">
-            <span class="close" onclick="closeMenu('itemDetails')">&times;</span>
+            <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
             <div class="container">
                 <img id="itemImage" src="" alt="Товар">
                 <h1 id="itemName">Назва товару</h1>
@@ -102,7 +102,7 @@
                     <p><b>Тип системи охолодження:</b> <span id="coolingType"></span></p>
                 </div>
                 <div class="clearfix">
-                    <button type="button" class="cancelbtn" onclick="closeMenu('itemDetails')">Закрити</button>
+                    <button type="button" class="cancelbtn">Закрити</button>
                 </div>
             </div>
         </div>
