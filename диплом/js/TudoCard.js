@@ -12,8 +12,10 @@ $(document).ready(function() {
     var totalPrice = $("#totalPrice");
     var clearCartButton = $("#clearCartButton");
     var orderButton = $("#orderButton");
+    var searchField = $("#searchField");
 
     var cart = {};
+    var goods = {};
 
     loginButton.click(function() {
         menuLogin.show();
@@ -38,22 +40,15 @@ $(document).ready(function() {
 
     // Завантаження товарів
     $.getJSON("goods.json", function(data) {
-        var goodsContainer = $("#goods");
-        $.each(data, function(key, value) {
-            goodsContainer.append(
-                '<div class="single-goods">' +
-                '<img src="' + value.image + '" alt="' + value.name + '">' +
-                '<h3 class="item-name" data-key="' + key + '">' + value.name + '</h3>' +
-                '<div class="price">₴' + value.cost + '</div>' +
-                '<button class="add-to-cart" data-key="' + key + '">Додати до кошика</button>' +
-                '</div>'
-            );
-        });
+        goods = data; // Зберігаємо завантажені товари
+        displayGoods(data);
+    });
 
-        // Показувати деталі товару при натисканні на назву
+    // Показувати деталі товару при натисканні на назву
+    function setupItemDetails() {
         $(".item-name").click(function() {
             var key = $(this).data("key");
-            var item = data[key];
+            var item = goods[key];
 
             $("#itemImage").attr("src", item.image);
             $("#itemName").text(item.name);
@@ -68,18 +63,50 @@ $(document).ready(function() {
 
             itemDetails.show();
         });
+    }
 
-        // Додавання товару до кошика
+    // Додавання товару до кошика
+    function setupAddToCartButtons() {
         $(".add-to-cart").click(function() {
             var key = $(this).data("key");
             if (cart[key]) {
                 cart[key].quantity += 1;
             } else {
-                cart[key] = data[key];
+                cart[key] = goods[key];
                 cart[key].quantity = 1;
             }
             updateCart();
         });
+    }
+
+    // Відображення товарів
+    function displayGoods(data) {
+        var goodsContainer = $("#goods");
+        goodsContainer.empty();
+        $.each(data, function(key, value) {
+            goodsContainer.append(
+                '<div class="single-goods">' +
+                '<img src="' + value.image + '" alt="' + value.name + '">' +
+                '<h3 class="item-name" data-key="' + key + '">' + value.name + '</h3>' +
+                '<div class="price">₴' + value.cost + '</div>' +
+                '<button class="add-to-cart" data-key="' + key + '">Додати до кошика</button>' +
+                '</div>'
+            );
+        });
+        setupItemDetails();
+        setupAddToCartButtons();
+    }
+
+    // Функціональність пошуку
+    searchField.on("input", function() {
+        var searchText = $(this).val().toLowerCase();
+        var filteredGoods = {};
+        $.each(goods, function(key, value) {
+            if (value.name.toLowerCase().includes(searchText)) {
+                filteredGoods[key] = value;
+            }
+        });
+        displayGoods(filteredGoods);
     });
 
     // Відкриття кошика
