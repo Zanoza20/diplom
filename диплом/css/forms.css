@@ -1,1 +1,79 @@
+input[type=text], input[type=password], input[type=tel] {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    margin: 1rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: 1.8рем;
+}
+
+input[type=checkbox] {
+    margin-top: 1.5rem;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+label {
+    font-size: 1.8рем;
+}
+
+.signupbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 1.4rem 2рем;
+    margin: 1рем 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 1рем;
+    font-size: 1.8рем;
+}
+
+button[type=button]:hover, button[type=submit]:hover {
+    opacity: .8;
+}
+
+.cancelbtn {
+    background-color: #f44336;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign-up {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,.7);
+    padding-top: 2рем;
+}
+
+.sign-up-content {
+    background-color: #fefefe;
+    margin: 2% auto 15% auto;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 1рем;
+    padding: 2рем;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 2рем;
+    top: 2рем;
+    font-size: 3рем;
+    cursor: pointer;
+}
 
