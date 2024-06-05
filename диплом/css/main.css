@@ -31,7 +31,7 @@ body {
     padding: 2rem; /* Збільшено висоту товару */
     border-radius: 1rem;
     text-align: center;
-    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .3);
+    box-shadow: .2rem .2рем .5рем rgba(0, 0, 0, .3);
 }
 
 .single-goods img {
@@ -62,7 +62,7 @@ body {
     width: 100%;
     opacity: 0.8;
     border-radius: 5px;
-    font-size: 1.6rem;
+    font-size: 1.6рем;
 }
 
 .single-goods .add-to-cart:hover {
@@ -74,22 +74,20 @@ body {
     z-index: 999;
     background-color: royalblue;
     color: #ffba0d;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8рем 1.5рем;
     border: none;
     outline: none;
-    box-shadow: .3rem .3рем .6рем rgba(0, 0, 0, .8);
+    box-shadow: .3рем .3рем .6рем rgba(0, 0, 0, .8);
     border-radius: 2rem; /* Зробимо кути круглими */
     cursor: pointer;
     font-size: 1.4рем;
     transition: .5s;
-    top: 80px; /* відступ з урахуванням панелі */
 }
 
 #registerButton {
-    left: 20px;
+    top: 140px; /* Відступ для кнопок */
 }
 
 #loginButton {
-    left: 20px;
-    top: 180px; /* відступ з урахуванням панелі */
+    top: 80px; /* Відступ для кнопок */
 }
