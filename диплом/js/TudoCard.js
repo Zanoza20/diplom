@@ -1,14 +1,22 @@
 $(document).ready(function() {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
+    var menuLogin = $("#menuLogin");
+    var menuRegister = $("#menuRegister");
+    var userRules = $("#userRules");
     var userRulesLink = $("#userRulesLink");
+    var itemDetails = $("#itemDetails");
 
     loginButton.click(function() {
-        $("#menuLogin").show();
+        menuLogin.show();
     });
 
     registerButton.click(function() {
-        $("#menuRegister").show();
+        menuRegister.show();
+    });
+
+    $(".cancelbtn").click(function() {
+        $(this).closest('.sign-up').hide();
     });
 
     $(".close").click(function() {
@@ -17,7 +25,7 @@ $(document).ready(function() {
 
     userRulesLink.click(function(event) {
         event.preventDefault();
-        $("#userRules").show();
+        userRules.show();
     });
 
     // Завантаження товарів
@@ -27,47 +35,29 @@ $(document).ready(function() {
             goodsContainer.append(
                 '<div class="single-goods">' +
                 '<img src="' + value.image + '" alt="' + value.name + '">' +
-                '<h3 class="item-name" data-key="' + key + '">' + value.name + '</h3>' +
-                '<div class="price">₴' + value.cost + '</div>' +
-                '<button class="add-to-cart">Додати до кошика</button>' +
+                '<h3>' + value.name + '</h3>' +
+                '<p class="price">' + value.price + ' грн</p>' +
+                '<button class="add-to-cart" data-id="' + value.id + '">До кошика</button>' +
                 '</div>'
             );
         });
 
-        // Показувати деталі товару при натисканні на назву
-        $(".item-name").click(function() {
-            var key = $(this).data("key");
-            var item = data[key];
-
-            $("#itemImage").attr("src", item.image);
-            $("#itemName").text(item.name);
-            $("#itemDescription").text(item.descreption);
-            $("#brand").text(item.brand || "Невідомий");
-            $("#gpuManufacturer").text(item.gpuManufacturer || "Невідомий");
-            $("#graphicChip").text(item.graphicChip || "Невідомий");
-            $("#memorySize").text(item.memorySize || "Невідомий");
-            $("#memoryType").text(item.memoryType || "Невідомий");
-            $("#purpose").text(item.purpose || "Невідомий");
-            $("#coolingType").text(item.coolingType || "Невідомий");
-
-            $("#itemDetails").show();
-        });
-    });
-
-    // Пошук товару
-    $("#searchField").on("input", function() {
-        var searchTerm = $(this).val().toLowerCase();
-        $(".single-goods").each(function() {
-            var itemName = $(this).find(".item-name").text().toLowerCase();
-            if (itemName.includes(searchTerm)) {
-                $(this).show();
-            } else {
-                $(this).hide();
+        $(".single-goods h3").click(function() {
+            var itemId = $(this).closest('.single-goods').find('.add-to-cart').data('id');
+            var selectedItem = data.find(item => item.id == itemId);
+            if (selectedItem) {
+                $("#itemImage").attr("src", selectedItem.image);
+                $("#itemName").text(selectedItem.name);
+                $("#itemDescription").text(selectedItem.description);
+                $("#brand").text(selectedItem.brand);
+                $("#gpuManufacturer").text(selectedItem.gpuManufacturer);
+                $("#graphicChip").text(selectedItem.graphicChip);
+                $("#memorySize").text(selectedItem.memorySize);
+                $("#memoryType").text(selectedItem.memoryType);
+                $("#purpose").text(selectedItem.purpose);
+                $("#coolingType").text(selectedItem.coolingType);
+                itemDetails.show();
             }
         });
     });
 });
-
-function closeMenu(menuId) {
-    $("#" + menuId).hide();
-}
