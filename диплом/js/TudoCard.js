@@ -99,7 +99,6 @@ $(document).ready(function() {
     // Відкрити кошик
     cartIcon.click(function() {
         cartMenu.toggle();
-        updateCart();
     });
 
     // Оновлення кошика
@@ -111,7 +110,6 @@ $(document).ready(function() {
             total += itemTotal;
             cartItems.append(
                 '<li>' +
-                '<img src="' + item.image + '" alt="' + item.name + '">' +
                 item.name + ' x ' + item.quantity + ' - ₴' + itemTotal +
                 ' <button class="remove-from-cart" data-key="' + key + '">Видалити</button>' +
                 '</li>'
