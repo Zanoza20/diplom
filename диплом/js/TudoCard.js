@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
     var menuLogin = $("#menuLogin");
@@ -13,19 +13,22 @@ $(document).ready(function() {
     var clearCartButton = $("#clearCartButton");
     var orderButton = $("#orderButton");
     var searchField = $("#searchField");
+    var sortIcon = $("#sortIcon");
+    var sortMenu = $("#sortMenu");
+    var sortForm = $("#sortForm");
 
     var cart = {};
     var goods = {};
 
-    loginButton.click(function() {
+    loginButton.click(function () {
         menuLogin.show();
     });
 
-    registerButton.click(function() {
+    registerButton.click(function () {
         menuRegister.show();
     });
 
-    $(".cancelbtn").click(function() {
+    $(".cancelbtn").click(function () {
         menuLogin.hide();
         menuRegister.hide();
         userRules.hide();
@@ -33,20 +36,24 @@ $(document).ready(function() {
         cartMenu.hide();
     });
 
-    userRulesLink.click(function(event) {
+    userRulesLink.click(function (event) {
         event.preventDefault();
         userRules.show();
     });
 
+    sortIcon.click(function () {
+        sortMenu.show();
+    });
+
     // Завантаження товарів
-    $.getJSON("goods.json", function(data) {
+    $.getJSON("goods.json", function (data) {
         goods = data; // Зберігаємо завантажені товари
         displayGoods(data);
     });
 
     // Показувати деталі товару при натисканні на назву
     function setupItemDetails() {
-        $(".item-name").click(function() {
+        $(".item-name").click(function () {
             var key = $(this).data("key");
             var item = goods[key];
 
@@ -67,7 +74,7 @@ $(document).ready(function() {
 
     // Додавання товару до кошика
     function setupAddToCartButtons() {
-        $(".add-to-cart").click(function() {
+        $(".add-to-cart").click(function () {
             var key = $(this).data("key");
             if (cart[key]) {
                 cart[key].quantity += 1;
@@ -83,7 +90,7 @@ $(document).ready(function() {
     function displayGoods(data) {
         var goodsContainer = $("#goods");
         goodsContainer.empty();
-        $.each(data, function(key, value) {
+        $.each(data, function (key, value) {
             goodsContainer.append(
                 '<div class="single-goods">' +
                 '<img src="' + value.image + '" alt="' + value.name + '">' +
@@ -98,55 +105,84 @@ $(document).ready(function() {
     }
 
     // Функціональність пошуку
-    searchField.on("input", function() {
+    searchField.on("input", function () {
         var searchText = $(this).val().toLowerCase();
         var filteredGoods = {};
-        $.each(goods, function(key, value) {
-            if (value.name.toLowerCase().includes(searchText)) {
+        $.each(goods, function (key, value) {
+            if (value.name.toLowerCase().includes(searchText) ||
+                value.descreption.toLowerCase().includes(searchText)) {
                 filteredGoods[key] = value;
             }
         });
         displayGoods(filteredGoods);
     });
 
-    // Відкриття кошика
-    cartIcon.click(function() {
-        updateCart();
-        cartMenu.show();
+    // Функціональність сортування
+    sortForm.on("submit", function (event) {
+        event.preventDefault();
+
+        var selectedGpuManufacturer = $("#gpuManufacturer").val();
+        var selectedGraphicChip = $("#graphicChip").val();
+        var selectedMemorySize = $("#memorySize").val();
+        var selectedPurpose = $("#purpose").val();
+        var selectedCoolingType = $("#coolingType").val();
+
+        var sortedGoods = {};
+
+        $.each(goods, function (key, value) {
+            var matchesGpuManufacturer = selectedGpuManufacturer === "" || value.gpuManufacturer === selectedGpuManufacturer;
+            var matchesGraphicChip = selectedGraphicChip === "" || value.graphicChip === selectedGraphicChip;
+            var matchesMemorySize = selectedMemorySize === "" || 
+                (selectedMemorySize === "asc" && value.memorySize >= 0) ||
+                (selectedMemorySize === "desc" && value.memorySize >= 0);
+            var matchesPurpose = selectedPurpose === "" || value.purpose === selectedPurpose;
+            var matchesCoolingType = selectedCoolingType === "" || value.coolingType === selectedCoolingType;
+
+            if (matchesGpuManufacturer && matchesGraphicChip && matchesMemorySize && matchesPurpose && matchesCoolingType) {
+                sortedGoods[key] = value;
+            }
+        });
+
+        if (selectedMemorySize === "asc") {
+            sortedGoods = Object.values(sortedGoods).sort((a, b) => a.memorySize - b.memorySize);
+        } else if (selectedMemorySize === "desc") {
+            sortedGoods = Object.values(sortedGoods).sort((a, b) => b.memorySize - a.memorySize);
+        }
+
+        displayGoods(sortedGoods);
+        sortMenu.hide();
     });
 
-    // Очищення кошика
-    clearCartButton.click(function() {
-        cart = {};
-        updateCart();
-        alert("Корзину очищено");
-    });
-
-    // Оформлення замовлення
-    orderButton.click(function() {
-        alert("Замовлення оформлено");
-        cart = {};
-        updateCart();
-    });
-
+    // Оновлення кошика
     function updateCart() {
         cartItems.empty();
         var total = 0;
-        $.each(cart, function(key, value) {
-            var itemTotal = value.cost * value.quantity;
-            total += itemTotal;
+        $.each(cart, function (key, item) {
+            var itemTotal = item.quantity * item.cost;
             cartItems.append(
                 '<div class="cart-item">' +
-                '<img src="' + value.image + '" alt="' + value.name + '">' +
-                '<h3 class="cart-item-name" style="font-size: 20px;">' + value.name + '</h3>' +
-                '<div class="cart-item-details">' +
-                '<p>Ціна: ₴' + value.cost + '</p>' +
-                '<p>Кількість: ' + value.quantity + '</p>' +
-                '<p>Всього: ₴' + itemTotal + '</p>' +
-                '</div>' +
+                '<span>' + item.name + ' (x' + item.quantity + ')</span>' +
+                '<span>₴' + itemTotal + '</span>' +
                 '</div>'
             );
+            total += itemTotal;
         });
-        totalPrice.text('₴' + total);
+        totalPrice.text('Загальна сума: ₴' + total);
     }
+
+    cartIcon.click(function () {
+        cartMenu.show();
+    });
+
+    clearCartButton.click(function () {
+        cart = {};
+        updateCart();
+    });
+
+    orderButton.click(function () {
+        alert("Замовлення оформлене!");
+        cart = {};
+        updateCart();
+        cartMenu.hide();
+    });
 });
