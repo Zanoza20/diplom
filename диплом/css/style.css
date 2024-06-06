@@ -1,4 +1,3 @@
-/* Основні стилі */
 * {
     margin: 0;
     padding: 0;
@@ -189,7 +188,7 @@ button[type=button]:hover, button[type=submit]:hover {
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
+    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .3);
 }
 
 .single-goods img {
@@ -245,28 +244,6 @@ button[type=button]:hover, button[type=submit]:hover {
     padding: 2rem;
     border: 1px solid #888;
     border-radius: 1rem;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.cart-item:last-child {
-    border-bottom: none;
-}
-
-.cart-item span {
-    font-size: 1.6rem;
-}
-
-.total-price {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    text-align: right;
 }
 
 .modal {
