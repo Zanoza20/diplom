@@ -20,38 +20,47 @@ $(document).ready(function () {
     var cart = {};
     var goods = {};
 
-    loginButton.click(function () {
-        menuLogin.show();
-    });
-
-    registerButton.click(function () {
-        menuRegister.show();
-    });
-
-    $(".cancelbtn").click(function () {
+    // Function to hide modals
+    function hideModals() {
         menuLogin.hide();
         menuRegister.hide();
         userRules.hide();
         itemDetails.hide();
         cartMenu.hide();
+        sortMenu.hide();
+    }
+
+    // Close modals on cancel button click
+    $(".cancelbtn").click(hideModals);
+
+    loginButton.click(function () {
+        hideModals();
+        menuLogin.show();
+    });
+
+    registerButton.click(function () {
+        hideModals();
+        menuRegister.show();
     });
 
     userRulesLink.click(function (event) {
         event.preventDefault();
+        hideModals();
         userRules.show();
     });
 
     sortIcon.click(function () {
+        hideModals();
         sortMenu.show();
     });
 
-    // Завантаження товарів
+    // Load goods
     $.getJSON("goods.json", function (data) {
-        goods = data; // Зберігаємо завантажені товари
+        goods = data; // Store loaded goods
         displayGoods(data);
     });
 
-    // Показувати деталі товару при натисканні на назву
+    // Show item details on name click
     function setupItemDetails() {
         $(".item-name").click(function () {
             var key = $(this).data("key");
@@ -68,11 +77,12 @@ $(document).ready(function () {
             $("#purpose").text(item.purpose || "Невідомий");
             $("#coolingType").text(item.coolingType || "Невідомий");
 
+            hideModals();
             itemDetails.show();
         });
     }
 
-    // Додавання товару до кошика
+    // Add item to cart
     function setupAddToCartButtons() {
         $(".add-to-cart").click(function () {
             var key = $(this).data("key");
@@ -86,7 +96,7 @@ $(document).ready(function () {
         });
     }
 
-    // Відображення товарів
+    // Display goods
     function displayGoods(data) {
         var goodsContainer = $("#goods");
         goodsContainer.empty();
@@ -104,7 +114,7 @@ $(document).ready(function () {
         setupAddToCartButtons();
     }
 
-    // Функціональність пошуку
+    // Search functionality
     searchField.on("input", function () {
         var searchText = $(this).val().toLowerCase();
         var filteredGoods = {};
@@ -117,7 +127,7 @@ $(document).ready(function () {
         displayGoods(filteredGoods);
     });
 
-    // Функціональність сортування
+    // Sorting functionality
     sortForm.on("submit", function (event) {
         event.preventDefault();
 
@@ -153,7 +163,7 @@ $(document).ready(function () {
         sortMenu.hide();
     });
 
-    // Оновлення кошика
+    // Update cart
     function updateCart() {
         cartItems.empty();
         var total = 0;
@@ -171,6 +181,7 @@ $(document).ready(function () {
     }
 
     cartIcon.click(function () {
+        hideModals();
         cartMenu.show();
     });
 
