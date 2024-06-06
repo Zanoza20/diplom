@@ -62,13 +62,13 @@ $(document).ready(function () {
 
     // Show item details on name click
     function setupItemDetails() {
-        $(".item-name").click(function () {
+        $(".item-name").off('click').on('click', function () {
             var key = $(this).data("key");
             var item = goods[key];
 
             $("#itemImage").attr("src", item.image);
             $("#itemName").text(item.name);
-            $("#itemDescription").text(item.descreption);
+            $("#itemDescription").text(item.description);
             $("#brand").text(item.brand || "Невідомий");
             $("#gpuManufacturer").text(item.gpuManufacturer || "Невідомий");
             $("#graphicChip").text(item.graphicChip || "Невідомий");
@@ -84,7 +84,7 @@ $(document).ready(function () {
 
     // Add item to cart
     function setupAddToCartButtons() {
-        $(".add-to-cart").click(function () {
+        $(".add-to-cart").off('click').on('click', function () {
             var key = $(this).data("key");
             if (cart[key]) {
                 cart[key].quantity += 1;
@@ -120,7 +120,7 @@ $(document).ready(function () {
         var filteredGoods = {};
         $.each(goods, function (key, value) {
             if (value.name.toLowerCase().includes(searchText) ||
-                value.descreption.toLowerCase().includes(searchText)) {
+                value.description.toLowerCase().includes(searchText)) {
                 filteredGoods[key] = value;
             }
         });
