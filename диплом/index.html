@@ -9,6 +9,7 @@
     <header class="top-bar">
         <img src="images/Logo.png" alt="Логотип" class="logo">
         <input type="text" id="searchField" placeholder="Пошук товару..." class="search-field">
+        <img src="images/Сортування.png" id="sortIcon" alt="Сортування" class="sort-icon">
         <span class="support-number">+38 097 69 37 243</span>
         <img src="images/Кошик.png" id="cartIcon" alt="Кошик" class="cart-icon">
     </header>
@@ -18,106 +19,124 @@
 
     <div id="goods" class="goods-container"></div>
 
-    <div id="menuLogin" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('menuLogin').style.display='none'">&times;</span>
-            <h1>Вхід в аккаунт</h1>
-            <form>
-                <div class="container">
-                    <label for="phoneLogin"><b>Номер телефону</b></label>
-                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
-                    
-                    <label for="pswLogin"><b>Пароль</b></label>
-                    <input type="password" placeholder="Пароль" name="psw" required>
-                    
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
-                    </label>
-                    
-                    <div class="clearfix buttons">
-                        <button type="button" class="cancelbtn">Відмінити</button>
-                        <button type="submit" class="signupbtn">Увійти</button>
-                    </div>
-                </div>
+    <!-- Sorting Menu -->
+    <div id="sortMenu" class="sort-menu">
+        <div class="sort-menu-content">
+            <span class="close" onclick="document.getElementById('sortMenu').style.display='none'">&times;</span>
+            <h1>Сортування</h1>
+            <form id="sortForm">
+                <label for="gpuManufacturer">Виробник графічного процессора:</label>
+                <select id="gpuManufacturer" name="gpuManufacturer">
+                    <option value="">Всі</option>
+                    <option value="Intel">Intel</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Nvidia">Nvidia</option>
+                </select>
+
+                <label for="graphicChip">Графічний чип:</label>
+                <select id="graphicChip" name="graphicChip">
+                    <option value="">Всі</option>
+                    <option value="Radeon">Radeon</option>
+                    <option value="GeForce">GeForce</option>
+                </select>
+
+                <label for="memorySize">Обсяг пам'яті:</label>
+                <select id="memorySize" name="memorySize">
+                    <option value="">Всі</option>
+                    <option value="asc">Від найменьшого</option>
+                    <option value="desc">Від найбільшого</option>
+                </select>
+
+                <label for="purpose">Призначення:</label>
+                <select id="purpose" name="purpose">
+                    <option value="">Всі</option>
+                    <option value="Ігрова">Ігрова</option>
+                    <option value="офісна">Офісна</option>
+                    <option value="професійна">Професійна</option>
+                </select>
+
+                <label for="coolingType">Тип системи охолодження:</label>
+                <select id="coolingType" name="coolingType">
+                    <option value="">Всі</option>
+                    <option value="активна">Активна</option>
+                    <option value="пасивна">Пасивна</option>
+                    <option value="водяне охолодження">Водяне охолодження</option>
+                </select>
+                
+                <button type="submit">Застосувати</button>
             </form>
         </div>
     </div>
 
-    <div id="menuRegister" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('menuRegister').style.display='none'">&times;</span>
-            <h1>Реєстрація</h1>
-            <form>
-                <div class="container">
-                    <label for="phoneRegister"><b>Введіть номер вашого телефону</b></label>
-                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
-                    
-                    <label for="pswRegister"><b>Придумайте пароль</b></label>
-                    <input type="password" placeholder="Пароль" name="psw" required>
-                    
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
-                    </label>
-                    
-                    <p>При реєстрації на нашому сайті, ви погоджуєтесь з <a href="#" id="userRulesLink">правилами користувача</a></p>
-
-                    <div class="clearfix buttons">
-                        <button type="button" class="cancelbtn">Відмінити</button>
-                        <button type="submit" class="signupbtn">Зареєструватись</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="userRules" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('userRules').style.display='none'">&times;</span>
-            <h1>Правила користувача</h1>
-            <div class="container">
-                <p>Тут будуть розміщені правила користувача...</p>
-                <div class="clearfix">
-                    <button type="button" class="cancelbtn">Закрити</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="itemDetails" class="sign-up">
-        <div class="sign-up-content">
-            <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
-            <div class="container">
-                <img id="itemImage" src="" alt="Товар">
-                <h1 id="itemName">Назва товару</h1>
-                <p id="itemDescription">Опис товару</p>
-                <div id="additionalInfo">
-                    <p><b>Бренд:</b> <span id="brand"></span></p>
-                    <p><b>Виробник графічного процессора:</b> <span id="gpuManufacturer"></span></p>
-                    <p><b>Графічний чип:</b> <span id="graphicChip"></span></p>
-                    <p><b>Обсяг пам'яті:</b> <span id="memorySize"></span></p>
-                    <p><b>Тип пам'яті:</b> <span id="memoryType"></span></p>
-                    <p><b>Призначення:</b> <span id="purpose"></span></p>
-                    <p><b>Тип системи охолодження:</b> <span id="coolingType"></span></p>
-                </div>
-                <div class="clearfix">
-                    <button type="button" class="cancelbtn">Закрити</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Cart Menu -->
     <div id="cartMenu" class="cart-menu">
         <div class="cart-menu-content">
             <span class="close" onclick="document.getElementById('cartMenu').style.display='none'">&times;</span>
-            <h1>Кошик</h1>
+            <h1>Ваш кошик</h1>
             <div id="cartItems"></div>
-            <div class="cart-total">
-                <p>Сумарна ціна: <span id="totalPrice">₴0</span></p>
-            </div>
-            <div class="clearfix buttons">
-                <button type="button" class="cancelbtn" id="clearCartButton">Очистити корзину</button>
-                <button type="button" class="orderbtn" onclick="placeOrder()">Замовити</button>
-            </div>
+            <div id="totalPrice">Загальна сума: ₴0</div>
+            <button id="clearCartButton">Очистити кошик</button>
+            <button id="orderButton">Оформити замовлення</button>
+        </div>
+    </div>
+
+    <!-- Item Details Modal -->
+    <div id="itemDetails" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
+            <h2 id="itemName">Назва товару</h2>
+            <img id="itemImage" src="" alt="Зображення товару" class="item-image">
+            <p id="itemDescription">Опис товару</p>
+            <ul>
+                <li>Виробник: <span id="brand">Невідомий</span></li>
+                <li>Виробник графічного процессора: <span id="gpuManufacturer">Невідомий</span></li>
+                <li>Графічний чип: <span id="graphicChip">Невідомий</span></li>
+                <li>Обсяг пам'яті: <span id="memorySize">Невідомий</span></li>
+                <li>Тип пам'яті: <span id="memoryType">Невідомий</span></li>
+                <li>Призначення: <span id="purpose">Невідомий</span></li>
+                <li>Тип системи охолодження: <span id="coolingType">Невідомий</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- User Login Modal -->
+    <div id="menuLogin" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('menuLogin').style.display='none'">&times;</span>
+            <h2>Вхід</h2>
+            <form>
+                <label for="username">Логін:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Register Modal -->
+    <div id="menuRegister" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('menuRegister').style.display='none'">&times;</span>
+            <h2>Реєстрація</h2>
+            <form>
+                <label for="newUsername">Логін:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+                <label for="newPassword">Пароль:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Зареєструватись</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Rules Modal -->
+    <div id="userRules" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('userRules').style.display='none'">&times;</span>
+            <h2>Правила користування</h2>
+            <p>Тут розміщуються правила користування сайтом.</p>
         </div>
     </div>
 
