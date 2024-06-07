@@ -264,6 +264,17 @@ button[type=button]:hover, button[type=submit]:hover {
     gap: 10px;
 }
 
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+}
+
+.cart-item img {
+    max-width: 50px;
+    margin-right: 10px;
+}
 /* Modal base styles */
 .modal {
     display: none;
@@ -275,6 +286,12 @@ button[type=button]:hover, button[type=submit]:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+#totalPrice {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .modal-content {
