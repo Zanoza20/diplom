@@ -188,7 +188,7 @@ button[type=button]:hover, button[type=submit]:hover {
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .3);
+    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
 }
 
 .single-goods img {
@@ -275,6 +275,7 @@ button[type=button]:hover, button[type=submit]:hover {
     max-width: 50px;
     margin-right: 10px;
 }
+
 /* Modal base styles */
 .modal {
     display: none;
@@ -304,7 +305,6 @@ button[type=button]:hover, button[type=submit]:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.5s;
 }
-
 
 .close {
     color: #aaa;
@@ -392,7 +392,7 @@ button[type=button]:hover, button[type=submit]:hover {
 }
 
 .clear-cart-btn, .order-btn {
-    background-color: #04AA6D;
+    background-color: #8A2BE2; /* Змінив колір на фіолетовий */
     color: white;
     padding: 1.4rem 2rem;
     margin: 1rem 0;
