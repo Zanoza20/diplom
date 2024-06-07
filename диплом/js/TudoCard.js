@@ -161,6 +161,7 @@ $(document).ready(function () {
             var itemTotal = item.quantity * item.cost;
             cartItems.append(
                 '<div class="cart-item">' +
+                '<img src="' + item.image + '" alt="' + item.name + '" class="cart-item-image">' +
                 '<span>' + item.name + ' (x' + item.quantity + ')</span>' +
                 '<span>₴' + itemTotal + '</span>' +
                 '</div>'
