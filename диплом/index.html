@@ -74,11 +74,9 @@
             <span class="close" onclick="document.getElementById('cartMenu').style.display='none'">&times;</span>
             <h1>Ваш кошик</h1>
             <div id="cartItems"></div>
-            <div id="totalPrice" class="total-price">Загальна сума: ₴0</div>
-            <div class="cart-buttons">
-                <button id="clearCartButton" class="cart-btn clear">Очистити кошик</button>
-                <button id="orderButton" class="cart-btn order">Оформити замовлення</button>
-            </div>
+            <div id="totalPrice">Загальна сума: ₴0</div>
+            <button id="clearCartButton">Очистити кошик</button>
+            <button id="orderButton">Оформити замовлення</button>
         </div>
     </div>
 
@@ -176,7 +174,8 @@
             </div>
         </div>
     </div>
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/TudoCard.js"></script>
 </body>
 </html>
