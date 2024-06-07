@@ -34,7 +34,6 @@ $(document).ready(function () {
         userRules.hide();
         itemDetails.hide();
         cartMenu.hide();
-        sortMenu.hide();
     });
 
     userRulesLink.click(function (event) {
