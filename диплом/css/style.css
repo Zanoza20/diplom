@@ -394,13 +394,13 @@ button[type=button]:hover, button[type=submit]:hover {
 .clear-cart-btn, .order-btn {
     background-color: #04AA6D;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.4rem 2rem;
+    margin: 1rem 0;
     border: none;
     cursor: pointer;
     width: 100%;
     border-radius: 1rem;
     font-size: 1.8rem;
-    margin-top: 10px;
 }
 
 .clear-cart-btn:hover, .order-btn:hover {
