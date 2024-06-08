@@ -186,3 +186,4 @@ $(document).ready(function () {
         updateCart();
         cartMenu.hide();
     });
+});
