@@ -53,7 +53,7 @@ $(document).ready(function () {
 
     // Показувати деталі товару при натисканні на назву
     function setupItemDetails() {
-        $(".item-name").click(function () {
+        $(".item-name").off("click").click(function () {
             var key = $(this).data("key");
             var item = goods[key];
 
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     // Додавання товару до кошика
     function setupAddToCartButtons() {
-        $(".add-to-cart").click(function () {
+        $(".add-to-cart").off("click").click(function () {
             var key = $(this).data("key");
             if (cart[key]) {
                 cart[key].quantity += 1;
