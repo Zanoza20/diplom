@@ -127,6 +127,12 @@ $(document).ready(function () {
         var selectedPurpose = $("#purpose").val();
         var selectedCoolingType = $("#coolingType").val();
 
+        console.log("Selected GPU Manufacturer:", selectedGpuManufacturer);
+        console.log("Selected Graphic Chip:", selectedGraphicChip);
+        console.log("Selected Memory Size:", selectedMemorySize);
+        console.log("Selected Purpose:", selectedPurpose);
+        console.log("Selected Cooling Type:", selectedCoolingType);
+
         var filteredGoods = {};
 
         $.each(goods, function (key, value) {
@@ -141,11 +147,15 @@ $(document).ready(function () {
             }
         });
 
+        console.log("Filtered Goods Before Sorting:", filteredGoods);
+
         if (selectedMemorySize === "asc") {
             filteredGoods = Object.values(filteredGoods).sort((a, b) => parseMemorySize(a.memorySize) - parseMemorySize(b.memorySize));
         } else if (selectedMemorySize === "desc") {
             filteredGoods = Object.values(filteredGoods).sort((a, b) => parseMemorySize(b.memorySize) - parseMemorySize(a.memorySize));
         }
+
+        console.log("Filtered Goods After Sorting:", filteredGoods);
 
         displayGoods(filteredGoods);
         sortMenu.hide();
