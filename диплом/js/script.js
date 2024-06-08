@@ -15,6 +15,7 @@ $(document).ready(function () {
     var searchField = $("#searchField");
     var sortIcon = $("#sortIcon");
     var sortMenu = $("#sortMenu");
+    var sortForm = $("#sortForm");
 
     var cart = {};
     var goods = {};
@@ -33,7 +34,6 @@ $(document).ready(function () {
         userRules.hide();
         itemDetails.hide();
         cartMenu.hide();
-        sortMenu.hide();
     });
 
     userRulesLink.click(function (event) {
@@ -115,6 +115,42 @@ $(document).ready(function () {
             }
         });
         displayGoods(filteredGoods);
+    });
+
+    // Функціональність сортування
+    sortForm.on("submit", function (event) {
+        event.preventDefault();
+
+        var selectedGpuManufacturer = $("#gpuManufacturer").val();
+        var selectedGraphicChip = $("#graphicChip").val();
+        var selectedMemorySize = $("#memorySize").val();
+        var selectedPurpose = $("#purpose").val();
+        var selectedCoolingType = $("#coolingType").val();
+
+        var sortedGoods = {};
+
+        $.each(goods, function (key, value) {
+            var matchesGpuManufacturer = selectedGpuManufacturer === "" || value.gpuManufacturer === selectedGpuManufacturer;
+            var matchesGraphicChip = selectedGraphicChip === "" || value.graphicChip === selectedGraphicChip;
+            var matchesMemorySize = selectedMemorySize === "" || 
+                (selectedMemorySize === "asc" && value.memorySize >= 0) ||
+                (selectedMemorySize === "desc" && value.memorySize >= 0);
+            var matchesPurpose = selectedPurpose === "" || value.purpose === selectedPurpose;
+            var matchesCoolingType = selectedCoolingType === "" || value.coolingType === selectedCoolingType;
+
+            if (matchesGpuManufacturer && matchesGraphicChip && matchesMemorySize && matchesPurpose && matchesCoolingType) {
+                sortedGoods[key] = value;
+            }
+        });
+
+        if (selectedMemorySize === "asc") {
+            sortedGoods = Object.values(sortedGoods).sort((a, b) => a.memorySize - b.memorySize);
+        } else if (selectedMemorySize === "desc") {
+            sortedGoods = Object.values(sortedGoods).sort((a, b) => b.memorySize - a.memorySize);
+        }
+
+        displayGoods(sortedGoods);
+        sortMenu.hide();
     });
 
     // Оновлення кошика
