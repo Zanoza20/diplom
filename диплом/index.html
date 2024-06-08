@@ -19,7 +19,54 @@
 
     <div id="goods" class="goods-container"></div>
 
-    <!-- Видалено: Sorting Menu -->
+    <!-- Sorting Menu -->
+    <div id="sortMenu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('sortMenu').style.display='none'">&times;</span>
+            <h1>Сортування</h1>
+            <form id="sortForm">
+                <label for="gpuManufacturer">Виробник графічного процессора:</label>
+                <select id="gpuManufacturer" name="gpuManufacturer">
+                    <option value="">Всі</option>
+                    <option value="Intel">Intel</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Nvidia">Nvidia</option>
+                </select>
+
+                <label for="graphicChip">Графічний чип:</label>
+                <select id="graphicChip" name="graphicChip">
+                    <option value="">Всі</option>
+                    <option value="Radeon">Radeon</option>
+                    <option value="GeForce">GeForce</option>
+                </select>
+
+                <label for="memorySize">Обсяг пам'яті:</label>
+                <select id="memorySize" name="memorySize">
+                    <option value="">Всі</option>
+                    <option value="asc">Від найменьшого</option>
+                    <option value="desc">Від найбільшого</option>
+                </select>
+
+                <label for="purpose">Призначення:</label>
+                <select id="purpose" name="purpose">
+                    <option value="">Всі</option>
+                    <option value="Ігрова">Ігрова</option>
+                    <option value="офісна">Офісна</option>
+                    <option value="професійна">Професійна</option>
+                </select>
+
+                <label for="coolingType">Тип системи охолодження:</label>
+                <select id="coolingType" name="coolingType">
+                    <option value="">Всі</option>
+                    <option value="активна">Активна</option>
+                    <option value="пасивна">Пасивна</option>
+                    <option value="водяне охолодження">Водяне охолодження</option>
+                </select>
+                
+                <button type="submit">Застосувати</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Cart Menu -->
     <div id="cartMenu" class="cart-menu">
