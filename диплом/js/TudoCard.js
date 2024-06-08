@@ -30,10 +30,10 @@ $(document).ready(function () {
             $("#itemDescription").text(item.description);
             $("#brand").text(item.brand || "Невідомий");
             $("#gpuManufacturerDetail").text(item.gpuManufacturer || "Невідомий");
-            $("#graphicChip").text(item.graphicChip || "Невідомий");
+            $("#graphicChipDetail").text(item.graphicChip || "Невідомий");
             $("#memorySizeDetail").text(item.memorySize || "Невідомий");
             $("#memoryType").text(item.memoryType || "Невідомий");
-            $("#purpose").text(item.purpose || "Невідомий");
+            $("#purposeDetail").text(item.purpose || "Невідомий");
             $("#coolingTypeDetail").text(item.coolingType || "Невідомий");
 
             itemDetails.show();
