@@ -162,8 +162,9 @@ $(document).ready(function () {
         cartMenu.show();
     });
 
+    // Toggle sort menu visibility when sort icon is clicked
     sortIcon.click(function () {
-        sortMenu.show();
+        sortMenu.toggle();
     });
 
     clearCartButton.click(function () {
@@ -176,5 +177,21 @@ $(document).ready(function () {
         cart = {};
         updateCart();
         cartMenu.hide();
+    });
+
+    // Close modals when clicking outside of them
+    $(window).click(function (event) {
+        if ($(event.target).is(menuLogin)) {
+            menuLogin.hide();
+        }
+        if ($(event.target).is(menuRegister)) {
+            menuRegister.hide();
+        }
+        if ($(event.target).is(sortMenu)) {
+            sortMenu.hide();
+        }
+        if ($(event.target).is(cartMenu)) {
+            cartMenu.hide();
+        }
     });
 });
