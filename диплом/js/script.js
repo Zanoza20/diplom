@@ -59,7 +59,7 @@ $(document).ready(function () {
 
             $("#itemImage").attr("src", item.image);
             $("#itemName").text(item.name);
-            $("#itemDescription").text(item.description); // Виправлено ключ
+            $("#itemDescription").text(item.description);
             $("#brand").text(item.brand || "Невідомий");
             $("#gpuManufacturer").text(item.gpuManufacturer || "Невідомий");
             $("#graphicChip").text(item.graphicChip || "Невідомий");
@@ -110,7 +110,7 @@ $(document).ready(function () {
         var filteredGoods = {};
         $.each(goods, function (key, value) {
             if (value.name.toLowerCase().includes(searchText) ||
-                value.description.toLowerCase().includes(searchText)) { // Виправлено ключ
+                value.description.toLowerCase().includes(searchText)) {
                 filteredGoods[key] = value;
             }
         });
@@ -132,9 +132,7 @@ $(document).ready(function () {
         $.each(goods, function (key, value) {
             var matchesGpuManufacturer = selectedGpuManufacturer === "" || value.gpuManufacturer === selectedGpuManufacturer;
             var matchesGraphicChip = selectedGraphicChip === "" || value.graphicChip === selectedGraphicChip;
-            var matchesMemorySize = selectedMemorySize === "" || 
-                (selectedMemorySize === "asc" && value.memorySize >= 0) ||
-                (selectedMemorySize === "desc" && value.memorySize >= 0);
+            var matchesMemorySize = selectedMemorySize === "" || value.memorySize === selectedMemorySize;
             var matchesPurpose = selectedPurpose === "" || value.purpose === selectedPurpose;
             var matchesCoolingType = selectedCoolingType === "" || value.coolingType === selectedCoolingType;
 
@@ -142,12 +140,6 @@ $(document).ready(function () {
                 sortedGoods[key] = value;
             }
         });
-
-        if (selectedMemorySize === "asc") {
-            sortedGoods = Object.values(sortedGoods).sort((a, b) => a.memorySize - b.memorySize);
-        } else if (selectedMemorySize === "desc") {
-            sortedGoods = Object.values(sortedGoods).sort((a, b) => b.memorySize - a.memorySize);
-        }
 
         displayGoods(sortedGoods);
         sortMenu.hide();
