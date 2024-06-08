@@ -127,7 +127,7 @@ $(document).ready(function () {
         var selectedPurpose = $("#purpose").val();
         var selectedCoolingType = $("#coolingType").val();
 
-        var sortedGoods = {};
+        var filteredGoods = {};
 
         $.each(goods, function (key, value) {
             var matchesGpuManufacturer = selectedGpuManufacturer === "" || value.gpuManufacturer === selectedGpuManufacturer;
@@ -137,13 +137,28 @@ $(document).ready(function () {
             var matchesCoolingType = selectedCoolingType === "" || value.coolingType === selectedCoolingType;
 
             if (matchesGpuManufacturer && matchesGraphicChip && matchesMemorySize && matchesPurpose && matchesCoolingType) {
-                sortedGoods[key] = value;
+                filteredGoods[key] = value;
             }
         });
 
-        displayGoods(sortedGoods);
+        if (selectedMemorySize === "asc") {
+            filteredGoods = Object.values(filteredGoods).sort((a, b) => parseMemorySize(a.memorySize) - parseMemorySize(b.memorySize));
+        } else if (selectedMemorySize === "desc") {
+            filteredGoods = Object.values(filteredGoods).sort((a, b) => parseMemorySize(b.memorySize) - parseMemorySize(a.memorySize));
+        }
+
+        displayGoods(filteredGoods);
         sortMenu.hide();
     });
+
+    // Парсинг розміру пам'яті
+    function parseMemorySize(size) {
+        var sizeNumber = parseInt(size);
+        if (isNaN(sizeNumber)) {
+            return 0; // Якщо розмір пам'яті не є числом, повертаємо 0
+        }
+        return sizeNumber;
+    }
 
     // Оновлення кошика
     function updateCart() {
