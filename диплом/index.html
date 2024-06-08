@@ -119,4 +119,31 @@
         <div class="modal-content">
             <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
             <img id="itemImage" src="" alt="Зображення товару" style="width:100%">
-            <h2 id="item
+            <h2 id="itemName">Назва товару</h2>
+            <p id="itemDescription">Опис товару</p>
+            <p><b>Бренд:</b> <span id="brand">Невідомий</span></p>
+            <p><b>Виробник GPU:</b> <span id="gpuManufacturer">Невідомий</span></p>
+            <p><b>Графічний чип:</b> <span id="graphicChip">Невідомий</span></p>
+            <p><b>Обсяг пам'яті:</b> <span id="memorySize">Невідомий</span></p>
+            <p><b>Тип пам'яті:</b> <span id="memoryType">Невідомий</span></p>
+            <p><b>Призначення:</b> <span id="purpose">Невідомий</span></p>
+            <p><b>Тип охолодження:</b> <span id="coolingType">Невідомий</span></p>
+        </div>
+    </div>
+
+    <!-- Cart Menu -->
+    <div id="cartMenu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('cartMenu').style.display='none'">&times;</span>
+            <h1>Кошик</h1>
+            <div id="cartItems"></div>
+            <h2 id="totalPrice">Загальна сума: ₴0</h2>
+            <button id="clearCartButton" class="btn">Очистити кошик</button>
+            <button id="orderButton" class="btn">Замовити</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/TudoCard.js"></script>
+</body>
+</html>
