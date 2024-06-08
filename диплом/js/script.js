@@ -1,23 +1,24 @@
 $(document).ready(function () {
-    var goods = {};
-    var cart = {};
-    var searchField = $("#searchField");
+    var loginButton = $("#loginButton");
+    var registerButton = $("#registerButton");
+    var menuLogin = $("#menuLogin");
+    var menuRegister = $("#menuRegister");
+    var userRules = $("#userRules");
+    var userRulesLink = $("#userRulesLink");
+    var itemDetails = $("#itemDetails");
     var cartIcon = $("#cartIcon");
-    var sortIcon = $("#sortIcon");
-    var sortMenu = $("#sortMenu");
-    var sortForm = $("#sortForm");
     var cartMenu = $("#cartMenu");
     var cartItems = $("#cartItems");
     var totalPrice = $("#totalPrice");
     var clearCartButton = $("#clearCartButton");
     var orderButton = $("#orderButton");
-    var itemDetails = $("#itemDetails");
+    var searchField = $("#searchField");
+    var sortIcon = $("#sortIcon");
+    var sortMenu = $("#sortMenu");
+    var sortForm = $("#sortForm");
 
-    // Login and Registration buttons
-    var loginButton = $("#loginButton");
-    var registerButton = $("#registerButton");
-    var menuLogin = $("#menuLogin");
-    var menuRegister = $("#menuRegister");
+    var cart = {};
+    var goods = {};
 
     loginButton.click(function () {
         menuLogin.show();
@@ -27,28 +28,45 @@ $(document).ready(function () {
         menuRegister.show();
     });
 
-    // Завантаження товарів з JSON файлу
-    $.getJSON("goods.json", function (data) {
-        goods = data;
-        displayGoods(goods);
+    $(".cancelbtn").click(function () {
+        menuLogin.hide();
+        menuRegister.hide();
+        userRules.hide();
+        itemDetails.hide();
+        cartMenu.hide();
     });
 
-    // Відображення деталей товару
+    userRulesLink.click(function (event) {
+        event.preventDefault();
+        userRules.show();
+    });
+
+    sortIcon.click(function () {
+        sortMenu.show();
+    });
+
+    // Завантаження товарів
+    $.getJSON("goods.json", function (data) {
+        goods = data; // Зберігаємо завантажені товари
+        displayGoods(data);
+    });
+
+    // Показувати деталі товару при натисканні на назву
     function setupItemDetails() {
-        $(".item-name").off("click").click(function () {
+        $(".item-name").click(function () {
             var key = $(this).data("key");
             var item = goods[key];
 
             $("#itemImage").attr("src", item.image);
             $("#itemName").text(item.name);
-            $("#itemDescription").text(item.description);
+            $("#itemDescription").text(item.description); // Виправлено ключ
             $("#brand").text(item.brand || "Невідомий");
-            $("#gpuManufacturerDetail").text(item.gpuManufacturer || "Невідомий");
+            $("#gpuManufacturer").text(item.gpuManufacturer || "Невідомий");
             $("#graphicChip").text(item.graphicChip || "Невідомий");
-            $("#memorySizeDetail").text(item.memorySize || "Невідомий");
+            $("#memorySize").text(item.memorySize || "Невідомий");
             $("#memoryType").text(item.memoryType || "Невідомий");
             $("#purpose").text(item.purpose || "Невідомий");
-            $("#coolingTypeDetail").text(item.coolingType || "Невідомий");
+            $("#coolingType").text(item.coolingType || "Невідомий");
 
             itemDetails.show();
         });
@@ -56,7 +74,7 @@ $(document).ready(function () {
 
     // Додавання товару до кошика
     function setupAddToCartButtons() {
-        $(".add-to-cart").off("click").click(function () {
+        $(".add-to-cart").click(function () {
             var key = $(this).data("key");
             if (cart[key]) {
                 cart[key].quantity += 1;
@@ -92,7 +110,7 @@ $(document).ready(function () {
         var filteredGoods = {};
         $.each(goods, function (key, value) {
             if (value.name.toLowerCase().includes(searchText) ||
-                value.description.toLowerCase().includes(searchText)) {
+                value.description.toLowerCase().includes(searchText)) { // Виправлено ключ
                 filteredGoods[key] = value;
             }
         });
@@ -131,12 +149,7 @@ $(document).ready(function () {
             sortedGoods = Object.values(sortedGoods).sort((a, b) => b.memorySize - a.memorySize);
         }
 
-        var sortedGoodsObject = {};
-        $.each(sortedGoods, function (index, value) {
-            sortedGoodsObject[value.key] = value;
-        });
-
-        displayGoods(sortedGoodsObject);
+        displayGoods(sortedGoods);
         sortMenu.hide();
     });
 
@@ -162,11 +175,6 @@ $(document).ready(function () {
         cartMenu.show();
     });
 
-    // Toggle sort menu visibility when sort icon is clicked
-    sortIcon.click(function () {
-        sortMenu.toggle();
-    });
-
     clearCartButton.click(function () {
         cart = {};
         updateCart();
@@ -177,21 +185,5 @@ $(document).ready(function () {
         cart = {};
         updateCart();
         cartMenu.hide();
-    });
-
-    // Close modals when clicking outside of them
-    $(window).click(function (event) {
-        if ($(event.target).is(menuLogin)) {
-            menuLogin.hide();
-        }
-        if ($(event.target).is(menuRegister)) {
-            menuRegister.hide();
-        }
-        if ($(event.target).is(sortMenu)) {
-            sortMenu.hide();
-        }
-        if ($(event.target).is(cartMenu)) {
-            cartMenu.hide();
-        }
     });
 });
