@@ -13,6 +13,20 @@ $(document).ready(function () {
     var orderButton = $("#orderButton");
     var itemDetails = $("#itemDetails");
 
+    // Login and Registration buttons
+    var loginButton = $("#loginButton");
+    var registerButton = $("#registerButton");
+    var menuLogin = $("#menuLogin");
+    var menuRegister = $("#menuRegister");
+
+    loginButton.click(function () {
+        menuLogin.show();
+    });
+
+    registerButton.click(function () {
+        menuRegister.show();
+    });
+
     // Завантаження товарів з JSON файлу
     $.getJSON("goods.json", function (data) {
         goods = data;
