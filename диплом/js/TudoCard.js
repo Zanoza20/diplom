@@ -59,7 +59,7 @@ $(document).ready(function () {
 
             $("#itemImage").attr("src", item.image);
             $("#itemName").text(item.name);
-            $("#itemDescription").text(item.description); // Виправлено ключ
+            $("#itemDescription").text(item.description);
             $("#brand").text(item.brand || "Невідомий");
             $("#gpuManufacturer").text(item.gpuManufacturer || "Невідомий");
             $("#graphicChip").text(item.graphicChip || "Невідомий");
@@ -110,7 +110,7 @@ $(document).ready(function () {
         var filteredGoods = {};
         $.each(goods, function (key, value) {
             if (value.name.toLowerCase().includes(searchText) ||
-                value.description.toLowerCase().includes(searchText)) { // Виправлено ключ
+                value.description.toLowerCase().includes(searchText)) {
                 filteredGoods[key] = value;
             }
         });
@@ -149,7 +149,13 @@ $(document).ready(function () {
             sortedGoods = Object.values(sortedGoods).sort((a, b) => b.memorySize - a.memorySize);
         }
 
-        displayGoods(sortedGoods);
+        var sortedGoodsObject = {};
+        $.each(sortedGoods, function (index, value) {
+            var key = value.key;
+            sortedGoodsObject[key] = value;
+        });
+
+        displayGoods(sortedGoodsObject);
         sortMenu.hide();
     });
 
