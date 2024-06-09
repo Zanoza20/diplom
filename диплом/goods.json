@@ -1,16 +1,16 @@
 {
   "11292": {
-    "name": "Видеокарта Gigabyte PCI-Ex GeForce RTX 3060 Vision OC 12G 12 GB GDDR6 (192 bit) (15000) (2 х HDMI, 2 x DisplayPort) LHR (GV-N3060VISION OC-12GD v2.0)",
-    "cost": 13 598,
-    "description": "Відеокарти серії GeForce RTX 30 підходять не тільки для ігор, але і для продуктивної роботи. Підтримка технологій штучного інтелекту, сумісність з програмною платформою NVIDIA Studio і висока продуктивність роблять їх відмінним вибором для тривимірного моделювання, редагування відеоматеріалів у форматі 8K або стрімінга в прямому ефір",
+      "name": "яблоки",
+    "cost": 12,
+    "description": "яблр",
     "image": "images/13860.png",
-    "brand": "GeForce",
-    "gpuManufacturer": "NVidia",
-    "graphicChip": "Radeon",
-    "memorySize": "12 Гб",
-    "memoryType": "GDDR6",
-    "purpose": "Ігрова",
-    "coolingType": "Активна"
+    "brand": "Apple",
+    "gpuManufacturer": "Apple Inc.",
+    "graphicChip": "A12 Bionic",
+    "memorySize": "256GB",
+    "memoryType": "LPDDR4X",
+    "purpose": "Consumer",
+    "coolingType": "Passive"
   },
   "11293": {
     "name": "яблоки",
