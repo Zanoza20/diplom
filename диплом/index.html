@@ -128,61 +128,52 @@
 
     <!-- Sorting Menu Modal -->
     <div id="sortMenu" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="document.getElementById('sortMenu').style.display='none'">&times;</span>
-            <h1>Сортування відеокарт</h1>
-            <form id="sortForm">
-                <label for="brand">Бренд:</label>
-                <select id="brand" name="brand">
-                    <option value="">Будь-який</option>
-                    <option value="AMD">AMD</option>
-                    <option value="Intel">Intel</option>
-                    <option value="Gigabyte">Gigabyte</option>
-                </select>
-
-                <label for="gpuManufacturer">Виробник графічного процесора:</label>
-                <select id="gpuManufacturer" name="gpuManufacturer">
-                    <option value="">Будь-який</option>
-                    <option value="Intel">Intel</option>
-                    <option value="AMD">AMD</option>
-                    <option value="NVidia">NVidia</option>
-                </select>
-
-                <label for="memoryType">Тип пам'яті:</label>
-                <select id="memoryType" name="memoryType">
-                    <option value="">Будь-який</option>
-                    <option value="GDDR5">GDDR5</option>
-                    <option value="DDR4">DDR4</option>
-                    <option value="DDR3">DDR3</option>
-                    <option value="GDDR6">GDDR6</option>
-                    <option value="GDDR6X">GDDR6X</option>
-                    <option value="DDR5">DDR5</option>
-                    <option value="GDDR3">GDDR3</option>
-                    <option value="LPDDR4x">LPDDR4x</option>
-                    <option value="GDDR5X">GDDR5X</option>
-                    <option value="GDDR4">GDDR4</option>
-                </select>
-
-                <label for="purpose">Призначення:</label>
-                <select id="purpose" name="purpose">
-                    <option value="">Будь-яке</option>
-                    <option value="професійна">Професійна</option>
-                    <option value="офісна">Офісна</option>
-                    <option value="ігрова">Ігрова</option>
-                </select>
-
-                <label for="coolingType">Тип системи охолодження:</label>
-                <select id="coolingType" name="coolingType">
-                    <option value="">Будь-який</option>
-                    <option value="пасивна">Пасивна</option>
-                    <option value="активна">Активна</option>
-                    <option value="водяне охолодження">Водяне охолодження</option>
-                </select>
-
-                <button type="submit" class="btn">Застосувати</button>
-            </form>
-        </div>
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('sortMenu').style.display='none'">&times;</span>
+        <h1>Сортування відеокарт</h1>
+        <form id="sortForm">
+            <label for="brand">Бренд:</label>
+            <select id="brand" name="brand">
+                <option value="">Будь-який</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="AMD">AMD</option>
+                <option value="Intel">Intel</option>
+            </select>
+            <label for="gpuManufacturer">Виробник графічного процесора:</label>
+            <select id="gpuManufacturer" name="gpuManufacturer">
+                <option value="">Будь-який</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="AMD">AMD</option>
+                <option value="Intel">Intel</option>
+            </select>
+            <label for="memoryType">Тип пам'яті:</label>
+            <select id="memoryType" name="memoryType">
+                <option value="">Будь-який</option>
+                <option value="GDDR6X">GDDR6X</option>
+                <option value="GDDR6">GDDR6</option>
+                <option value="GDDR5X">GDDR5X</option>
+                <option value="GDDR5">GDDR5</option>
+                <option value="LPDDR4X">LPDDR4X</option>
+            </select>
+            <label for="purpose">Призначення:</label>
+            <select id="purpose" name="purpose">
+                <option value="">Будь-яке</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Workstation">Workstation</option>
+                <option value="Consumer">Consumer</option>
+            </select>
+            <label for="coolingType">Тип системи охолодження:</label>
+            <select id="coolingType" name="coolingType">
+                <option value="">Будь-який</option>
+                <option value="Active">Active</option>
+                <option value="Passive">Passive</option>
+                <option value="Water">Water</option>
+            </select>
+            <button type="submit" class="btn">Застосувати</button>
+        </form>
     </div>
+</div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
