@@ -121,54 +121,29 @@ $(document).ready(function () {
     sortForm.on("submit", function (event) {
         event.preventDefault();
 
+        var selectedBrand = $("#brand").val();
         var selectedGpuManufacturer = $("#gpuManufacturer").val();
-        var selectedGraphicChip = $("#graphicChip").val();
-        var selectedMemorySize = $("#memorySize").val();
+        var selectedMemoryType = $("#memoryType").val();
         var selectedPurpose = $("#purpose").val();
         var selectedCoolingType = $("#coolingType").val();
-
-        console.log("Selected GPU Manufacturer:", selectedGpuManufacturer);
-        console.log("Selected Graphic Chip:", selectedGraphicChip);
-        console.log("Selected Memory Size:", selectedMemorySize);
-        console.log("Selected Purpose:", selectedPurpose);
-        console.log("Selected Cooling Type:", selectedCoolingType);
 
         var filteredGoods = {};
 
         $.each(goods, function (key, value) {
+            var matchesBrand = selectedBrand === "" || value.brand === selectedBrand;
             var matchesGpuManufacturer = selectedGpuManufacturer === "" || value.gpuManufacturer === selectedGpuManufacturer;
-            var matchesGraphicChip = selectedGraphicChip === "" || value.graphicChip === selectedGraphicChip;
-            var matchesMemorySize = selectedMemorySize === "" || value.memorySize === selectedMemorySize;
+            var matchesMemoryType = selectedMemoryType === "" || value.memoryType === selectedMemoryType;
             var matchesPurpose = selectedPurpose === "" || value.purpose === selectedPurpose;
             var matchesCoolingType = selectedCoolingType === "" || value.coolingType === selectedCoolingType;
 
-            if (matchesGpuManufacturer && matchesGraphicChip && matchesMemorySize && matchesPurpose && matchesCoolingType) {
+            if (matchesBrand && matchesGpuManufacturer && matchesMemoryType && matchesPurpose && matchesCoolingType) {
                 filteredGoods[key] = value;
             }
         });
 
-        console.log("Filtered Goods Before Sorting:", filteredGoods);
-
-        if (selectedMemorySize === "asc") {
-            filteredGoods = Object.values(filteredGoods).sort((a, b) => parseMemorySize(a.memorySize) - parseMemorySize(b.memorySize));
-        } else if (selectedMemorySize === "desc") {
-            filteredGoods = Object.values(filteredGoods).sort((a, b) => parseMemorySize(b.memorySize) - parseMemorySize(a.memorySize));
-        }
-
-        console.log("Filtered Goods After Sorting:", filteredGoods);
-
         displayGoods(filteredGoods);
         sortMenu.hide();
     });
-
-    // Парсинг розміру пам'яті
-    function parseMemorySize(size) {
-        var sizeNumber = parseInt(size);
-        if (isNaN(sizeNumber)) {
-            return 0; // Якщо розмір пам'яті не є числом, повертаємо 0
-        }
-        return sizeNumber;
-    }
 
     // Оновлення кошика
     function updateCart() {
