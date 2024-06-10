@@ -21,13 +21,14 @@
 
     <!-- Cart Menu -->
     <div id="cartMenu" class="cart-menu">
-       <div class="cart-menu-content">
-    <span class="close-cart">&times;</span>
-    <div id="cartItems"></div>
-    <div id="totalPrice"></div>
-    <button class="clear-cart-btn">Очистити кошик</button>
-    <button class="order-btn">Оформити замовлення</button>
-</div>
+        <div class="cart-menu-content">
+            <span class="close" onclick="document.getElementById('cartMenu').style.display='none'">&times;</span>
+            <h1>Ваш кошик</h1>
+            <div id="cartItems"></div>
+            <div id="totalPrice">Загальна сума: ₴0</div>
+            <button id="clearCartButton" class="clear-cart-btn">Очистити кошик</button>
+            <button id="orderButton" class="order-btn">Оформити замовлення</button>
+        </div>
     </div>
 
     <!-- Item Details Modal -->
