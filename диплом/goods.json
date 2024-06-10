@@ -2,8 +2,7 @@
   "10001": {
     "name": "NVIDIA GeForce RTX 3080",
     "cost": 699,
-    "description": "High-performance gaming graphics card with 10GB GDDR6X memory
-    рекрв",
+    "description": "High-performance gaming graphics card with 10GB GDDR6X memory",
     "image": "images/13860.png",
     "brand": "NVIDIA",
     "gpuManufacturer": "NVIDIA",
