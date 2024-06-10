@@ -16,7 +16,7 @@ $(document).ready(function () {
     var sortIcon = $("#sortIcon");
     var sortMenu = $("#sortMenu");
     var sortForm = $("#sortForm");
-    var closeCartButton = $("#closeCartButton"); // Додано кнопку закриття кошика
+    var closeCartButton = $("#closeCartButton");
 
     var cart = {};
     var goods = {};
@@ -128,13 +128,6 @@ $(document).ready(function () {
         var selectedPurpose = $("#sortPurpose").val();
         var selectedCoolingType = $("#sortCoolingType").val();
 
-        console.log("Фільтрування товарів з наступними параметрами:");
-        console.log("Бренд:", selectedBrand);
-        console.log("Виробник графічного процесора:", selectedGpuManufacturer);
-        console.log("Тип пам'яті:", selectedMemoryType);
-        console.log("Призначення:", selectedPurpose);
-        console.log("Тип системи охолодження:", selectedCoolingType);
-
         var filteredGoods = {};
 
         $.each(goods, function (key, value) {
@@ -143,13 +136,6 @@ $(document).ready(function () {
             var matchesMemoryType = selectedMemoryType === "" || value.memoryType === selectedMemoryType;
             var matchesPurpose = selectedPurpose === "" || value.purpose === selectedPurpose;
             var matchesCoolingType = selectedCoolingType === "" || value.coolingType === selectedCoolingType;
-
-            console.log("Перевірка товару:", value.name);
-            console.log("matchesBrand:", matchesBrand);
-            console.log("matchesGpuManufacturer:", matchesGpuManufacturer);
-            console.log("matchesMemoryType:", matchesMemoryType);
-            console.log("matchesPurpose:", matchesPurpose);
-            console.log("matchesCoolingType:", matchesCoolingType);
 
             if (matchesBrand && matchesGpuManufacturer && matchesMemoryType && matchesPurpose && matchesCoolingType) {
                 filteredGoods[key] = value;
@@ -204,6 +190,44 @@ $(document).ready(function () {
             cart = {};
             updateCart();
             cartMenu.hide();
+        }
+    });
+
+    // Реєстрація користувача
+    $("#menuRegister form").submit(function (event) {
+        event.preventDefault();
+        var phone = $("#phoneRegister").val();
+        var email = $("#emailRegister").val();
+        var password = $("#pswRegister").val();
+
+        var users = JSON.parse(localStorage.getItem('users')) || [];
+        var userExists = users.some(user => user.phone === phone);
+
+        if (userExists) {
+            alert('Користувач з таким номером телефону вже існує');
+        } else {
+            users.push({ phone, email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Реєстрація пройшла успішно');
+            menuRegister.hide();
+        }
+    });
+
+    // Вхід користувача
+    $("#menuLogin form").submit(function (event) {
+        event.preventDefault();
+        var phone = $("#phoneLogin").val();
+        var password = $("#pswLogin").val();
+
+        var users = JSON.parse(localStorage.getItem('users')) || [];
+        var user = users.find(user => user.phone === phone && user.password === password);
+
+        if (user) {
+            alert('Вхід успішний');
+            menuLogin.hide();
+            // Тут можна додати логіку для перенаправлення на сторінку профілю користувача
+        } else {
+            alert('Невірний номер телефону або пароль');
         }
     });
 });
