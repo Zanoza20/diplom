@@ -121,11 +121,11 @@ $(document).ready(function () {
     sortForm.on("submit", function (event) {
         event.preventDefault();
 
-        var selectedBrand = $("#brand").val();
-        var selectedGpuManufacturer = $("#gpuManufacturer").val();
-        var selectedMemoryType = $("#memoryType").val();
-        var selectedPurpose = $("#purpose").val();
-        var selectedCoolingType = $("#coolingType").val();
+        var selectedBrand = $("#sortBrand").val();
+        var selectedGpuManufacturer = $("#sortGpuManufacturer").val();
+        var selectedMemoryType = $("#sortMemoryType").val();
+        var selectedPurpose = $("#sortPurpose").val();
+        var selectedCoolingType = $("#sortCoolingType").val();
 
         console.log("Фільтрування товарів з наступними параметрами:");
         console.log("Бренд:", selectedBrand);
