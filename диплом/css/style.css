@@ -64,7 +64,7 @@ body {
     padding: 0.8rem 1.5rem;
     border: none;
     outline: none;
-    box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
+    box-shadow: .3rem .3рем .6рем rgba(0, 0, 0, .8);
     border-radius: 1rem;
     cursor: pointer;
     font-size: 1.4rem;
@@ -94,7 +94,7 @@ input[type=tel], input[type=password], input[type=email] {
     padding: 1.5rem;
     display: inline-block;
     border: 1px solid #ccc;
-    margin: .5rem 0 2.2rem 0;
+    margin: .5rem 0 2.2рем 0;
     background: #ddd;
     border-radius: 0.5rem;
 }
@@ -188,12 +188,12 @@ button[type=button]:hover, button[type=submit]:hover {
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    box-shadow: .2rem .2rem .5рем rgba(0, 0, 0, .3);
+    box-shadow: .2рем .2рем .5рем rgba(0, 0, 0, .3);
 }
 
 .single-goods img {
     max-width: 100%;
-    border-bottom: .1rem solid #ddd;
+    border-bottom: .1рем solid #ddd;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
 }
@@ -395,11 +395,11 @@ button[type=button]:hover, button[type=submit]:hover {
     background-color: #8A2BE2; /* Змінив колір на фіолетовий */
     color: white;
     padding: 1.4rem 2rem;
-    margin: 1rem 0;
+    margin: 1рем 0;
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius: 1rem;
+    border-radius: 1рем;
     font-size: 1.8rem;
 }
 
@@ -411,4 +411,22 @@ button[type=button]:hover, button[type=submit]:hover {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px;
+}
+
+/* Close button for cart */
+.close-cart-btn {
+    background-color: #8A2BE2; /* Змінив колір на фіолетовий */
+    color: white;
+    padding: 1.4rem 2rem;
+    margin: 1рем 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 1рем;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.close-cart-btn:hover {
+    opacity: 0.8;
 }
