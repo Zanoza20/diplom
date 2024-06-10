@@ -201,4 +201,8 @@ $(document).ready(function () {
             cartMenu.hide();
         }
     });
+
+    $(".close-cart").click(function () {
+        cartMenu.hide();
+    });
 });
