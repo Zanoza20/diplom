@@ -16,6 +16,7 @@ $(document).ready(function () {
     var sortIcon = $("#sortIcon");
     var sortMenu = $("#sortMenu");
     var sortForm = $("#sortForm");
+    var closeCartButton = $("#closeCartButton"); // Додано кнопку закриття кошика
 
     var cart = {};
     var goods = {};
@@ -184,6 +185,10 @@ $(document).ready(function () {
 
     cartIcon.click(function () {
         cartMenu.show();
+    });
+
+    closeCartButton.click(function () { // Додаємо обробник кліку для закриття кошика
+        cartMenu.hide();
     });
 
     clearCartButton.click(function () {
