@@ -9,8 +9,8 @@
     "graphicChip": "GeForce RTX 3080",
     "memorySize": "10GB",
     "memoryType": "GDDR6X",
-    "purpose": "Gaming",
-    "coolingType": "Active"
+    "purpose": "Геймінг",
+    "coolingType": "Активний"
   },
   "10002": {
     "name": "AMD Radeon RX 6800 XT",
@@ -22,8 +22,8 @@
     "graphicChip": "Radeon RX 6800 XT",
     "memorySize": "16GB",
     "memoryType": "GDDR6",
-    "purpose": "Gaming",
-    "coolingType": "Active"
+    "purpose": "Геймінг",
+    "coolingType": "Активний"
   },
   "10003": {
     "name": "NVIDIA GeForce GTX 1660 Super",
@@ -35,8 +35,8 @@
     "graphicChip": "GeForce GTX 1660 Super",
     "memorySize": "6GB",
     "memoryType": "GDDR6",
-    "purpose": "Gaming",
-    "coolingType": "Active"
+    "purpose": "Геймінг",
+    "coolingType": "Активний"
   },
   "10004": {
     "name": "AMD Radeon RX 570",
@@ -48,8 +48,8 @@
     "graphicChip": "Radeon RX 570",
     "memorySize": "4GB",
     "memoryType": "GDDR5",
-    "purpose": "Gaming",
-    "coolingType": "Active"
+    "purpose": "Геймінг",
+    "coolingType": "Активний"
   },
   "10005": {
     "name": "NVIDIA Quadro P2200",
@@ -61,8 +61,8 @@
     "graphicChip": "Quadro P2200",
     "memorySize": "5GB",
     "memoryType": "GDDR5X",
-    "purpose": "Workstation",
-    "coolingType": "Active"
+    "purpose": "Офісний",
+    "coolingType": "Активний"
   },
   "10006": {
     "name": "AMD Radeon Pro WX 7100",
@@ -74,8 +74,8 @@
     "graphicChip": "Radeon Pro WX 7100",
     "memorySize": "8GB",
     "memoryType": "GDDR5",
-    "purpose": "Workstation",
-    "coolingType": "Active"
+    "purpose": "Офісний",
+    "coolingType": "Активний"
   },
   "10007": {
     "name": "Intel Iris Xe MAX",
@@ -87,8 +87,8 @@
     "graphicChip": "Iris Xe MAX",
     "memorySize": "4GB",
     "memoryType": "LPDDR4X",
-    "purpose": "Consumer",
-    "coolingType": "Passive"
+    "purpose": "Майнінг",
+    "coolingType": "Пасивний"
   },
   "10008": {
     "name": "NVIDIA GeForce RTX 3090",
@@ -100,7 +100,7 @@
     "graphicChip": "GeForce RTX 3090",
     "memorySize": "24GB",
     "memoryType": "GDDR6X",
-    "purpose": "Gaming",
-    "coolingType": "Active"
+    "purpose": "Геймінг",
+    "coolingType": "Активний"
   }
 }
