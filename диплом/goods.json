@@ -9,8 +9,8 @@
     "graphicChip": "GeForce RTX 3080",
     "memorySize": "10GB",
     "memoryType": "GDDR6X",
-    "purpose": "Gaming",
-    "coolingType": "Геймінг"
+    "purpose": "Геймінг",
+    "coolingType": "Active"
   },
   "10002": {
     "name": "AMD Radeon RX 6800 XT",
