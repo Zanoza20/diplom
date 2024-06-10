@@ -16,13 +16,6 @@
     
     <button id="loginButton" class="btn">Увійти</button>
     <button id="registerButton" class="btn">Зареєструватись</button>
-    <img id="userProfileImage" src="images/Профіль.png" alt="Профіль" class="profile-image" style="display: none;">
-    <div id="userProfileMenu" class="profile-menu" style="display: none;">
-        <p>Номер телефону: <span id="userPhone"></span></p>
-        <p>Email: <span id="userEmail"></span></p>
-        <button id="logoutButton" class="profile-btn">Вийти</button>
-        <button id="closeProfileButton" class="profile-btn">Закрити</button>
-    </div>
 
     <div id="goods" class="goods-container"></div>
 
@@ -35,7 +28,7 @@
             <div id="totalPrice">Загальна сума: ₴0</div>
             <button id="clearCartButton" class="clear-cart-btn">Очистити кошик</button>
             <button id="orderButton" class="order-btn">Оформити замовлення</button>
-            <button id="closeCartButton" class="close-cart-btn">Закрити кошик</button>
+<button id="closeCartButton" class="close-cart-btn">Закрити кошик</button>
         </div>
     </div>
 
@@ -163,21 +156,24 @@
                     <option value="GDDR5">GDDR5</option>
                     <option value="LPDDR4X">LPDDR4X</option>
                 </select>
-                <label for="sortCoolingType">Тип охолодження:</label>
+                <label for="sortPurpose">Призначення:</label>
+                <select id="sortPurpose" name="purpose">
+                    <option value="">Будь-яке</option>
+                    <option value="Геймінг">Геймінг</option>
+                    <option value="Офісний">Офісний</option>
+                    <option value="Майнінг">Майнінг</option>
+                </select>
+                <label for="sortCoolingType">Тип системи охолодження:</label>
                 <select id="sortCoolingType" name="coolingType">
                     <option value="">Будь-який</option>
                     <option value="Активне">Активне</option>
                     <option value="Пасивне">Пасивне</option>
-                    <option value="Рідинне">Рідинне</option>
                 </select>
-                <div class="buttons">
-                    <button type="submit" class="signupbtn">Застосувати</button>
-                    <button type="button" class="cancelbtn" onclick="document.getElementById('sortMenu').style.display='none'">Закрити</button>
-                </div>
+                <button type="submit" class="sort-btn">Сортувати</button>
             </form>
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
