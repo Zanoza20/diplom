@@ -174,7 +174,7 @@ $(document).ready(function () {
                 '</div>'
             );
         });
-        totalPrice.text("Загальна вартість: ₴" + total);
+        totalPrice.text("Загальна сума: ₴" + total);
 
         $(".remove-from-cart").click(function () {
             var key = $(this).data("key");
