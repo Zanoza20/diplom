@@ -10,7 +10,7 @@
     "memorySize": "10GB",
     "memoryType": "GDDR6X",
     "purpose": "Геймінг",
-    "coolingType": "Активний"
+    "coolingType": "Активне"
   },
   "10002": {
     "name": "AMD Radeon RX 6800 XT",
@@ -23,7 +23,7 @@
     "memorySize": "16GB",
     "memoryType": "GDDR6",
     "purpose": "Геймінг",
-    "coolingType": "Активний"
+    "coolingType": "Активне"
   },
   "10003": {
     "name": "NVIDIA GeForce GTX 1660 Super",
@@ -36,7 +36,7 @@
     "memorySize": "6GB",
     "memoryType": "GDDR6",
     "purpose": "Геймінг",
-    "coolingType": "Активний"
+    "coolingType": "Активне"
   },
   "10004": {
     "name": "AMD Radeon RX 570",
@@ -49,7 +49,7 @@
     "memorySize": "4GB",
     "memoryType": "GDDR5",
     "purpose": "Геймінг",
-    "coolingType": "Активний"
+    "coolingType": "Активне"
   },
   "10005": {
     "name": "NVIDIA Quadro P2200",
@@ -62,7 +62,7 @@
     "memorySize": "5GB",
     "memoryType": "GDDR5X",
     "purpose": "Офісний",
-    "coolingType": "Активний"
+    "coolingType": "Активне"
   },
   "10006": {
     "name": "AMD Radeon Pro WX 7100",
@@ -75,7 +75,7 @@
     "memorySize": "8GB",
     "memoryType": "GDDR5",
     "purpose": "Офісний",
-    "coolingType": "Активний"
+    "coolingType": "Активне"
   },
   "10007": {
     "name": "Intel Iris Xe MAX",
@@ -88,7 +88,7 @@
     "memorySize": "4GB",
     "memoryType": "LPDDR4X",
     "purpose": "Майнінг",
-    "coolingType": "Пасивний"
+    "coolingType": "Пасивне"
   },
   "10008": {
     "name": "NVIDIA GeForce RTX 3090",
@@ -101,6 +101,6 @@
     "memorySize": "24GB",
     "memoryType": "GDDR6X",
     "purpose": "Геймінг",
-    "coolingType": "Активний"
+    "coolingType": "Активне"
   }
 }
