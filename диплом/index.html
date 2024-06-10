@@ -63,10 +63,10 @@
             <form>
                 <div class="container">
                     <label for="phoneLogin"><b>Номер телефону</b></label>
-                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
+                    <input type="tel" id="phoneLogin" placeholder="Введіть ваш номер телефону" name="phone" required>
                     
                     <label for="pswLogin"><b>Пароль</b></label>
-                    <input type="password" placeholder="Пароль" name="psw" required>
+                    <input type="password" id="pswLogin" placeholder="Пароль" name="psw" required>
                     
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
@@ -89,13 +89,13 @@
             <form>
                 <div class="container">
                     <label for="phoneRegister"><b>Введіть номер вашого телефону</b></label>
-                    <input type="tel" placeholder="Введіть ваш номер телефону" name="phone" required>
+                    <input type="tel" id="phoneRegister" placeholder="Введіть ваш номер телефону" name="phone" required>
                     
                     <label for="emailRegister"><b>Введіть ваш email</b></label>
-                    <input type="email" placeholder="Введіть ваш email" name="email" required>
+                    <input type="email" id="emailRegister" placeholder="Введіть ваш email" name="email" required>
                     
                     <label for="pswRegister"><b>Придумайте пароль</b></label>
-                    <input type="password" placeholder="Пароль" name="psw" required>
+                    <input type="password" id="pswRegister" placeholder="Пароль" name="psw" required>
                     
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Запам'ятати мене
@@ -132,22 +132,22 @@
             <span class="close" onclick="document.getElementById('sortMenu').style.display='none'">&times;</span>
             <h1>Сортування відеокарт</h1>
             <form id="sortForm">
-                <label for="brand">Бренд:</label>
-                <select id="brand" name="brand">
+                <label for="sortBrand">Бренд:</label>
+                <select id="sortBrand" name="brand">
                     <option value="">Будь-який</option>
                     <option value="NVIDIA">NVIDIA</option>
                     <option value="AMD">AMD</option>
                     <option value="Intel">Intel</option>
                 </select>
-                <label for="gpuManufacturer">Виробник графічного процесора:</label>
-                <select id="gpuManufacturer" name="gpuManufacturer">
+                <label for="sortGpuManufacturer">Виробник графічного процесора:</label>
+                <select id="sortGpuManufacturer" name="gpuManufacturer">
                     <option value="">Будь-який</option>
                     <option value="NVIDIA">NVIDIA</option>
                     <option value="AMD">AMD</option>
                     <option value="Intel">Intel</option>
                 </select>
-                <label for="memoryType">Тип пам'яті:</label>
-                <select id="memoryType" name="memoryType">
+                <label for="sortMemoryType">Тип пам'яті:</label>
+                <select id="sortMemoryType" name="memoryType">
                     <option value="">Будь-який</option>
                     <option value="GDDR6X">GDDR6X</option>
                     <option value="GDDR6">GDDR6</option>
@@ -155,15 +155,15 @@
                     <option value="GDDR5">GDDR5</option>
                     <option value="LPDDR4X">LPDDR4X</option>
                 </select>
-                <label for="purpose">Призначення:</label>
-                <select id="purpose" name="purpose">
+                <label for="sortPurpose">Призначення:</label>
+                <select id="sortPurpose" name="purpose">
                     <option value="">Будь-яке</option>
                     <option value="Gaming">Геймінг</option>
                     <option value="Workstation">Робоча станція</option>
                     <option value="Mining">Майнінг</option>
                 </select>
-                <label for="coolingType">Тип системи охолодження:</label>
-                <select id="coolingType" name="coolingType">
+                <label for="sortCoolingType">Тип системи охолодження:</label>
+                <select id="sortCoolingType" name="coolingType">
                     <option value="">Будь-який</option>
                     <option value="Air">Повітряне</option>
                     <option value="Water">Водяне</option>
