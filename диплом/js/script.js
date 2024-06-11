@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$ (document).ready(function () {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
     var menuLogin = $("#menuLogin");
