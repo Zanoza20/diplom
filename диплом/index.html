@@ -12,7 +12,7 @@
         <span class="support-number">+38 097 69 37 243</span>
         <img src="images/Сортування.png" id="sortIcon" alt="Сортування" class="sort-icon">
         <img src="images/Кошик.png" id="cartIcon" alt="Кошик" class="cart-icon">
-        <img src="images/Профіль.png" id="profileIcon" alt="Профіль" class="profile-icon">
+        <img src="images/Профіль.png" id="profileIcon" alt="Профіль" class="profile-icon" style="display:none;">
     </header>
     
     <button id="loginButton" class="btn">Увійти</button>
@@ -161,20 +161,36 @@
                 <select id="sortPurpose" name="purpose">
                     <option value="">Будь-яке</option>
                     <option value="Геймінг">Геймінг</option>
+                    <option value="Майнинг">Майнинг</option>
                     <option value="Офісний">Офісний</option>
-                    <option value="Майнінг">Майнінг</option>
                 </select>
                 <label for="sortCoolingType">Тип системи охолодження:</label>
                 <select id="sortCoolingType" name="coolingType">
                     <option value="">Будь-який</option>
-                    <option value="Активне">Активне</option>
-                    <option value="Пасивне">Пасивне</option>
+                    <option value="Активна">Активна</option>
+                    <option value="Пасивна">Пасивна</option>
                 </select>
-                <button type="submit" class="sort-btn">Сортувати</button>
+                <button type="submit">Сортувати</button>
             </form>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- User Profile Modal -->
+    <div id="profileMenu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('profileMenu').style.display='none'">&times;</span>
+            <h1>Ваш профіль</h1>
+            <div class="container">
+                <p><b>Email:</b> <span id="profileEmail"></span></p>
+                <p><b>Телефон:</b> <span id="profilePhone"></span></p>
+                <button id="logoutButton">Вийти</button>
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn">Закрити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
