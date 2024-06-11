@@ -1,6 +1,7 @@
-$ (document).ready(function () {
+$(document).ready(function () {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
+    var profileIcon = $("#profileIcon");
     var menuLogin = $("#menuLogin");
     var menuRegister = $("#menuRegister");
     var userRules = $("#userRules");
@@ -225,7 +226,10 @@ $ (document).ready(function () {
         if (user) {
             alert('Вхід успішний');
             menuLogin.hide();
-            // Тут можна додати логіку для перенаправлення на сторінку профілю користувача
+            profileIcon.show();
+            loginButton.hide();
+            registerButton.hide();
+            // Можна додати додаткову логіку для показу інформації профілю
         } else {
             alert('Невірний номер телефону або пароль');
         }
