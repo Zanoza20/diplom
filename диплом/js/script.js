@@ -2,8 +2,8 @@ $(document).ready(function () {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
     var profileIcon = $("#profileIcon");
-    var profileModal = $("#profileModal"); // Додаємо змінну для модального вікна профілю
-    var logoutButton = $("#logoutButton"); // Додаємо змінну для кнопки виходу
+    var profileModal = $("#profileMenu");
+    var logoutButton = $("#logoutButton");
     var menuLogin = $("#menuLogin");
     var menuRegister = $("#menuRegister");
     var userRules = $("#userRules");
@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     var cart = {};
     var goods = {};
+    var currentUser = null;
 
     loginButton.click(function () {
         menuLogin.show();
@@ -38,7 +39,7 @@ $(document).ready(function () {
         userRules.hide();
         itemDetails.hide();
         cartMenu.hide();
-        profileModal.hide(); // Ховаємо модальне вікно профілю при закритті
+        profileModal.hide();
     });
 
     userRulesLink.click(function (event) {
@@ -50,13 +51,11 @@ $(document).ready(function () {
         sortMenu.show();
     });
 
-    // Завантаження товарів
     $.getJSON("goods.json", function (data) {
-        goods = data; // Зберігаємо завантажені товари
+        goods = data;
         displayGoods(data);
     });
 
-    // Показувати деталі товару при натисканні на назву
     function setupItemDetails() {
         $(".item-name").click(function () {
             var key = $(this).data("key");
@@ -77,7 +76,6 @@ $(document).ready(function () {
         });
     }
 
-    // Додавання товару до кошика
     function setupAddToCartButtons() {
         $(".add-to-cart").click(function () {
             var key = $(this).data("key");
@@ -91,7 +89,6 @@ $(document).ready(function () {
         });
     }
 
-    // Відображення товарів
     function displayGoods(data) {
         var goodsContainer = $("#goods");
         goodsContainer.empty();
@@ -109,7 +106,6 @@ $(document).ready(function () {
         setupAddToCartButtons();
     }
 
-    // Функціональність пошуку
     searchField.on("input", function () {
         var searchText = $(this).val().toLowerCase();
         var filteredGoods = {};
@@ -122,7 +118,6 @@ $(document).ready(function () {
         displayGoods(filteredGoods);
     });
 
-    // Функціональність сортування
     sortForm.on("submit", function (event) {
         event.preventDefault();
 
@@ -150,7 +145,6 @@ $(document).ready(function () {
         sortMenu.hide();
     });
 
-    // Оновлення кошика
     function updateCart() {
         cartItems.empty();
         var total = 0;
@@ -177,7 +171,7 @@ $(document).ready(function () {
         cartMenu.show();
     });
 
-    closeCartButton.click(function () { // Додаємо обробник кліку для закриття кошика
+    closeCartButton.click(function () {
         cartMenu.hide();
     });
 
@@ -197,7 +191,6 @@ $(document).ready(function () {
         }
     });
 
-    // Реєстрація користувача
     $("#menuRegister form").submit(function (event) {
         event.preventDefault();
         var phone = $("#phoneRegister").val();
@@ -217,7 +210,6 @@ $(document).ready(function () {
         }
     });
 
-    // Вхід користувача
     $("#menuLogin form").submit(function (event) {
         event.preventDefault();
         var phone = $("#phoneLogin").val();
@@ -232,7 +224,9 @@ $(document).ready(function () {
             profileIcon.show();
             loginButton.hide();
             registerButton.hide();
-            // Можна додати додаткову логіку для показу інформації профілю
+            currentUser = user;
+            $("#profileEmail").text(user.email);
+            $("#profilePhone").text(user.phone);
         } else {
             alert('Невірний номер телефону або пароль');
         }
@@ -243,6 +237,7 @@ $(document).ready(function () {
     });
 
     logoutButton.click(function () {
+        currentUser = null;
         profileModal.hide();
         profileIcon.hide();
         loginButton.show();
