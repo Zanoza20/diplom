@@ -12,7 +12,6 @@
         <span class="support-number">+38 097 69 37 243</span>
         <img src="images/Сортування.png" id="sortIcon" alt="Сортування" class="sort-icon">
         <img src="images/Кошик.png" id="cartIcon" alt="Кошик" class="cart-icon">
-        <img src="images/Профіль.png" id="profileIcon" alt="Профіль" class="profile-icon" style="display:none;">
     </header>
     
     <button id="loginButton" class="btn">Увійти</button>
@@ -29,7 +28,7 @@
             <div id="totalPrice">Загальна сума: ₴0</div>
             <button id="clearCartButton" class="clear-cart-btn">Очистити кошик</button>
             <button id="orderButton" class="order-btn">Оформити замовлення</button>
-            <button id="closeCartButton" class="close-cart-btn">Закрити кошик</button>
+<button id="closeCartButton" class="close-cart-btn">Закрити кошик</button>
         </div>
     </div>
 
@@ -159,7 +158,7 @@
                 </select>
                 <label for="sortPurpose">Призначення:</label>
                 <select id="sortPurpose" name="purpose">
-                    <option value="">Будь-який</option>
+                    <option value="">Будь-яке</option>
                     <option value="Геймінг">Геймінг</option>
                     <option value="Офісний">Офісний</option>
                     <option value="Майнінг">Майнінг</option>
@@ -170,13 +169,7 @@
                     <option value="Активне">Активне</option>
                     <option value="Пасивне">Пасивне</option>
                 </select>
-                <label for="sortMemorySize">Обсяг пам'яті:</label>
-                <input type="number" id="sortMemorySize" name="memorySize" placeholder="Введіть обсяг пам'яті">
-
-                <label for="sortPrice">Ціна:</label>
-                <input type="number" id="sortPrice" name="price" placeholder="Введіть ціну">
-
-                <button type="button" id="sortButton">Сортувати</button>
+                <button type="submit" class="sort-btn">Сортувати</button>
             </form>
         </div>
     </div>
