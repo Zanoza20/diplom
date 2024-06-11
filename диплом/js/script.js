@@ -2,6 +2,8 @@ $(document).ready(function () {
     var loginButton = $("#loginButton");
     var registerButton = $("#registerButton");
     var profileIcon = $("#profileIcon");
+    var profileModal = $("#profileModal"); // Додаємо змінну для модального вікна профілю
+    var logoutButton = $("#logoutButton"); // Додаємо змінну для кнопки виходу
     var menuLogin = $("#menuLogin");
     var menuRegister = $("#menuRegister");
     var userRules = $("#userRules");
@@ -36,6 +38,7 @@ $(document).ready(function () {
         userRules.hide();
         itemDetails.hide();
         cartMenu.hide();
+        profileModal.hide(); // Ховаємо модальне вікно профілю при закритті
     });
 
     userRulesLink.click(function (event) {
@@ -233,5 +236,16 @@ $(document).ready(function () {
         } else {
             alert('Невірний номер телефону або пароль');
         }
+    });
+
+    profileIcon.click(function () {
+        profileModal.show();
+    });
+
+    logoutButton.click(function () {
+        profileModal.hide();
+        profileIcon.hide();
+        loginButton.show();
+        registerButton.show();
     });
 });
