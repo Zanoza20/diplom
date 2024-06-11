@@ -78,6 +78,11 @@ $(document).ready(function () {
 
     function setupAddToCartButtons() {
         $(".add-to-cart").click(function () {
+            if (!currentUser) {
+                alert("Ви повинні увійти в акаунт, щоб додати товар до кошика.");
+                return;
+            }
+
             var key = $(this).data("key");
             if (cart[key]) {
                 cart[key].quantity += 1;
