@@ -29,6 +29,8 @@ $(document).ready(function () {
     var deleteItemModal = $("#deleteItemModal");
     var addItemForm = $("#addItemForm");
     var deleteItemForm = $("#deleteItemForm");
+    var closeAddItemModalButton = $("#closeAddItemModalButton");
+    var closeDeleteItemModalButton = $("#closeDeleteItemModalButton");
 
     var cart = {};
     var goods = {};
@@ -335,5 +337,13 @@ $(document).ready(function () {
         } else {
             alert('Товар з таким ключем не знайдено');
         }
+    });
+
+    closeAddItemModalButton.click(function () {
+        addItemModal.hide();
+    });
+
+    closeDeleteItemModalButton.click(function () {
+        deleteItemModal.hide();
     });
 });
