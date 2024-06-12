@@ -25,6 +25,11 @@ $(document).ready(function () {
     var editIcon = $("#editIcon");
     var deleteIcon = $("#deleteIcon");
 
+    var addItemModal = $("#addItemModal");
+    var deleteItemModal = $("#deleteItemModal");
+    var addItemForm = $("#addItemForm");
+    var deleteItemForm = $("#deleteItemForm");
+
     var cart = {};
     var goods = {};
     var currentUser = null;
@@ -52,6 +57,8 @@ $(document).ready(function () {
         itemDetails.hide();
         cartMenu.hide();
         profileModal.hide();
+        addItemModal.hide();
+        deleteItemModal.hide();
     });
 
     userRulesLink.click(function (event) {
@@ -236,7 +243,7 @@ $(document).ready(function () {
             // Вхід як адміністратор
             adminJournalIcon.show();
             alert('Вхід як адміністратор успішний');
-          profileIcon.show();
+            profileIcon.show();
             loginButton.hide();
             registerButton.hide();
             adminJournalIcon.show();
@@ -253,9 +260,9 @@ $(document).ready(function () {
                 alert('Вхід успішний');
                 menuLogin.hide();
                 profileIcon.show();
-   addIcon.hide();
-            editIcon.hide();
-            deleteIcon.hide();
+                addIcon.hide();
+                editIcon.hide();
+                deleteIcon.hide();
                 loginButton.hide();
                 registerButton.hide();
                 currentUser = user;
@@ -275,11 +282,58 @@ $(document).ready(function () {
         currentUser = null;
         profileModal.hide();
         profileIcon.hide();
-   addIcon.hide();
-            editIcon.hide();
-            deleteIcon.hide();
+        addIcon.hide();
+        editIcon.hide();
+        deleteIcon.hide();
         adminJournalIcon.hide();
         loginButton.show();
         registerButton.show();
+    });
+
+    addIcon.click(function () {
+        addItemModal.show();
+    });
+
+    deleteIcon.click(function () {
+        deleteItemModal.show();
+    });
+
+    addItemForm.submit(function (event) {
+        event.preventDefault();
+
+        var newItem = {
+            name: $("#addItemName").val(),
+            description: $("#addItemDescription").val(),
+            brand: $("#addItemBrand").val(),
+            gpuManufacturer: $("#addItemGpuManufacturer").val(),
+            graphicChip: $("#addItemGraphicChip").val(),
+            memorySize: $("#addItemMemorySize").val(),
+            memoryType: $("#addItemMemoryType").val(),
+            purpose: $("#addItemPurpose").val(),
+            coolingType: $("#addItemCoolingType").val(),
+            cost: parseFloat($("#addItemCost").val()),
+            image: $("#addItemImage").val()
+        };
+
+        var newKey = 'item' + (Object.keys(goods).length + 1);
+        goods[newKey] = newItem;
+
+        alert('Товар успішно доданий');
+        addItemModal.hide();
+        displayGoods(goods);
+    });
+
+    deleteItemForm.submit(function (event) {
+        event.preventDefault();
+
+        var keyToDelete = $("#deleteItemKey").val();
+        if (goods[keyToDelete]) {
+            delete goods[keyToDelete];
+            alert('Товар успішно видалений');
+            deleteItemModal.hide();
+            displayGoods(goods);
+        } else {
+            alert('Товар з таким ключем не знайдено');
+        }
     });
 });
