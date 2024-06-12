@@ -26,13 +26,7 @@ $(document).ready(function () {
     var goods = {};
     var currentUser = null;
 
-    var actors = {
-        "Admin": {
-            "phone": "380976937243",
-            "password": "496193202004"
-        },
-        "users": []
-    };
+    var Actors = {};
 
     loginButton.click(function () {
         menuLogin.show();
