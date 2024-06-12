@@ -22,6 +22,11 @@ $(document).ready(function () {
     var closeCartButton = $("#closeCartButton");
     var adminJournalIcon = $("#adminJournalIcon");
 
+    // Нові іконки дій
+    var addIcon = $("#addIcon");
+    var editIcon = $("#editIcon");
+    var deleteIcon = $("#deleteIcon");
+
     var cart = {};
     var goods = {};
     var currentUser = null;
@@ -172,8 +177,11 @@ $(document).ready(function () {
                 '</div>'
             );
         });
-        totalPrice.text("Загальна сума: ₴" + total);
+        totalPrice.text('Загальна сума: ₴' + total);
+        setupRemoveFromCartButtons();
+    }
 
+    function setupRemoveFromCartButtons() {
         $(".remove-from-cart").click(function () {
             var key = $(this).data("key");
             delete cart[key];
@@ -182,11 +190,11 @@ $(document).ready(function () {
     }
 
     cartIcon.click(function () {
+        if (!currentUser) {
+            alert("Ви повинні увійти в акаунт, щоб переглянути кошик.");
+            return;
+        }
         cartMenu.show();
-    });
-
-    closeCartButton.click(function () {
-        cartMenu.hide();
     });
 
     clearCartButton.click(function () {
@@ -195,78 +203,83 @@ $(document).ready(function () {
     });
 
     orderButton.click(function () {
-        if (Object.keys(cart).length === 0) {
-            alert("Ваш кошик порожній!");
-        } else {
-            alert("Замовлення успішно оформлене!");
-            cart = {};
-            updateCart();
-            cartMenu.hide();
-        }
+        alert("Ваше замовлення оформлено.");
+        cart = {};
+        updateCart();
+        cartMenu.hide();
     });
 
-    $("#menuRegister form").submit(function (event) {
-        event.preventDefault();
-        var phone = $("#phoneRegister").val();
-        var email = $("#emailRegister").val();
-        var password = $("#pswRegister").val();
-
-        var users = JSON.parse(localStorage.getItem('users')) || [];
-        var userExists = users.some(user => user.phone === phone);
-
-        if (userExists) {
-            alert('Користувач з таким номером телефону вже існує');
-        } else {
-            users.push({ phone, email, password });
-            localStorage.setItem('users', JSON.stringify(users));
-            alert('Реєстрація пройшла успішно');
-            menuRegister.hide();
-        }
+    closeCartButton.click(function () {
+        cartMenu.hide();
     });
 
-    $("#menuLogin form").submit(function (event) {
+    logoutButton.click(function () {
+        currentUser = null;
+        profileIcon.hide();
+        loginButton.show();
+        registerButton.show();
+        adminJournalIcon.hide();
+        addIcon.hide();
+        editIcon.hide();
+        deleteIcon.hide();
+        alert("Ви вийшли з акаунту.");
+    });
+
+    // Перевірка входу адміністратора
+    $("#menuLogin form").on("submit", function (event) {
         event.preventDefault();
         var phone = $("#phoneLogin").val();
         var password = $("#pswLogin").val();
 
         if (phone === actors.Admin.phone && password === actors.Admin.password) {
-            // Вхід як адміністратор
-            adminJournalIcon.show();
-            alert('Вхід як адміністратор успішний');
-            menuLogin.hide();
+            currentUser = actors.Admin;
             profileIcon.show();
             loginButton.hide();
             registerButton.hide();
-            currentUser = actors.Admin;
+            adminJournalIcon.show();
+            addIcon.show();
+            editIcon.show();
+            deleteIcon.show();
+            menuLogin.hide();
+            alert("Ви увійшли як адміністратор.");
         } else {
-            var users = JSON.parse(localStorage.getItem('users')) || [];
-            var user = users.find(user => user.phone === phone && user.password === password);
-
-            if (user) {
-                alert('Вхід успішний');
-                menuLogin.hide();
-                profileIcon.show();
-                loginButton.hide();
-                registerButton.hide();
-                currentUser = user;
-                $("#profileEmail").text(user.email);
-                $("#profilePhone").text(user.phone);
-            } else {
-                alert('Невірний номер телефону або пароль');
-            }
+            alert("Невірний номер телефону або пароль.");
         }
     });
 
-    profileIcon.click(function () {
-        profileModal.show();
+    // Реєстрація нового користувача
+    $("#menuRegister form").on("submit", function (event) {
+        event.preventDefault();
+        var newUser = {
+            phone: $("#phoneRegister").val(),
+            email: $("#emailRegister").val(),
+            password: $("#pswRegister").val()
+        };
+
+        actors.users.push(newUser);
+        alert("Ви успішно зареєструвались. Тепер ви можете увійти.");
+        menuRegister.hide();
     });
 
-    logoutButton.click(function () {
-        currentUser = null;
-        profileModal.hide();
-        profileIcon.hide();
-        adminJournalIcon.hide();
-        loginButton.show();
-        registerButton.show();
+    // Перевірка входу користувача
+    $("#menuLogin form").on("submit", function (event) {
+        event.preventDefault();
+        var phone = $("#phoneLogin").val();
+        var password = $("#pswLogin").val();
+
+        var user = actors.users.find(function (user) {
+            return user.phone === phone && user.password === password;
+        });
+
+        if (user) {
+            currentUser = user;
+            profileIcon.show();
+            loginButton.hide();
+            registerButton.hide();
+            menuLogin.hide();
+            alert("Ви увійшли в акаунт.");
+        } else {
+            alert("Невірний номер телефону або пароль.");
+        }
     });
 });
