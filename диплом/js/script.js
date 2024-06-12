@@ -233,10 +233,14 @@ $(document).ready(function () {
             // Вхід як адміністратор
             adminJournalIcon.show();
             alert('Вхід як адміністратор успішний');
-            menuLogin.hide();
-            profileIcon.show();
+          profileIcon.show();
             loginButton.hide();
             registerButton.hide();
+            adminJournalIcon.show();
+            addIcon.show();
+            editIcon.show();
+            deleteIcon.show();
+            menuLogin.hide();
             currentUser = actors.Admin;
         } else {
             var users = JSON.parse(localStorage.getItem('users')) || [];
