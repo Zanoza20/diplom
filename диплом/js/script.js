@@ -31,6 +31,7 @@ $(document).ready(function () {
     var deleteItemForm = $("#deleteItemForm");
     var closeAddItemModalButton = $("#closeAddItemModalButton");
     var closeDeleteItemModalButton = $("#closeDeleteItemModalButton");
+    var deleteItemSelect = $("#deleteItemSelect");
 
     var cart = {};
     var goods = {};
@@ -130,6 +131,16 @@ $(document).ready(function () {
         });
         setupItemDetails();
         setupAddToCartButtons();
+        updateDeleteItemSelect();
+    }
+
+    function updateDeleteItemSelect() {
+        deleteItemSelect.empty();
+        $.each(goods, function (key, value) {
+            deleteItemSelect.append(
+                '<option value="' + key + '">' + value.name + '</option>'
+            );
+        });
     }
 
     searchField.on("input", function () {
@@ -297,6 +308,7 @@ $(document).ready(function () {
     });
 
     deleteIcon.click(function () {
+        updateDeleteItemSelect();
         deleteItemModal.show();
     });
 
@@ -328,7 +340,7 @@ $(document).ready(function () {
     deleteItemForm.submit(function (event) {
         event.preventDefault();
 
-        var keyToDelete = $("#deleteItemKey").val();
+        var keyToDelete = $("#deleteItemSelect").val();
         if (goods[keyToDelete]) {
             delete goods[keyToDelete];
             alert('Товар успішно видалений');
