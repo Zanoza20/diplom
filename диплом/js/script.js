@@ -253,6 +253,9 @@ $(document).ready(function () {
                 alert('Вхід успішний');
                 menuLogin.hide();
                 profileIcon.show();
+   addIcon.hide();
+            editIcon.hide();
+            deleteIcon.hide();
                 loginButton.hide();
                 registerButton.hide();
                 currentUser = user;
