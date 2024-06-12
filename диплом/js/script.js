@@ -275,6 +275,9 @@ $(document).ready(function () {
         currentUser = null;
         profileModal.hide();
         profileIcon.hide();
+   addIcon.hide();
+            editIcon.hide();
+            deleteIcon.hide();
         adminJournalIcon.hide();
         loginButton.show();
         registerButton.show();
