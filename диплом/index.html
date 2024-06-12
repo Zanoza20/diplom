@@ -7,17 +7,17 @@
 </head>
 <body>
     <header class="top-bar">
-    <img src="images/Logo.png" alt="Логотип" class="logo">
-    <input type="text" id="searchField" placeholder="Пошук товару..." class="search-field">
-    <span class="support-number">+38 097 69 37 243</span>
-    <img src="images/Сортування.png" id="sortIcon" alt="Сортування" class="sort-icon">
-    <img src="images/Кошик.png" id="cartIcon" alt="Кошик" class="cart-icon">
-    <img src="images/Профіль.png" id="profileIcon" alt="Профіль" class="profile-icon" style="display:none;">
-    <img src="images/Додавання.png" id="addIcon" alt="Додати" class="action-icon" style="display:none;">
-    <img src="images/Редагування.png" id="editIcon" alt="Редагувати" class="action-icon" style="display:none;">
-    <img src="images/Мусор.png" id="deleteIcon" alt="Видалити" class="action-icon" style="display:none;">
-    <img src="images/Журнал.png" id="adminJournalIcon" alt="Журнал" class="admin-journal-icon" style="display:none;">
-</header>
+        <img src="images/Logo.png" alt="Логотип" class="logo">
+        <input type="text" id="searchField" placeholder="Пошук товару..." class="search-field">
+        <span class="support-number">+38 097 69 37 243</span>
+        <img src="images/Сортування.png" id="sortIcon" alt="Сортування" class="sort-icon">
+        <img src="images/Кошик.png" id="cartIcon" alt="Кошик" class="cart-icon">
+        <img src="images/Профіль.png" id="profileIcon" alt="Профіль" class="profile-icon" style="display:none;">
+        <img src="images/Додавання.png" id="addIcon" alt="Додати" class="action-icon" style="display:none;">
+        <img src="images/Редагування.png" id="editIcon" alt="Редагувати" class="action-icon" style="display:none;">
+        <img src="images/Мусор.png" id="deleteIcon" alt="Видалити" class="action-icon" style="display:none;">
+        <img src="images/Журнал.png" id="adminJournalIcon" alt="Журнал" class="admin-journal-icon" style="display:none;">
+    </header>
     
     <button id="loginButton" class="btn">Увійти</button>
     <button id="registerButton" class="btn">Зареєструватись</button>
@@ -194,7 +194,65 @@
             </div>
         </div>
     </div>
+
+    <!-- Add Item Modal -->
+    <div id="addItemModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('addItemModal').style.display='none'">&times;</span>
+            <h1>Додати новий товар</h1>
+            <form id="addItemForm">
+                <label for="itemNameInput">Назва товару:</label>
+                <input type="text" id="itemNameInput" name="name" required>
+                
+                <label for="itemDescriptionInput">Опис товару:</label>
+                <textarea id="itemDescriptionInput" name="description" required></textarea>
+                
+                <label for="itemPriceInput">Ціна товару:</label>
+                <input type="number" id="itemPriceInput" name="price" required>
+                
+                <label for="itemImageInput">Посилання на зображення:</label>
+                <input type="text" id="itemImageInput" name="image" required>
+                
+                <label for="itemBrandInput">Бренд:</label>
+                <input type="text" id="itemBrandInput" name="brand" required>
+                
+                <label for="itemGpuManufacturerInput">Виробник графічного процессора:</label>
+                <input type="text" id="itemGpuManufacturerInput" name="gpuManufacturer" required>
+                
+                <label for="itemGraphicChipInput">Графічний чип:</label>
+                <input type="text" id="itemGraphicChipInput" name="graphicChip" required>
+                
+                <label for="itemMemorySizeInput">Обсяг пам'яті:</label>
+                <input type="text" id="itemMemorySizeInput" name="memorySize" required>
+                
+                <label for="itemMemoryTypeInput">Тип пам'яті:</label>
+                <input type="text" id="itemMemoryTypeInput" name="memoryType" required>
+                
+                <label for="itemPurposeInput">Призначення:</label>
+                <input type="text" id="itemPurposeInput" name="purpose" required>
+                
+                <label for="itemCoolingTypeInput">Тип системи охолодження:</label>
+                <input type="text" id="itemCoolingTypeInput" name="coolingType" required>
+                
+                <button type="submit">Додати товар</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Item Modal -->
+    <div id="deleteItemModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('deleteItemModal').style.display='none'">&times;</span>
+            <h1>Видалити товар</h1>
+            <form id="deleteItemForm">
+                <label for="deleteItemNameInput">Назва товару:</label>
+                <input type="text" id="deleteItemNameInput" name="name" required>
+                <button type="submit">Видалити товар</button>
+            </form>
+        </div>
+    </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
