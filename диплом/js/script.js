@@ -25,8 +25,11 @@ $(document).ready(function () {
     var cart = {};
     var goods = {};
     var currentUser = null;
+    var actors = {};
 
-    var Actors = {};
+    $.getJSON("Actors.json", function (data) {
+        actors = data;
+    });
 
     loginButton.click(function () {
         menuLogin.show();
@@ -205,16 +208,22 @@ $(document).ready(function () {
         var email = $("#emailRegister").val();
         var password = $("#pswRegister").val();
 
-        var users = JSON.parse(localStorage.getItem('users')) || [];
-        var userExists = users.some(user => user.phone === phone);
+        var userExists = actors.users.some(user => user.phone === phone);
 
         if (userExists) {
             alert('Користувач з таким номером телефону вже існує');
         } else {
-            users.push({ phone, email, password });
-            localStorage.setItem('users', JSON.stringify(users));
-            alert('Реєстрація пройшла успішно');
-            menuRegister.hide();
+            actors.users.push({ phone, email, password });
+            $.ajax({
+                url: 'Actors.json',
+                type: 'PUT',
+                data: JSON.stringify(actors),
+                contentType: 'application/json',
+                success: function () {
+                    alert('Реєстрація пройшла успішно');
+                    menuRegister.hide();
+                }
+            });
         }
     });
 
@@ -233,8 +242,7 @@ $(document).ready(function () {
             registerButton.hide();
             currentUser = actors.Admin;
         } else {
-            var users = JSON.parse(localStorage.getItem('users')) || [];
-            var user = users.find(user => user.phone === phone && user.password === password);
+            var user = actors.users.find(user => user.phone === phone && user.password === password);
 
             if (user) {
                 alert('Вхід успішний');
