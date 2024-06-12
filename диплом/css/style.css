@@ -74,14 +74,16 @@ body {
 
 /* New action icons styles */
 .action-icon {
-    width: 32px; /* Set desired size */
-    height: 32px;
+     width: 50px; /* Adjust the width as needed */
+    height: auto; /* Keep the aspect ratio */
     cursor: pointer;
     display: none; /* Initially hidden */
 }
 
 #addIcon {
     position: fixed;
+ width: 50px; /* Adjust the width as needed */
+    height: auto; /* Keep the aspect ratio */
     bottom: 80px; /* Adjust distance from bottom of the screen */
     left: 20px; /* Align with the admin journal icon */
     z-index: 1001; /* Ensure it is on top */
@@ -92,6 +94,8 @@ body {
     bottom: 120px; /* Adjust distance from bottom of the screen */
     left: 20px; /* Align with the admin journal icon */
     z-index: 1001; /* Ensure it is on top */
+ width: 50px; /* Adjust the width as needed */
+    height: auto; /* Keep the aspect ratio */
 }
 
 #deleteIcon {
@@ -99,6 +103,8 @@ body {
     bottom: 160px; /* Adjust distance from bottom of the screen */
     left: 20px; /* Align with the admin journal icon */
     z-index: 1001; /* Ensure it is on top */
+ width: 50px; /* Adjust the width as needed */
+    height: auto; /* Keep the aspect ratio */
 }
 
 .btn {
