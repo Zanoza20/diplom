@@ -241,16 +241,16 @@
 
     <!-- Delete Item Modal -->
     <div id="deleteItemModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="document.getElementById('deleteItemModal').style.display='none'">&times;</span>
-            <h1>Видалити товар</h1>
-            <form id="deleteItemForm">
-                <label for="deleteItemNameInput">Назва товару:</label>
-                <input type="text" id="deleteItemNameInput" name="name" required>
-                <button type="submit">Видалити товар</button>
-            </form>
-        </div>
+    <div class="modal-content">
+        <span class="close" id="closeDeleteItemModalButton">&times;</span>
+        <form id="deleteItemForm">
+            <label for="deleteItemSelect">Виберіть товар для видалення:</label>
+            <select id="deleteItemSelect"></select>
+            <button type="submit">Видалити</button>
+        </form>
     </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/script.js"></script>
