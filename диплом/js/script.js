@@ -20,10 +20,19 @@ $(document).ready(function () {
     var sortMenu = $("#sortMenu");
     var sortForm = $("#sortForm");
     var closeCartButton = $("#closeCartButton");
+    var adminJournalIcon = $("#adminJournalIcon");
 
     var cart = {};
     var goods = {};
     var currentUser = null;
+
+    var actors = {
+        "Admin": {
+            "phone": "380976937243",
+            "password": "496193202004"
+        },
+        "users": []
+    };
 
     loginButton.click(function () {
         menuLogin.show();
@@ -220,20 +229,31 @@ $(document).ready(function () {
         var phone = $("#phoneLogin").val();
         var password = $("#pswLogin").val();
 
-        var users = JSON.parse(localStorage.getItem('users')) || [];
-        var user = users.find(user => user.phone === phone && user.password === password);
-
-        if (user) {
-            alert('Вхід успішний');
+        if (phone === actors.Admin.phone && password === actors.Admin.password) {
+            // Вхід як адміністратор
+            adminJournalIcon.show();
+            alert('Вхід як адміністратор успішний');
             menuLogin.hide();
             profileIcon.show();
             loginButton.hide();
             registerButton.hide();
-            currentUser = user;
-            $("#profileEmail").text(user.email);
-            $("#profilePhone").text(user.phone);
+            currentUser = actors.Admin;
         } else {
-            alert('Невірний номер телефону або пароль');
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+            var user = users.find(user => user.phone === phone && user.password === password);
+
+            if (user) {
+                alert('Вхід успішний');
+                menuLogin.hide();
+                profileIcon.show();
+                loginButton.hide();
+                registerButton.hide();
+                currentUser = user;
+                $("#profileEmail").text(user.email);
+                $("#profilePhone").text(user.phone);
+            } else {
+                alert('Невірний номер телефону або пароль');
+            }
         }
     });
 
@@ -245,6 +265,7 @@ $(document).ready(function () {
         currentUser = null;
         profileModal.hide();
         profileIcon.hide();
+        adminJournalIcon.hide();
         loginButton.show();
         registerButton.show();
     });
