@@ -61,7 +61,15 @@ width: 50px;
     height: 50px;
     cursor: pointer;
 }
-
+#adminJournalIcon {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom of the screen */
+    left: 20px;  /* Adjust the distance from the left side of the screen */
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Keep the aspect ratio */
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it is on top */
+}
 .btn {
     position: fixed;
     z-index: 999;
