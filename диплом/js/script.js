@@ -21,6 +21,9 @@ $(document).ready(function () {
     var sortForm = $("#sortForm");
     var closeCartButton = $("#closeCartButton");
     var adminJournalIcon = $("#adminJournalIcon");
+    var addIcon = $("#addIcon");
+    var editIcon = $("#editIcon");
+    var deleteIcon = $("#deleteIcon");
 
     var cart = {};
     var goods = {};
