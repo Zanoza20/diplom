@@ -27,18 +27,18 @@ $(document).ready(function () {
 
     var addItemModal = $("#addItemModal");
     var deleteItemModal = $("#deleteItemModal");
-    var editItemModal = $("#editItemModal"); // Нове модальне вікно для редагування
+    var editItemModal = $("#editItemModal");
     var addItemForm = $("#addItemForm");
     var deleteItemForm = $("#deleteItemForm");
-    var editItemForm = $("#editItemForm"); // Нова форма для редагування
+    var editItemForm = $("#editItemForm");
     var closeAddItemModalButton = $("#closeAddItemModalButton");
     var closeDeleteItemModalButton = $("#closeDeleteItemModalButton");
-    var closeEditItemModalButton = $("#closeEditItemModalButton"); // Нова кнопка закриття для модального вікна редагування
+    var closeEditItemModalButton = $("#closeEditItemModalButton");
     var deleteItemSelect = $("#deleteItemSelect");
-    var editItemSelect = $("#editItemSelect"); // Новий селект для редагування товарів
+    var editItemSelect = $("#editItemSelect");
     var addItemCloseButton = $("#addItemCloseButton");
     var deleteItemCloseButton = $("#deleteItemCloseButton");
-    var editItemCloseButton = $("#editItemCloseButton"); // Нова кнопка закриття для модального вікна редагування
+    var editItemCloseButton = $("#editItemCloseButton");
 
     var cart = {};
     var goods = JSON.parse(localStorage.getItem('goods')) || {};
@@ -69,7 +69,7 @@ $(document).ready(function () {
         profileModal.hide();
         addItemModal.hide();
         deleteItemModal.hide();
-        editItemModal.hide(); // Додаємо закриття модального вікна редагування
+        editItemModal.hide();
     });
 
     userRulesLink.click(function (event) {
@@ -135,7 +135,7 @@ $(document).ready(function () {
         setupItemDetails();
         setupAddToCartButtons();
         updateDeleteItemSelect();
-        updateEditItemSelect(); // Оновлюємо селект редагування товарів
+        updateEditItemSelect();
     }
 
     function updateDeleteItemSelect() {
@@ -234,6 +234,28 @@ $(document).ready(function () {
         if (Object.keys(cart).length === 0) {
             alert("Ваш кошик порожній!");
         } else {
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+            var user = currentUser;
+            var orderItems = [];
+            var total = 0;
+
+            $.each(cart, function (key, item) {
+                orderItems.push(item.name);
+                total += item.cost * item.quantity;
+            });
+
+            var newOrder = {
+                time: new Date().toLocaleString(),
+                phone: user.phone,
+                email: user.email,
+                items: orderItems.join(", "),
+                total: total
+            };
+
+            var orders = JSON.parse(localStorage.getItem('orders')) || [];
+            orders.push(newOrder);
+            localStorage.setItem('orders', JSON.stringify(orders));
+
             alert("Замовлення успішно оформлене!");
             cart = {};
             updateCart();
@@ -266,7 +288,6 @@ $(document).ready(function () {
         var password = $("#pswLogin").val();
 
         if (phone === actors.Admin.phone && password === actors.Admin.password) {
-            // Вхід як адміністратор
             adminJournalIcon.show();
             alert('Вхід як адміністратор успішний');
             profileIcon.show();
@@ -423,6 +444,27 @@ $(document).ready(function () {
         editItemModal.hide();
     });
 
-    // Ініціалізація показу товарів
+    adminJournalIcon.click(function () {
+        var users = JSON.parse(localStorage.getItem('users')) || [];
+        var orders = JSON.parse(localStorage.getItem('orders')) || [];
+        
+        var userSection = "<h3>Користувачі</h3><ul>";
+        users.forEach(function(user) {
+            userSection += "<li>Телефон: " + user.phone + ", Email: " + user.email + "</li>";
+        });
+        userSection += "</ul>";
+
+        var orderSection = "<h3>Замовлення</h3><ul>";
+        orders.forEach(function(order) {
+            orderSection += "<li>У " + order.time + " користувач за номером " + order.phone + " та почтою " + order.email + " оформив замовлення на " + order.items + " ціною в ₴" + order.total + "</li>";
+        });
+        orderSection += "</ul>";
+
+        var journalContent = userSection + orderSection;
+        var journalModal = $("<div>").attr("id", "journalModal").html(journalContent);
+        $("body").append(journalModal);
+        journalModal.show();
+    });
+
     displayGoods(goods);
 });
