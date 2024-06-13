@@ -34,7 +34,7 @@ $(document).ready(function () {
     var deleteItemSelect = $("#deleteItemSelect");
 
     var cart = {};
-    var goods = {};
+    var goods = JSON.parse(localStorage.getItem('goods')) || {};
     var currentUser = null;
 
     var actors = {
@@ -71,11 +71,6 @@ $(document).ready(function () {
 
     sortIcon.click(function () {
         sortMenu.show();
-    });
-
-    $.getJSON("goods.json", function (data) {
-        goods = data;
-        displayGoods(data);
     });
 
     function setupItemDetails() {
@@ -332,6 +327,8 @@ $(document).ready(function () {
         var newKey = 'item' + (Object.keys(goods).length + 1);
         goods[newKey] = newItem;
 
+        localStorage.setItem('goods', JSON.stringify(goods));
+
         alert('Товар успішно доданий');
         addItemModal.hide();
         displayGoods(goods);
@@ -343,6 +340,7 @@ $(document).ready(function () {
         var keyToDelete = $("#deleteItemSelect").val();
         if (goods[keyToDelete]) {
             delete goods[keyToDelete];
+            localStorage.setItem('goods', JSON.stringify(goods));
             alert('Товар успішно видалений');
             deleteItemModal.hide();
             displayGoods(goods);
@@ -358,4 +356,7 @@ $(document).ready(function () {
     closeDeleteItemModalButton.click(function () {
         deleteItemModal.hide();
     });
+
+    // Ініціалізація показу товарів
+    displayGoods(goods);
 });
