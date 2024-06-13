@@ -195,53 +195,76 @@
         </div>
     </div>
 
-    <!-- Add Item Modal -->
-   <!-- Add Item Modal -->
-<div id="addItemModal" class="modal">
-    <form id="addItemForm" class="modal-content">
-        <div class="container">
-            <h1>Додати товар</h1>
-            <label for="addItemName"><b>Назва</b></label>
+    <div id="addItemModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeAddItemModalButton">&times;</span>
+        <form id="addItemForm">
+            <label for="addItemName">Назва:</label>
             <input type="text" id="addItemName" name="name" required>
 
-            <label for="addItemDescription"><b>Опис</b></label>
-            <input type="text" id="addItemDescription" name="description" required>
+            <label for="addItemDescription">Опис:</label>
+            <textarea id="addItemDescription" name="description" required></textarea>
 
-            <label for="addItemBrand"><b>Бренд</b></label>
-            <select id="addItemBrand" name="brand"></select>
+            <label for="addItemBrand">Бренд:</label>
+            <select id="addItemBrand" name="brand" required>
+                <option value="">Виберіть бренд</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інші бренди -->
+            </select>
 
-            <label for="addItemGpuManufacturer"><b>Виробник GPU</b></label>
-            <select id="addItemGpuManufacturer" name="gpuManufacturer"></select>
+            <label for="addItemGpuManufacturer">Виробник GPU:</label>
+            <select id="addItemGpuManufacturer" name="gpuManufacturer" required>
+                <option value="">Виберіть виробника GPU</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інших виробників GPU -->
+            </select>
 
-            <label for="addItemGraphicChip"><b>Графічний чип</b></label>
-            <select id="addItemGraphicChip" name="graphicChip"></select>
+            <label for="addItemGraphicChip">Графічний чіп:</label>
+            <input type="text" id="addItemGraphicChip" name="graphicChip" required>
 
-            <label for="addItemMemorySize"><b>Розмір пам'яті</b></label>
-            <select id="addItemMemorySize" name="memorySize"></select>
+            <label for="addItemMemorySize">Розмір пам'яті:</label>
+            <input type="text" id="addItemMemorySize" name="memorySize" required>
 
-            <label for="addItemMemoryType"><b>Тип пам'яті</b></label>
-            <select id="addItemMemoryType" name="memoryType"></select>
+            <label for="addItemMemoryType">Тип пам'яті:</label>
+            <select id="addItemMemoryType" name="memoryType" required>
+                <option value="">Виберіть тип пам'яті</option>
+                    <option value="GDDR6X">GDDR6X</option>
+                    <option value="GDDR6">GDDR6</option>
+                    <option value="GDDR5X">GDDR5X</option>
+                    <option value="GDDR5">GDDR5</option>
+                    <option value="LPDDR4X">LPDDR4X</option>
+            </select>
 
-            <label for="addItemPurpose"><b>Призначення</b></label>
-            <select id="addItemPurpose" name="purpose"></select>
+            <label for="addItemPurpose">Призначення:</label>
+            <select id="addItemPurpose" name="purpose" required>
+                <option value="">Виберіть призначення</option>
+                    <option value="Геймінг">Геймінг</option>
+                    <option value="Майнинг">Майнинг</option>
+                    <option value="Офісний">Офісний</option>
+                <!-- Додати інші призначення -->
+            </select>
 
-            <label for="addItemCoolingType"><b>Тип охолодження</b></label>
-            <select id="addItemCoolingType" name="coolingType"></select>
+            <label for="addItemCoolingType">Тип охолодження:</label>
+            <select id="addItemCoolingType" name="coolingType" required>
+                <option value="">Виберіть тип охолодження</option>
+                    <option value="Активна">Активна</option>
+                    <option value="Пасивна">Пасивна</option>
+            </select>
 
-            <label for="addItemCost"><b>Ціна</b></label>
+            <label for="addItemCost">Ціна:</label>
             <input type="number" id="addItemCost" name="cost" required>
 
-            <label for="addItemImage"><b>Зображення (URL)</b></label>
+            <label for="addItemImage">Посилання на зображення:</label>
             <input type="text" id="addItemImage" name="image" required>
 
-            <div class="clearfix">
-                <button type="button" class="cancelbtn">Відмінити</button>
-                <button type="submit" class="signupbtn">Додати</button>
-            </div>
-        </div>
-    </form>
+            <button type="submit">Додати товар</button>
+        </form>
+    </div>
 </div>
-
 
     <!-- Delete Item Modal -->
     <div id="deleteItemModal" class="modal">
