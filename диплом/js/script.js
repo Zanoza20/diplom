@@ -27,13 +27,18 @@ $(document).ready(function () {
 
     var addItemModal = $("#addItemModal");
     var deleteItemModal = $("#deleteItemModal");
+    var editItemModal = $("#editItemModal"); // Нове модальне вікно для редагування
     var addItemForm = $("#addItemForm");
     var deleteItemForm = $("#deleteItemForm");
+    var editItemForm = $("#editItemForm"); // Нова форма для редагування
     var closeAddItemModalButton = $("#closeAddItemModalButton");
     var closeDeleteItemModalButton = $("#closeDeleteItemModalButton");
+    var closeEditItemModalButton = $("#closeEditItemModalButton"); // Нова кнопка закриття для модального вікна редагування
     var deleteItemSelect = $("#deleteItemSelect");
+    var editItemSelect = $("#editItemSelect"); // Новий селект для редагування товарів
     var addItemCloseButton = $("#addItemCloseButton");
     var deleteItemCloseButton = $("#deleteItemCloseButton");
+    var editItemCloseButton = $("#editItemCloseButton"); // Нова кнопка закриття для модального вікна редагування
 
     var cart = {};
     var goods = JSON.parse(localStorage.getItem('goods')) || {};
@@ -64,6 +69,7 @@ $(document).ready(function () {
         profileModal.hide();
         addItemModal.hide();
         deleteItemModal.hide();
+        editItemModal.hide(); // Додаємо закриття модального вікна редагування
     });
 
     userRulesLink.click(function (event) {
@@ -129,12 +135,22 @@ $(document).ready(function () {
         setupItemDetails();
         setupAddToCartButtons();
         updateDeleteItemSelect();
+        updateEditItemSelect(); // Оновлюємо селект редагування товарів
     }
 
     function updateDeleteItemSelect() {
         deleteItemSelect.empty();
         $.each(goods, function (key, value) {
             deleteItemSelect.append(
+                '<option value="' + key + '">' + value.name + '</option>'
+            );
+        });
+    }
+
+    function updateEditItemSelect() {
+        editItemSelect.empty();
+        $.each(goods, function (key, value) {
+            editItemSelect.append(
                 '<option value="' + key + '">' + value.name + '</option>'
             );
         });
@@ -309,6 +325,11 @@ $(document).ready(function () {
         deleteItemModal.show();
     });
 
+    editIcon.click(function () {
+        updateEditItemSelect();
+        editItemModal.show();
+    });
+
     addItemForm.submit(function (event) {
         event.preventDefault();
 
@@ -351,6 +372,33 @@ $(document).ready(function () {
         }
     });
 
+    editItemForm.submit(function (event) {
+        event.preventDefault();
+
+        var keyToEdit = $("#editItemSelect").val();
+        if (goods[keyToEdit]) {
+            goods[keyToEdit].name = $("#editItemName").val();
+            goods[keyToEdit].description = $("#editItemDescription").val();
+            goods[keyToEdit].brand = $("#editItemBrand").val();
+            goods[keyToEdit].gpuManufacturer = $("#editItemGpuManufacturer").val();
+            goods[keyToEdit].graphicChip = $("#editItemGraphicChip").val();
+            goods[keyToEdit].memorySize = $("#editItemMemorySize").val();
+            goods[keyToEdit].memoryType = $("#editItemMemoryType").val();
+            goods[keyToEdit].purpose = $("#editItemPurpose").val();
+            goods[keyToEdit].coolingType = $("#editItemCoolingType").val();
+            goods[keyToEdit].cost = parseFloat($("#editItemCost").val());
+            goods[keyToEdit].image = $("#editItemImage").val();
+
+            localStorage.setItem('goods', JSON.stringify(goods));
+
+            alert('Товар успішно відредаговано');
+            editItemModal.hide();
+            displayGoods(goods);
+        } else {
+            alert('Товар з таким ключем не знайдено');
+        }
+    });
+
     closeAddItemModalButton.click(function () {
         addItemModal.hide();
     });
@@ -359,12 +407,20 @@ $(document).ready(function () {
         deleteItemModal.hide();
     });
 
+    closeEditItemModalButton.click(function () {
+        editItemModal.hide();
+    });
+
     addItemCloseButton.click(function () {
         addItemModal.hide();
     });
 
     deleteItemCloseButton.click(function () {
         deleteItemModal.hide();
+    });
+
+    editItemCloseButton.click(function () {
+        editItemModal.hide();
     });
 
     // Ініціалізація показу товарів
