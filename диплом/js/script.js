@@ -109,7 +109,7 @@ $(document).ready(function () {
             if (cart[key]) {
                 cart[key].quantity += 1;
             } else {
-                cart[key] = goods[key];
+                cart[key] = Object.assign({}, goods[key]);
                 cart[key].quantity = 1;
             }
             updateCart();
