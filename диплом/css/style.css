@@ -506,3 +506,13 @@ button[type=button]:hover, button[type=submit]:hover {
     width: 100%;
     margin-bottom: 10px;
 }
+/* Стилі для форми редагування товару */
+#editItemForm label,
+#editItemForm input,
+#editItemForm textarea,
+#editItemForm button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
