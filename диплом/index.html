@@ -354,6 +354,25 @@
         </form>
     </div>
 </div>
+<!-- Journal Modal -->
+<div id="journalModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeJournalModalButton">&times;</span>
+        <h2>Журнал</h2>
+        <div id="journalTabs">
+            <button class="tablink" onclick="openJournalTab(event, 'usersTab')">Користувачі</button>
+            <button class="tablink" onclick="openJournalTab(event, 'ordersTab')">Замовлення</button>
+        </div>
+        <div id="usersTab" class="journalTabContent">
+            <h3>Зареєстровані користувачі</h3>
+            <div id="usersList"></div>
+        </div>
+        <div id="ordersTab" class="journalTabContent">
+            <h3>Замовлення</h3>
+            <div id="ordersList"></div>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
