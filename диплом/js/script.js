@@ -32,6 +32,8 @@ $(document).ready(function () {
     var closeAddItemModalButton = $("#closeAddItemModalButton");
     var closeDeleteItemModalButton = $("#closeDeleteItemModalButton");
     var deleteItemSelect = $("#deleteItemSelect");
+    var addItemCloseButton = $("#addItemCloseButton");
+    var deleteItemCloseButton = $("#deleteItemCloseButton");
 
     var cart = {};
     var goods = JSON.parse(localStorage.getItem('goods')) || {};
@@ -354,6 +356,14 @@ $(document).ready(function () {
     });
 
     closeDeleteItemModalButton.click(function () {
+        deleteItemModal.hide();
+    });
+
+    addItemCloseButton.click(function () {
+        addItemModal.hide();
+    });
+
+    deleteItemCloseButton.click(function () {
         deleteItemModal.hide();
     });
 
