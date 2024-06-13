@@ -27,18 +27,13 @@ $(document).ready(function () {
 
     var addItemModal = $("#addItemModal");
     var deleteItemModal = $("#deleteItemModal");
-    var editItemModal = $("#editItemModal");
     var addItemForm = $("#addItemForm");
     var deleteItemForm = $("#deleteItemForm");
-    var editItemForm = $("#editItemForm");
     var closeAddItemModalButton = $("#closeAddItemModalButton");
     var closeDeleteItemModalButton = $("#closeDeleteItemModalButton");
-    var closeEditItemModalButton = $("#closeEditItemModalButton");
     var deleteItemSelect = $("#deleteItemSelect");
-    var editItemSelect = $("#editItemSelect");
     var addItemCloseButton = $("#addItemCloseButton");
     var deleteItemCloseButton = $("#deleteItemCloseButton");
-    var editItemCloseButton = $("#editItemCloseButton");
 
     var cart = {};
     var goods = JSON.parse(localStorage.getItem('goods')) || {};
@@ -69,7 +64,6 @@ $(document).ready(function () {
         profileModal.hide();
         addItemModal.hide();
         deleteItemModal.hide();
-        editItemModal.hide();
     });
 
     userRulesLink.click(function (event) {
@@ -135,22 +129,12 @@ $(document).ready(function () {
         setupItemDetails();
         setupAddToCartButtons();
         updateDeleteItemSelect();
-        updateEditItemSelect();
     }
 
     function updateDeleteItemSelect() {
         deleteItemSelect.empty();
         $.each(goods, function (key, value) {
             deleteItemSelect.append(
-                '<option value="' + key + '">' + value.name + '</option>'
-            );
-        });
-    }
-
-    function updateEditItemSelect() {
-        editItemSelect.empty();
-        $.each(goods, function (key, value) {
-            editItemSelect.append(
                 '<option value="' + key + '">' + value.name + '</option>'
             );
         });
@@ -268,28 +252,34 @@ $(document).ready(function () {
         if (phone === actors.Admin.phone && password === actors.Admin.password) {
             // Вхід як адміністратор
             adminJournalIcon.show();
-            alert("Вхід виконано як Адміністратор");
-            currentUser = { phone, password, role: "Admin" };
-            profileModal.hide();
-            menuLogin.hide();
+            alert('Вхід як адміністратор успішний');
             profileIcon.show();
             loginButton.hide();
             registerButton.hide();
+            adminJournalIcon.show();
+            addIcon.show();
+            editIcon.show();
+            deleteIcon.show();
+            menuLogin.hide();
+            currentUser = actors.Admin;
         } else {
-            // Вхід як звичайний користувач
             var users = JSON.parse(localStorage.getItem('users')) || [];
             var user = users.find(user => user.phone === phone && user.password === password);
 
             if (user) {
-                alert("Вхід виконано успішно");
-                currentUser = user;
-                profileModal.hide();
+                alert('Вхід успішний');
                 menuLogin.hide();
                 profileIcon.show();
+                addIcon.hide();
+                editIcon.hide();
+                deleteIcon.hide();
                 loginButton.hide();
                 registerButton.hide();
+                currentUser = user;
+                $("#profileEmail").text(user.email);
+                $("#profilePhone").text(user.phone);
             } else {
-                alert("Невірний номер телефону або пароль");
+                alert('Невірний номер телефону або пароль');
             }
         }
     });
@@ -300,12 +290,14 @@ $(document).ready(function () {
 
     logoutButton.click(function () {
         currentUser = null;
+        profileModal.hide();
         profileIcon.hide();
+        addIcon.hide();
+        editIcon.hide();
+        deleteIcon.hide();
         adminJournalIcon.hide();
         loginButton.show();
         registerButton.show();
-        alert("Ви вийшли з акаунту");
-        profileModal.hide();
     });
 
     addIcon.click(function () {
@@ -317,33 +309,29 @@ $(document).ready(function () {
         deleteItemModal.show();
     });
 
-    editIcon.click(function () {
-        updateEditItemSelect();
-        editItemModal.show();
-    });
-
     addItemForm.submit(function (event) {
         event.preventDefault();
 
         var newItem = {
-            name: $("#itemName").val(),
-            description: $("#itemDescription").val(),
-            brand: $("#itemBrand").val(),
-            gpuManufacturer: $("#itemGpuManufacturer").val(),
-            graphicChip: $("#itemGraphicChip").val(),
-            memorySize: $("#itemMemorySize").val(),
-            memoryType: $("#itemMemoryType").val(),
-            purpose: $("#itemPurpose").val(),
-            coolingType: $("#itemCoolingType").val(),
-            cost: parseFloat($("#itemCost").val()),
-            image: $("#itemImage").val()
+            name: $("#addItemName").val(),
+            description: $("#addItemDescription").val(),
+            brand: $("#addItemBrand").val(),
+            gpuManufacturer: $("#addItemGpuManufacturer").val(),
+            graphicChip: $("#addItemGraphicChip").val(),
+            memorySize: $("#addItemMemorySize").val(),
+            memoryType: $("#addItemMemoryType").val(),
+            purpose: $("#addItemPurpose").val(),
+            coolingType: $("#addItemCoolingType").val(),
+            cost: parseFloat($("#addItemCost").val()),
+            image: $("#addItemImage").val()
         };
 
-        var key = Date.now().toString();
-        goods[key] = newItem;
+        var newKey = 'item' + (Object.keys(goods).length + 1);
+        goods[newKey] = newItem;
+
         localStorage.setItem('goods', JSON.stringify(goods));
 
-        alert('Новий товар успішно доданий');
+        alert('Товар успішно доданий');
         addItemModal.hide();
         displayGoods(goods);
     });
@@ -351,55 +339,16 @@ $(document).ready(function () {
     deleteItemForm.submit(function (event) {
         event.preventDefault();
 
-        var selectedKey = deleteItemSelect.val();
-        delete goods[selectedKey];
-        localStorage.setItem('goods', JSON.stringify(goods));
-
-        alert('Товар успішно видалений');
-        deleteItemModal.hide();
-        displayGoods(goods);
-    });
-
-    editItemSelect.change(function () {
-        var selectedKey = $(this).val();
-        var selectedItem = goods[selectedKey];
-        $("#editItemName").val(selectedItem.name);
-        $("#editItemDescription").val(selectedItem.description);
-        $("#editItemBrand").val(selectedItem.brand);
-        $("#editItemGpuManufacturer").val(selectedItem.gpuManufacturer);
-        $("#editItemGraphicChip").val(selectedItem.graphicChip);
-        $("#editItemMemorySize").val(selectedItem.memorySize);
-        $("#editItemMemoryType").val(selectedItem.memoryType);
-        $("#editItemPurpose").val(selectedItem.purpose);
-        $("#editItemCoolingType").val(selectedItem.coolingType);
-        $("#editItemCost").val(selectedItem.cost);
-        $("#editItemImage").val(selectedItem.image);
-    });
-
-    editItemForm.submit(function (event) {
-        event.preventDefault();
-
-        var selectedKey = editItemSelect.val();
-        var updatedItem = {
-            name: $("#editItemName").val(),
-            description: $("#editItemDescription").val(),
-            brand: $("#editItemBrand").val(),
-            gpuManufacturer: $("#editItemGpuManufacturer").val(),
-            graphicChip: $("#editItemGraphicChip").val(),
-            memorySize: $("#editItemMemorySize").val(),
-            memoryType: $("#editItemMemoryType").val(),
-            purpose: $("#editItemPurpose").val(),
-            coolingType: $("#editItemCoolingType").val(),
-            cost: parseFloat($("#editItemCost").val()),
-            image: $("#editItemImage").val()
-        };
-
-        goods[selectedKey] = updatedItem;
-        localStorage.setItem('goods', JSON.stringify(goods));
-
-        alert('Товар успішно оновлений');
-        editItemModal.hide();
-        displayGoods(goods);
+        var keyToDelete = $("#deleteItemSelect").val();
+        if (goods[keyToDelete]) {
+            delete goods[keyToDelete];
+            localStorage.setItem('goods', JSON.stringify(goods));
+            alert('Товар успішно видалений');
+            deleteItemModal.hide();
+            displayGoods(goods);
+        } else {
+            alert('Товар з таким ключем не знайдено');
+        }
     });
 
     closeAddItemModalButton.click(function () {
@@ -410,10 +359,6 @@ $(document).ready(function () {
         deleteItemModal.hide();
     });
 
-    closeEditItemModalButton.click(function () {
-        editItemModal.hide();
-    });
-
     addItemCloseButton.click(function () {
         addItemModal.hide();
     });
@@ -422,9 +367,6 @@ $(document).ready(function () {
         deleteItemModal.hide();
     });
 
-    editItemCloseButton.click(function () {
-        editItemModal.hide();
-    });
-
+    // Ініціалізація показу товарів
     displayGoods(goods);
 });
