@@ -196,48 +196,52 @@
     </div>
 
     <!-- Add Item Modal -->
-    <div id="addItemModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="document.getElementById('addItemModal').style.display='none'">&times;</span>
-            <h1>Додати новий товар</h1>
-            <form id="addItemForm">
-                <label for="itemNameInput">Назва товару:</label>
-                <input type="text" id="itemNameInput" name="name" required>
-                
-                <label for="itemDescriptionInput">Опис товару:</label>
-                <textarea id="itemDescriptionInput" name="description" required></textarea>
-                
-                <label for="itemPriceInput">Ціна товару:</label>
-                <input type="number" id="itemPriceInput" name="price" required>
-                
-                <label for="itemImageInput">Посилання на зображення:</label>
-                <input type="text" id="itemImageInput" name="image" required>
-                
-                <label for="itemBrandInput">Бренд:</label>
-                <input type="text" id="itemBrandInput" name="brand" required>
-                
-                <label for="itemGpuManufacturerInput">Виробник графічного процессора:</label>
-                <input type="text" id="itemGpuManufacturerInput" name="gpuManufacturer" required>
-                
-                <label for="itemGraphicChipInput">Графічний чип:</label>
-                <input type="text" id="itemGraphicChipInput" name="graphicChip" required>
-                
-                <label for="itemMemorySizeInput">Обсяг пам'яті:</label>
-                <input type="text" id="itemMemorySizeInput" name="memorySize" required>
-                
-                <label for="itemMemoryTypeInput">Тип пам'яті:</label>
-                <input type="text" id="itemMemoryTypeInput" name="memoryType" required>
-                
-                <label for="itemPurposeInput">Призначення:</label>
-                <input type="text" id="itemPurposeInput" name="purpose" required>
-                
-                <label for="itemCoolingTypeInput">Тип системи охолодження:</label>
-                <input type="text" id="itemCoolingTypeInput" name="coolingType" required>
-                
-                <button type="submit">Додати товар</button>
-            </form>
+   <!-- Add Item Modal -->
+<div id="addItemModal" class="modal">
+    <form id="addItemForm" class="modal-content">
+        <div class="container">
+            <h1>Додати товар</h1>
+            <label for="addItemName"><b>Назва</b></label>
+            <input type="text" id="addItemName" name="name" required>
+
+            <label for="addItemDescription"><b>Опис</b></label>
+            <input type="text" id="addItemDescription" name="description" required>
+
+            <label for="addItemBrand"><b>Бренд</b></label>
+            <select id="addItemBrand" name="brand"></select>
+
+            <label for="addItemGpuManufacturer"><b>Виробник GPU</b></label>
+            <select id="addItemGpuManufacturer" name="gpuManufacturer"></select>
+
+            <label for="addItemGraphicChip"><b>Графічний чип</b></label>
+            <select id="addItemGraphicChip" name="graphicChip"></select>
+
+            <label for="addItemMemorySize"><b>Розмір пам'яті</b></label>
+            <select id="addItemMemorySize" name="memorySize"></select>
+
+            <label for="addItemMemoryType"><b>Тип пам'яті</b></label>
+            <select id="addItemMemoryType" name="memoryType"></select>
+
+            <label for="addItemPurpose"><b>Призначення</b></label>
+            <select id="addItemPurpose" name="purpose"></select>
+
+            <label for="addItemCoolingType"><b>Тип охолодження</b></label>
+            <select id="addItemCoolingType" name="coolingType"></select>
+
+            <label for="addItemCost"><b>Ціна</b></label>
+            <input type="number" id="addItemCost" name="cost" required>
+
+            <label for="addItemImage"><b>Зображення (URL)</b></label>
+            <input type="text" id="addItemImage" name="image" required>
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn">Відмінити</button>
+                <button type="submit" class="signupbtn">Додати</button>
+            </div>
         </div>
-    </div>
+    </form>
+</div>
+
 
     <!-- Delete Item Modal -->
     <div id="deleteItemModal" class="modal">
