@@ -52,29 +52,6 @@ $(document).ready(function () {
         "users": []
     };
 
-    // Перевірка авторизації та адміністративних прав користувача
-    function checkUserStatus() {
-        if (currentUser) {
-            profileIcon.show();
-            loginButton.hide();
-            registerButton.hide();
-            if (currentUser.role === "Admin") {
-                adminJournalIcon.show();
-                addIcon.show();
-                editIcon.show();
-                deleteIcon.show();
-            }
-        } else {
-            profileIcon.hide();
-            adminJournalIcon.hide();
-            addIcon.hide();
-            editIcon.hide();
-            deleteIcon.hide();
-            loginButton.show();
-            registerButton.show();
-        }
-    }
-
     loginButton.click(function () {
         menuLogin.show();
     });
@@ -298,7 +275,6 @@ $(document).ready(function () {
             profileIcon.show();
             loginButton.hide();
             registerButton.hide();
-            checkUserStatus();
         } else {
             // Вхід як звичайний користувач
             var users = JSON.parse(localStorage.getItem('users')) || [];
@@ -312,7 +288,6 @@ $(document).ready(function () {
                 profileIcon.show();
                 loginButton.hide();
                 registerButton.hide();
-                checkUserStatus();
             } else {
                 alert("Невірний номер телефону або пароль");
             }
@@ -452,5 +427,4 @@ $(document).ready(function () {
     });
 
     displayGoods(goods);
-    checkUserStatus();
 });
