@@ -266,6 +266,82 @@
         </form>
     </div>
 </div>
+<!-- Edit Item Modal -->
+<div id="editItemModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEditItemModalButton">&times;</span>
+        <form id="editItemForm">
+            <label for="editItemSelect">Виберіть товар для редагування:</label>
+            <select id="editItemSelect"></select>
+            
+            <label for="editItemName">Назва:</label>
+            <input type="text" id="editItemName" name="name" required>
+
+            <label for="editItemDescription">Опис:</label>
+            <textarea id="editItemDescription" name="description" required></textarea>
+
+            <label for="editItemBrand">Бренд:</label>
+            <select id="editItemBrand" name="brand" required>
+                <option value="">Виберіть бренд</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інші бренди -->
+            </select>
+
+            <label for="editItemGpuManufacturer">Виробник GPU:</label>
+            <select id="editItemGpuManufacturer" name="gpuManufacturer" required>
+                <option value="">Виберіть виробника GPU</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інших виробників GPU -->
+            </select>
+
+            <label for="editItemGraphicChip">Графічний чіп:</label>
+            <input type="text" id="editItemGraphicChip" name="graphicChip" required>
+
+            <label for="editItemMemorySize">Розмір пам'яті:</label>
+            <input type="text" id="editItemMemorySize" name="memorySize" required>
+
+            <label for="editItemMemoryType">Тип пам'яті:</label>
+            <select id="editItemMemoryType" name="memoryType" required>
+                <option value="">Виберіть тип пам'яті</option>
+                    <option value="GDDR6X">GDDR6X</option>
+                    <option value="GDDR6">GDDR6</option>
+                    <option value="GDDR5X">GDDR5X</option>
+                    <option value="GDDR5">GDDR5</option>
+                    <option value="LPDDR4X">LPDDR4X</option>
+            </select>
+
+            <label for="editItemPurpose">Призначення:</label>
+            <select id="editItemPurpose" name="purpose" required>
+                <option value="">Виберіть призначення</option>
+                    <option value="Геймінг">Геймінг</option>
+                    <option value="Майнинг">Майнинг</option>
+                    <option value="Офісний">Офісний</option>
+  
+            </select>
+
+            <label for="editItemCoolingType">Тип охолодження:</label>
+            <select id="editItemCoolingType" name="coolingType" required>
+                <option value="">Виберіть тип охолодження</option>
+                    <option value="Активна">Активна</option>
+                    <option value="Пасивна">Пасивна</option>
+            </select>
+
+            <label for="editItemCost">Ціна:</label>
+            <input type="number" id="editItemCost" name="cost" required>
+
+            <label for="editItemImage">Посилання на зображення:</label>
+            <input type="text" id="editItemImage" name="image" required>
+
+            <button type="submit">Оновити товар</button>
+            <button type="button" id="editItemCloseButton">Закрити</button>
+        </form>
+    </div>
+</div>
+
 
     <!-- Delete Item Modal -->
     <div id="deleteItemModal" class="modal">
