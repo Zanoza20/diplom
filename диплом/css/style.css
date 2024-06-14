@@ -64,17 +64,6 @@ body {
     cursor: pointer;
 }
 
-/* Admin Journal Icon */
-#adminJournalIcon {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: auto;
-    display: none;
-    z-index: 1000;
-}
-
 /* Action icons */
 .action-icon {
     width: 50px;
