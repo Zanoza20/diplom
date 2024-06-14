@@ -64,6 +64,17 @@ body {
     cursor: pointer;
 }
 
+/* Admin Journal Icon */
+#adminJournalIcon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: auto;
+    display: none;
+    z-index: 1000;
+}
+
 /* Action icons */
 .action-icon {
     width: 50px;
@@ -137,37 +148,6 @@ body {
     background-color: #45a049;
 }
 
-.journalTabContent {
-    display: none;
-}
-
-#journalModal h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-#journalModal ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#journalModal li {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-#journalModal .close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 3rem;
-    cursor: pointer;
-    color: #aaa;
-}
-
-#journalModal .close:hover {
-    color: black;
-}
 
 .close-btn {
     background-color: #f44336;
