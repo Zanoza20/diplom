@@ -105,7 +105,7 @@ body {
 }
 
 /* Admin Journal Styles */
-#adminJournal {
+#Journal {
     display: none; /* Initially hidden */
     position: fixed;
     z-index: 1002; /* Ensure it is on top */
@@ -121,29 +121,29 @@ body {
     overflow: auto;
 }
 
-#adminJournal h1 {
+#Journal h1 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-#adminJournal table {
+#Journal table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
 }
 
-#adminJournal table th, #adminJournal table td {
+#Journal table th, #Journal table td {
     border: 1px solid #ddd;
     padding: 1rem;
     text-align: left;
 }
 
-#adminJournal table th {
+#Journal table th {
     background-color: #f2f2f2;
 }
 
-#adminJournal .close {
+#Journal .close {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -152,7 +152,7 @@ body {
     color: #aaa;
 }
 
-#adminJournal .close:hover {
+#Journal .close:hover {
     color: black;
 }
 
