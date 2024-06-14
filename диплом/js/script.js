@@ -39,7 +39,6 @@ $(document).ready(function () {
     var addItemCloseButton = $("#addItemCloseButton");
     var deleteItemCloseButton = $("#deleteItemCloseButton");
     var editItemCloseButton = $("#editItemCloseButton");
-    var closeJournalModalButton = $("#closeJournalModalButton");
 
     var cart = {};
     var goods = JSON.parse(localStorage.getItem('goods')) || {};
@@ -462,13 +461,9 @@ $(document).ready(function () {
         orderSection += "</ul>";
 
         var journalContent = userSection + orderSection;
-        $("#journalModal .modal-content").append(journalContent);
-        $("#journalModal").show();
-    });
-
-    closeJournalModalButton.click(function () {
-        $("#journalModal").hide();
-        $("#journalModal .modal-content ul").remove(); // Remove the dynamically inserted content
+        var journalModal = $("<div>").attr("id", "journalModal").html(journalContent);
+        $("body").append(journalModal);
+        journalModal.show();
     });
 
     displayGoods(goods);
