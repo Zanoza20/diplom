@@ -136,12 +136,12 @@ body {
 .tablink {
     background-color: #04AA6D;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 2рем;
     margin: 0 1rem;
     border: none;
     cursor: pointer;
     border-radius: 0.5rem;
-    font-size: 1.6rem;
+    font-size: 1.6рем;
 }
 
 .tablink:hover {
@@ -163,7 +163,7 @@ body {
 }
 
 #journalModal li {
-    font-size: 1.8rem;
+    font-size: 1.8рем;
     margin-bottom: 1rem;
 }
 
@@ -189,7 +189,7 @@ body {
     cursor: pointer;
     width: 100%;
     border-radius: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.8рем;
     text-align: center;
 }
 
@@ -203,13 +203,13 @@ body {
     z-index: 999;
     background-color: royalblue;
     color: #ffba0d;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.5рем;
     border: none;
     outline: none;
-    box-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .8);
+    box-shadow: .3рем .3рем .6рем rgba(0, 0, 0, .8);
     border-radius: 1rem;
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 1.4рем;
     transition: .5s;
     top: 80px;
 }
@@ -220,11 +220,11 @@ body {
 
 #loginButton {
     left: 20px;
-    top: calc(80px + 1.5rem + 20px);
+    top: calc(80px + 1.5рем + 20px);
 }
 
 .btn:active {
-    transform: translateY(.3rem);
+    transform: translateY(.3рем);
 }
 
 .container {
@@ -233,12 +233,12 @@ body {
 
 input[type=tel], input[type=password], input[type=email] {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.5рем;
     display: inline-block;
     border: 1px solid #ccc;
-    margin: .5rem 0 2.2rem 0;
+    margin: .5рем 0 2.2рем 0;
     background: #ddd;
-    border-radius: 0.5rem;
+    border-radius: 0.5рем;
 }
 
 input[type=tel]:focus, input[type=password]:focus, input[type=email]:focus {
@@ -247,29 +247,29 @@ input[type=tel]:focus, input[type=password]:focus, input[type=email]:focus {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.5рем;
     text-align: center;
 }
 
 p {
-    font-size: 1.7rem;
+    font-size: 1.7рем;
     margin-top: 1rem;
 }
 
 label {
-    font-size: 2rem;
+    font-size: 2рем;
 }
 
 button[type=button], button[type=submit] {
     background-color: #04AA6D;
     color: white;
-    padding: 1.4rem 2rem;
+    padding: 1.4рем 2рем;
     margin: 1rem 0;
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius: 1rem;
-    font-size: 1.8rem;
+    border-radius: 1рем;
+    font-size: 1.8рем;
 }
 
 button[type=button]:hover, button[type=submit]:hover {
@@ -303,8 +303,8 @@ button[type=button]:hover, button[type=submit]:hover {
     margin: 2% auto 15% auto;
     border: 1px solid #888;
     width: 50%;
-    border-radius: 1rem;
-    padding: 2rem;
+    border-radius: 1рем;
+    padding: 2рем;
     position: relative;
 }
 
@@ -312,40 +312,40 @@ button[type=button]:hover, button[type=submit]:hover {
     position: absolute;
     right: 2rem;
     top: 2rem;
-    font-size: 3rem;
+    font-size: 3рем;
     cursor: pointer;
 }
 
 .goods-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 2rem;
+    gap: 2рем;
+    padding: 2рем;
     margin-top: 80px;
 }
 
 .single-goods {
     background: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
+    padding: 2рем;
+    border-radius: 1рем;
     text-align: center;
-    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .3);
+    box-shadow: .2рем .2рем .5рем rgba(0, 0, 0, .3);
 }
 
 .single-goods img {
     max-width: 100%;
-    border-bottom: .1rem solid #ddd;
+    border-bottom: .1рем solid #ddd;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
 }
 
 .single-goods h3 {
-    font-size: 2.2rem;
+    font-size: 2.2рем;
     cursor: pointer;
 }
 
 .single-goods .price {
-    font-size: 2rem;
+    font-size: 2рем;
     font-weight: bold;
     color: red;
     margin: 1rem 0;
@@ -360,7 +360,7 @@ button[type=button]:hover, button[type=submit]:hover {
     width: 100%;
     opacity: 0.8;
     border-radius: 5px;
-    font-size: 1.6rem;
+    font-size: 1.6рем;
 }
 
 .single-goods .add-to-cart:hover {
@@ -409,7 +409,7 @@ button[type=button]:hover, button[type=submit]:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1.8rem;
+    font-size: 1.8рем;
 }
 
 .cart-item img {
@@ -432,7 +432,7 @@ button[type=button]:hover, button[type=submit]:hover {
 
 #totalPrice {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2рем;
     text-align: center;
 }
 
@@ -535,13 +535,13 @@ button[type=button]:hover, button[type=submit]:hover {
 .clear-cart-btn, .order-btn {
     background-color: #8A2BE2;
     color: white;
-    padding: 1.4rem 2rem;
-    margin: 1rem 0;
+    padding: 1.4рем 2рем;
+    margin: 1рем 0;
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius: 1rem;
-    font-size: 1.8rem;
+    border-radius: 1рем;
+    font-size: 1.8рем;
 }
 
 .clear-cart-btn:hover, .order-btn:hover {
@@ -558,13 +558,13 @@ button[type=button]:hover, button[type=submit]:hover {
 .close-cart-btn {
     background-color: #8A2BE2;
     color: white;
-    padding: 1.4rem 2rem;
-    margin: 1rem 0;
+    padding: 1.4рем 2рем;
+    margin: 1рем 0;
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius: 1rem;
-    font-size: 1.8rem;
+    border-radius: 1рем;
+    font-size: 1.8рем;
     text-align: center;
 }
 
@@ -597,4 +597,15 @@ button[type=button]:hover, button[type=submit]:hover {
     display: block;
     width: 100%;
     margin-bottom: 10px;
+}
+
+/* Help icon */
+.help-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    z-index: 1001;
 }
