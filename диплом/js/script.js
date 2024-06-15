@@ -288,7 +288,7 @@ $(document).ready(function () {
         var password = $("#pswLogin").val();
 
         if (phone === actors.Admin.phone && password === actors.Admin.password) {
-            adminJournalIcon.toggle();
+            adminJournalIcon.show();
             alert('Вхід як адміністратор успішний');
             profileIcon.show();
             loginButton.hide();
@@ -463,7 +463,7 @@ $(document).ready(function () {
         var journalContent = userSection + orderSection;
         var journalModal = $("<div>").attr("id", "journalModal").html(journalContent);
         $("body").append(journalModal);
-        journalModal.toggle();
+        journalModal.show();
     });
 
     displayGoods(goods);
