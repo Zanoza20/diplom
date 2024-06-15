@@ -382,23 +382,23 @@
     </div>
 </div>
 <!-- Journal Modal -->
-<div id="journalModal" class="modal">
+<div id="adminJournalModal" class="modal">
     <div class="modal-content">
-        <span class="close" id="closeJournalModalButton">&times;</span>
-        <h2>Журнал</h2>
-        <div id="journalTabs">
-            <button class="tablink" onclick="openJournalTab(event, 'usersTab')">Користувачі</button>
-            <button class="tablink" onclick="openJournalTab(event, 'ordersTab')">Замовлення</button>
+        <span id="closeAdminJournalModalButton" class="close-button">&times;</span>
+        <div id="adminJournalTabs">
+            <div class="tab-buttons">
+                <button class="tab-button" data-target="usersTab">Користувачі</button>
+                <button class="tab-button" data-target="ordersTab">Замовлення</button>
+            </div>
+            <div class="tab-content" id="usersTab">
+                <h3>Користувачі</h3>
+                <div id="usersList"></div>
+            </div>
+            <div class="tab-content" id="ordersTab">
+                <h3>Замовлення</h3>
+                <div id="ordersList"></div>
+            </div>
         </div>
-        <div id="usersTab" class="journalTabContent">
-            <h3>Зареєстровані користувачі</h3>
-            <div id="usersList"></div>
-        </div>
-        <div id="ordersTab" class="journalTabContent">
-            <h3>Замовлення</h3>
-            <div id="ordersList"></div>
-        </div>
-        <button id="closeJournalButton" class="close-btn">Закрити</button>
     </div>
 </div>
 
