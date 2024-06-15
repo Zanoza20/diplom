@@ -444,26 +444,21 @@ $(document).ready(function () {
         editItemModal.hide();
     });
 
-    adminJournalIcon.click(function () {
-        var users = JSON.parse(localStorage.getItem('users')) || [];
-        var orders = JSON.parse(localStorage.getItem('orders')) || [];
-        
-        var userSection = "<h3>Користувачі</h3><ul>";
-        users.forEach(function(user) {
-            userSection += "<li>Телефон: " + user.phone + ", Email: " + user.email + "</li>";
-        });
-        userSection += "</ul>";
+    // Updated: Admin Journal Functionality
+    $("#adminJournalIcon").click(function () {
+        $("#adminJournalModal").show();
+        $("#adminJournalTabs .tab-content").hide();
+        $("#usersTab").show();
+    });
 
-        var orderSection = "<h3>Замовлення</h3><ul>";
-        orders.forEach(function(order) {
-            orderSection += "<li>У " + order.time + " користувач за номером " + order.phone + " та почтою " + order.email + " оформив замовлення на " + order.items + " ціною в ₴" + order.total + "</li>";
-        });
-        orderSection += "</ul>";
+    $("#closeAdminJournalModalButton").click(function () {
+        $("#adminJournalModal").hide();
+    });
 
-        var journalContent = userSection + orderSection;
-        var journalModal = $("<div>").attr("id", "journalModal").html(journalContent);
-        $("body").append(journalModal);
-        journalModal.show();
+    $("#adminJournalTabs .tab-button").click(function () {
+        var targetTab = $(this).data("target");
+        $("#adminJournalTabs .tab-content").hide();
+        $("#" + targetTab).show();
     });
 
     displayGoods(goods);
