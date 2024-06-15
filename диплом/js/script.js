@@ -288,7 +288,7 @@ $(document).ready(function () {
         var password = $("#pswLogin").val();
 
         if (phone === actors.Admin.phone && password === actors.Admin.password) {
-            adminJournalIcon.show();
+            adminJournalIcon.toggle();
             alert('Вхід як адміністратор успішний');
             profileIcon.show();
             loginButton.hide();
