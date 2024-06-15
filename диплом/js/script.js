@@ -445,10 +445,10 @@ $(document).ready(function () {
     });
 
     // Updated: Admin Journal Functionality
-    $("#adminJournalIcon").click(function () {
+     $("#adminJournalIcon").click(function () {
         $("#adminJournalModal").show();
         $("#adminJournalTabs .tab-content").hide();
-        $("#usersTab").show();
+        $("#usersTab").show();  // Show the Users tab by default
     });
 
     $("#closeAdminJournalModalButton").click(function () {
@@ -459,6 +459,39 @@ $(document).ready(function () {
         var targetTab = $(this).data("target");
         $("#adminJournalTabs .tab-content").hide();
         $("#" + targetTab).show();
+    });
+
+    // Function to load users into the users tab
+    function loadUsers() {
+        var users = JSON.parse(localStorage.getItem('users')) || [];
+        var usersList = $("#usersList");
+        usersList.empty();
+        users.forEach(function (user) {
+            usersList.append("<p>" + user.phone + " - " + user.email + "</p>");
+        });
+    }
+
+    // Function to load orders into the orders tab
+    function loadOrders() {
+        var orders = JSON.parse(localStorage.getItem('orders')) || [];
+        var ordersList = $("#ordersList");
+        ordersList.empty();
+        orders.forEach(function (order) {
+            ordersList.append("<p>" + order.time + " - " + order.phone + " - " + order.email + " - " + order.items + " - " + order.total + "</p>");
+        });
+    }
+
+    // Load users and orders when switching tabs
+    $("#adminJournalTabs .tab-button").click(function () {
+        var targetTab = $(this).data("target");
+        $("#adminJournalTabs .tab-content").hide();
+        $("#" + targetTab).show();
+        
+        if (targetTab === "usersTab") {
+            loadUsers();
+        } else if (targetTab === "ordersTab") {
+            loadOrders();
+        }
     });
 
     displayGoods(goods);
