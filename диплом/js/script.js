@@ -65,6 +65,7 @@ $(document).ready(function () {
         menuLogin.hide();
         menuRegister.hide();
         userRules.hide();
+        helpMenu.hide();
         itemDetails.hide();
         cartMenu.hide();
         profileModal.hide();
@@ -80,6 +81,9 @@ $(document).ready(function () {
 
     sortIcon.click(function () {
         sortMenu.show();
+    });
+  helpIcon.click(function () {
+        helpMenu.show();
     });
 
     function setupItemDetails() {
