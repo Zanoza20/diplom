@@ -608,3 +608,31 @@ button[type=button]:hover, button[type=submit]:hover {
     cursor: pointer;
     z-index: 1001;
 }
+ .help-menu {
+            display: none; /* Спочатку приховане меню */
+            position: fixed;
+            bottom: 70px; /* Змінено для зручності */
+            right: 10px;
+            width: 300px; /* Змінити за потреби */
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Для відображення поверх інших елементів */
+        }
+
+        .help-menu h3 {
+            margin-top: 0;
+        }
+
+        .help-menu p {
+            margin-bottom: 1em;
+        }
+
+        .help-menu .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
