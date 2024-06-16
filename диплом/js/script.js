@@ -8,6 +8,7 @@ $(document).ready(function () {
     var menuRegister = $("#menuRegister");
     var userRules = $("#userRules");
     var userRulesLink = $("#userRulesLink");
+        var helpMenu = $("#helpMenu");
     var itemDetails = $("#itemDetails");
     var cartIcon = $("#cartIcon");
     var cartMenu = $("#cartMenu");
