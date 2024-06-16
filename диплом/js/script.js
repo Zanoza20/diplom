@@ -8,7 +8,6 @@ $(document).ready(function () {
     var menuRegister = $("#menuRegister");
     var userRules = $("#userRules");
     var userRulesLink = $("#userRulesLink");
-        var helpMenu = $("#helpMenu");
     var itemDetails = $("#itemDetails");
     var cartIcon = $("#cartIcon");
     var cartMenu = $("#cartMenu");
@@ -65,7 +64,6 @@ $(document).ready(function () {
         menuLogin.hide();
         menuRegister.hide();
         userRules.hide();
-        helpMenu.hide();
         itemDetails.hide();
         cartMenu.hide();
         profileModal.hide();
@@ -81,9 +79,6 @@ $(document).ready(function () {
 
     sortIcon.click(function () {
         sortMenu.show();
-    });
-  helpIcon.click(function () {
-        helpMenu.show();
     });
 
     function setupItemDetails() {
