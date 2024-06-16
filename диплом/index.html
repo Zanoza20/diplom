@@ -18,6 +18,7 @@
         <img src="images/Редагування.png" id="editIcon" alt="Редагувати" class="action-icon" style="display:none;">
         <img src="images/Мусор.png" id="deleteIcon" alt="Видалити" class="action-icon" style="display:none;">
         <img src="images/Журнал.png" id="adminJournalIcon" alt="Журнал" class="action-icon" style="display:none;">
+
     </header>
     
     <button id="loginButton" class="btn">Увійти</button>
@@ -127,22 +128,280 @@
         <div class="container">
             <p><b>1. Загальні положення</b></p>
             <p>1.1. Користуючись сайтом "TudoCard", ви погоджуєтесь дотримуватись цих правил.</p>
-            <p>1.2. Адміністрація сайту залишає за собою право змінювати ці правила без попереднього повідомлення.</p>
-            
+            <p>1.2. Адміністрація сайту залишає за собою право змінювати ці правила без попереднього повідомлення користувачів.</p>
+
             <p><b>2. Реєстрація</b></p>
-            <p>2.1. Реєстрація на сайті є добровільною і безкоштовною.</p>
-            <p>2.2. Під час реєстрації необхідно вказати дійсні контактні дані.</p>
-            
-            <p><b>3. Конфіденційність</b></p>
-            <p>3.1. Ваші персональні дані будуть використовуватись виключно для обробки замовлень та зворотного зв'язку.</p>
-            
+            <p>2.1. Для реєстрації на сайті необхідно вказати дійсні дані (номер телефону, email, пароль).</p>
+            <p>2.2. Ви зобов'язуєтесь забезпечити конфіденційність ваших облікових даних та не передавати їх третім особам.</p>
+
+            <p><b>3. Використання сайту</b></p>
+            <p>3. Ви погоджуєтесь не використовувати сайт або товар з нього для протиправних дій.</p>
+
             <p><b>4. Оформлення замовлення</b></p>
-            <p>4.1. Замовлення, що оформлюються через сайт, підлягають підтвердженню з боку адміністрації.</p>
-            <p>4.2. Ви погоджуєтесь надати точну та правдиву інформацію при оформленні замовлення.</p>
+            <p>4.1. Всі замовлення, зроблені на сайті, є обов'язковими для виконання.</p>
+            <p>4.2. Адміністрація залишає за собою право відмовити в обслуговуванні без пояснення причин.</p>
+
+            <p><b>5. Політика конфіденційності</b></p>
+            <p>5.1. Всі особисті дані користувачів захищені відповідно до законодавства.</p>
+            <p>5.2. Ваші дані не будуть передаватися третім особам без вашої згоди.</p>
+
+            <p><b>6. Відповідальність</b></p>
+            <p>6.1. Адміністрація не несе відповідальності за будь-які збитки, завдані в результаті використання або неможливості використання сайту.</p>
+            <p>6.2. Ви погоджуєтесь використовувати сайт на свій страх і ризик.</p>
+
+            <p><b>7. Заключні положення</b></p>
+            <p>7.1. Усі спірні питання, що виникають із використання сайту, вирішуються відповідно до чинного законодавства.</p>
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn" onclick="document.getElementById('userRules').style.display='none'">Закрити</button>
+            </div>
         </div>
     </div>
 </div>
 
+
+    <!-- Sorting Menu Modal -->
+    <div id="sortMenu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('sortMenu').style.display='none'">&times;</span>
+            <h1>Сортування відеокарт</h1>
+            <form id="sortForm">
+                <label for="sortBrand">Бренд:</label>
+                <select id="sortBrand" name="brand">
+                    <option value="">Будь-який</option>
+                    <option value="NVIDIA">NVIDIA</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Intel">Intel</option>
+                </select>
+                <label for="sortGpuManufacturer">Виробник графічного процесора:</label>
+                <select id="sortGpuManufacturer" name="gpuManufacturer">
+                    <option value="">Будь-який</option>
+                    <option value="NVIDIA">NVIDIA</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Intel">Intel</option>
+                </select>
+                <label for="sortMemoryType">Тип пам'яті:</label>
+                <select id="sortMemoryType" name="memoryType">
+                    <option value="">Будь-який</option>
+                    <option value="GDDR6X">GDDR6X</option>
+                    <option value="GDDR6">GDDR6</option>
+                    <option value="GDDR5X">GDDR5X</option>
+                    <option value="GDDR5">GDDR5</option>
+                    <option value="LPDDR4X">LPDDR4X</option>
+                </select>
+                <label for="sortPurpose">Призначення:</label>
+                <select id="sortPurpose" name="purpose">
+                    <option value="">Будь-яке</option>
+                    <option value="Геймінг">Геймінг</option>
+                    <option value="Майнинг">Майнинг</option>
+                    <option value="Офісний">Офісний</option>
+                </select>
+                <label for="sortCoolingType">Тип системи охолодження:</label>
+                <select id="sortCoolingType" name="coolingType">
+                    <option value="">Будь-який</option>
+                    <option value="Активна">Активна</option>
+                    <option value="Пасивна">Пасивна</option>
+                </select>
+                <button type="submit">Сортувати</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Profile Modal -->
+    <div id="profileMenu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('profileMenu').style.display='none'">&times;</span>
+            <h1>Ваш профіль</h1>
+            <div class="container">
+                <p><b>Email:</b> <span id="profileEmail"></span></p>
+                <p><b>Телефон:</b> <span id="profilePhone"></span></p>
+                <button id="logoutButton">Вийти</button>
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn">Закрити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addItemModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeAddItemModalButton">&times;</span>
+        <form id="addItemForm">
+            <label for="addItemName">Назва:</label>
+            <input type="text" id="addItemName" name="name" required>
+
+            <label for="addItemDescription">Опис:</label>
+            <textarea id="addItemDescription" name="description" required></textarea>
+
+            <label for="addItemBrand">Бренд:</label>
+            <select id="addItemBrand" name="brand" required>
+                <option value="">Виберіть бренд</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інші бренди -->
+            </select>
+
+            <label for="addItemGpuManufacturer">Виробник GPU:</label>
+            <select id="addItemGpuManufacturer" name="gpuManufacturer" required>
+                <option value="">Виберіть виробника GPU</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інших виробників GPU -->
+            </select>
+
+            <label for="addItemGraphicChip">Графічний чіп:</label>
+            <input type="text" id="addItemGraphicChip" name="graphicChip" required>
+
+            <label for="addItemMemorySize">Розмір пам'яті:</label>
+            <input type="text" id="addItemMemorySize" name="memorySize" required>
+
+            <label for="addItemMemoryType">Тип пам'яті:</label>
+            <select id="addItemMemoryType" name="memoryType" required>
+                <option value="">Виберіть тип пам'яті</option>
+                    <option value="GDDR6X">GDDR6X</option>
+                    <option value="GDDR6">GDDR6</option>
+                    <option value="GDDR5X">GDDR5X</option>
+                    <option value="GDDR5">GDDR5</option>
+                    <option value="LPDDR4X">LPDDR4X</option>
+            </select>
+
+            <label for="addItemPurpose">Призначення:</label>
+            <select id="addItemPurpose" name="purpose" required>
+                <option value="">Виберіть призначення</option>
+                    <option value="Геймінг">Геймінг</option>
+                    <option value="Майнинг">Майнинг</option>
+                    <option value="Офісний">Офісний</option>
+  
+            </select>
+
+            <label for="addItemCoolingType">Тип охолодження:</label>
+            <select id="addItemCoolingType" name="coolingType" required>
+                <option value="">Виберіть тип охолодження</option>
+                    <option value="Активна">Активна</option>
+                    <option value="Пасивна">Пасивна</option>
+            </select>
+
+            <label for="addItemCost">Ціна:</label>
+            <input type="number" id="addItemCost" name="cost" required>
+
+            <label for="addItemImage">Посилання на зображення:</label>
+            <input type="text" id="addItemImage" name="image" required>
+
+            <button type="submit">Додати товар</button>
+<button type="button" id="addItemCloseButton">Закрити</button>
+        </form>
+    </div>
+</div>
+<!-- Модальне вікно для редагування товару -->
+<div id="editItemModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEditItemModalButton">&times;</span>
+        <form id="editItemForm">
+            <label for="editItemSelect">Виберіть товар для редагування:</label>
+            <select id="editItemSelect"></select>
+            
+            <label for="editItemName">Назва:</label>
+            <input type="text" id="editItemName" name="name">
+
+            <label for="editItemDescription">Опис:</label>
+            <textarea id="editItemDescription" name="description"></textarea>
+
+            <label for="editItemBrand">Бренд:</label>
+            <select id="editItemBrand" name="brand">
+                <option value="">Виберіть бренд</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інші бренди -->
+            </select>
+
+            <label for="editItemGpuManufacturer">Виробник GPU:</label>
+            <select id="editItemGpuManufacturer" name="gpuManufacturer">
+                <option value="">Виберіть виробника GPU</option>
+                <option value="AMD">AMD</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="Intel">Intel</option>
+                <!-- Додати інших виробників GPU -->
+            </select>
+
+            <label for="editItemGraphicChip">Графічний чіп:</label>
+            <input type="text" id="editItemGraphicChip" name="graphicChip">
+
+            <label for="editItemMemorySize">Розмір пам'яті:</label>
+            <input type="text" id="editItemMemorySize" name="memorySize">
+
+            <label for="editItemMemoryType">Тип пам'яті:</label>
+            <select id="editItemMemoryType" name="memoryType">
+                <option value="">Виберіть тип пам'яті</option>
+                    <option value="GDDR6X">GDDR6X</option>
+                    <option value="GDDR6">GDDR6</option>
+                    <option value="GDDR5X">GDDR5X</option>
+                    <option value="GDDR5">GDDR5</option>
+                    <option value="LPDDR4X">LPDDR4X</option>
+            </select>
+
+            <label for="editItemPurpose">Призначення:</label>
+            <select id="editItemPurpose" name="purpose">
+                <option value="">Виберіть призначення</option>
+                    <option value="Геймінг">Геймінг</option>
+                    <option value="Майнинг">Майнинг</option>
+                    <option value="Офісний">Офісний</option>
+            </select>
+
+            <label for="editItemCoolingType">Тип охолодження:</label>
+            <select id="editItemCoolingType" name="coolingType">
+                <option value="">Виберіть тип охолодження</option>
+                    <option value="Активна">Активна</option>
+                    <option value="Пасивна">Пасивна</option>
+            </select>
+
+            <label for="editItemCost">Ціна:</label>
+            <input type="number" id="editItemCost" name="cost">
+
+            <label for="editItemImage">Посилання на зображення:</label>
+            <input type="text" id="editItemImage" name="image">
+
+            <button type="submit">Оновити товар</button>
+            <button type="button" id="editItemCloseButton">Закрити</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- Delete Item Modal -->
+    <div id="deleteItemModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeDeleteItemModalButton">&times;</span>
+        <form id="deleteItemForm">
+            <label for="deleteItemSelect">Виберіть товар для видалення:</label>
+            <select id="deleteItemSelect"></select>
+            <button type="submit">Видалити</button>
+<button type="button" id="deleteItemCloseButton">Закрити</button>
+        </form>
+    </div>
+</div>
+<!-- Journal Modal -->
+<div id="adminJournalModal" class="modal">
+    <div class="modal-content">
+        <span id="closeAdminJournalModalButton" class="close-button">&times;</span>
+        <div id="adminJournalTabs">
+            <div class="tab-buttons">
+                <button class="tab-button" data-target="usersTab">Користувачі</button>
+                <button class="tab-button" data-target="ordersTab">Замовлення</button>
+            </div>
+            <div class="tab-content" id="usersTab">
+                <h3>Користувачі</h3>
+                <div id="usersList"></div>
+            </div>
+            <div class="tab-content" id="ordersTab">
+                <h3>Замовлення</h3>
+                <div id="ordersList"></div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Help Icon -->
     <img src="images/Допомога.png" alt="Допомога" class="help-icon" id="helpIcon">
 
