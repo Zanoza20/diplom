@@ -402,10 +402,10 @@
     </div>
 </div>
 <div id="helpMenu" class="modal">
-    <div class="help-menu-content">
-        <span class="close" onclick="document.getElementById('userRules').style.display='none'">&times;</span>
-        <h1>Правила користувача</h1>
-        <div class="container">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('helpMenu').style.display='none'">&times;</span>
+            <h1>Допомога</h1>
+            <div class="container">
                 <h3>Як переглянути характеристики товару?</h3>
                 <p>Для перегляду характеристик товару необхідно нажати на його назву в каталозі, відкриється меню з його повними характеристиками.</p>
 
@@ -421,12 +421,10 @@
                 <h3>Що робити, якщо я забув пароль?</h3>
                 <p>Паролі всіх користувачів доступні службі підтримки для перегляду, ви можете зателефонувати чи написати за номером +380 97 69 37 243. Ви обов'язково повинні назвати свій точний номер телефона та email, щоб служба могла підтвердити, що ви власник аккаунта. Після цього вам повідомлять пароль або ви зможете запросити зміну.</p>
 
-               <div class="clearfix">
-                <button type="button" class="cancelbtn" onclick="document.getElementById('helpMenu').style.display='none'">Закрити</button>
+                <button class="close-help-btn" onclick="document.getElementById('helpMenu').style.display='none'">Закрити</button>
             </div>
         </div>
     </div>
-</div>
 
 <img src="images/Допомога.png" alt="Help Icon" class="help-icon">
 
