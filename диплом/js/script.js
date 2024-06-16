@@ -487,11 +487,6 @@ $(document).ready(function () {
             ordersList.append("<p>Час: " + order.time + " - Телефон: " + order.phone + " - Email: " + order.email + " - Товари: " + order.items + " - Сума: ₴" + order.total + "</p>");
         });
     }
- $("#helpButton").click(function () {
-        $("#helpModal").show();
-    });
 
-    $("#closeHelpModalButton").click(function () {
-        $("#helpModal").hide();
     displayGoods(goods);
 });
