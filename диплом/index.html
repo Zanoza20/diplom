@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>TudoCard</title>
     <link rel="stylesheet" href="css/style.css">
-  
 </head>
 <body>
     <header class="top-bar">
@@ -18,16 +17,10 @@
         <img src="images/Редагування.png" id="editIcon" alt="Редагувати" class="action-icon" style="display:none;">
         <img src="images/Мусор.png" id="deleteIcon" alt="Видалити" class="action-icon" style="display:none;">
         <img src="images/Журнал.png" id="adminJournalIcon" alt="Журнал" class="action-icon" style="display:none;">
-
     </header>
-    
     <button id="loginButton" class="btn">Увійти</button>
     <button id="registerButton" class="btn">Зареєструватись</button>
-
-    
     <div id="goods" class="goods-container"></div>
-
-    <!-- Cart Menu -->
     <div id="cartMenu" class="cart-menu">
         <div class="cart-menu-content">
             <span class="close" onclick="document.getElementById('cartMenu').style.display='none'">&times;</span>
@@ -39,8 +32,7 @@
             <button id="closeCartButton" class="close-cart-btn">Закрити кошик</button>
         </div>
     </div>
-
-    <!-- Item Details Modal -->
+    
     <div id="itemDetails" class="sign-up">
         <div class="sign-up-content">
             <span class="close" onclick="document.getElementById('itemDetails').style.display='none'">&times;</span>
@@ -63,8 +55,7 @@
             </div>
         </div>
     </div>
-
-    <!-- User Login Modal -->
+    
     <div id="menuLogin" class="sign-up">
         <div class="sign-up-content">
             <span class="close" onclick="document.getElementById('menuLogin').style.display='none'">&times;</span>
@@ -90,7 +81,6 @@
         </div>
     </div>
 
-    <!-- User Register Modal -->
     <div id="menuRegister" class="sign-up">
         <div class="sign-up-content">
             <span class="close" onclick="document.getElementById('menuRegister').style.display='none'">&times;</span>
@@ -121,7 +111,6 @@
         </div>
     </div>
 
-    <!-- User Rules Modal -->
 <div id="userRules" class="sign-up">
     <div class="sign-up-content">
         <span class="close" onclick="document.getElementById('userRules').style.display='none'">&times;</span>
@@ -160,8 +149,6 @@
     </div>
 </div>
 
-
-    <!-- Sorting Menu Modal -->
     <div id="sortMenu" class="modal">
         <div class="modal-content">
             <span class="close" onclick="document.getElementById('sortMenu').style.display='none'">&times;</span>
@@ -208,7 +195,6 @@
         </div>
     </div>
 
-    <!-- User Profile Modal -->
     <div id="profileMenu" class="modal">
         <div class="modal-content">
             <span class="close" onclick="document.getElementById('profileMenu').style.display='none'">&times;</span>
@@ -240,7 +226,6 @@
                 <option value="AMD">AMD</option>
                 <option value="NVIDIA">NVIDIA</option>
                 <option value="Intel">Intel</option>
-                <!-- Додати інші бренди -->
             </select>
 
             <label for="addItemGpuManufacturer">Виробник GPU:</label>
@@ -249,7 +234,6 @@
                 <option value="AMD">AMD</option>
                 <option value="NVIDIA">NVIDIA</option>
                 <option value="Intel">Intel</option>
-                <!-- Додати інших виробників GPU -->
             </select>
 
             <label for="addItemGraphicChip">Графічний чіп:</label>
@@ -295,7 +279,7 @@
         </form>
     </div>
 </div>
-<!-- Модальне вікно для редагування товару -->
+
 <div id="editItemModal" class="modal">
     <div class="modal-content">
         <span class="close" id="closeEditItemModalButton">&times;</span>
@@ -315,7 +299,6 @@
                 <option value="AMD">AMD</option>
                 <option value="NVIDIA">NVIDIA</option>
                 <option value="Intel">Intel</option>
-                <!-- Додати інші бренди -->
             </select>
 
             <label for="editItemGpuManufacturer">Виробник GPU:</label>
@@ -324,7 +307,6 @@
                 <option value="AMD">AMD</option>
                 <option value="NVIDIA">NVIDIA</option>
                 <option value="Intel">Intel</option>
-                <!-- Додати інших виробників GPU -->
             </select>
 
             <label for="editItemGraphicChip">Графічний чіп:</label>
@@ -370,8 +352,6 @@
     </div>
 </div>
 
-
-    <!-- Delete Item Modal -->
     <div id="deleteItemModal" class="modal">
     <div class="modal-content">
         <span class="close" id="closeDeleteItemModalButton">&times;</span>
@@ -383,7 +363,7 @@
         </form>
     </div>
 </div>
-<!-- Journal Modal -->
+
 <div id="adminJournalModal" class="modal">
     <div class="modal-content">
         <span id="closeAdminJournalModalButton" class="close-button">&times;</span>
@@ -403,10 +383,9 @@
         </div>
     </div>
 </div>
-    <!-- Help Icon -->
+
     <img src="images/Допомога.png" alt="Допомога" class="help-icon" id="helpIcon">
 
-    <!-- Help Menu -->
     <div class="help-menu" id="helpMenu">
         <span class="close" id="closeHelpMenu">&times;</span>
         <h3>Як переглянути характеристики товару?</h3>
@@ -426,7 +405,6 @@
     </div>
 
     <script>
-        // Показати/приховати меню допомоги при натисканні на іконку
         document.getElementById('helpIcon').addEventListener('click', function() {
             var helpMenu = document.getElementById('helpMenu');
             if (helpMenu.style.display === 'none' || helpMenu.style.display === '') {
@@ -436,7 +414,6 @@
             }
         });
 
-        // Закрити меню допомоги при натисканні на хрестик
         document.getElementById('closeHelpMenu').addEventListener('click', function() {
             document.getElementById('helpMenu').style.display = 'none';
         });
