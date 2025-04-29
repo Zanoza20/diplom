@@ -43,8 +43,8 @@ $(document).ready(function () {
     var currentUser = null;
     var actors = {
         "Admin": {
-            "phone": "380976937243",
-            "password": "496193202004"
+            "phone": "1234",
+            "password": "1234"
         },
         "users": []
     };
